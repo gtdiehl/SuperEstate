@@ -1,0 +1,84 @@
+/*External stylesheet*/
+* {
+	margin: 0;
+	padding-right: 5px;
+	border: 0;
+}
+body {height:100%; background-color: rgba(33,136,136,0.6);}
+h1 {color:#B6A11A; font-family:Segoe UI; font-size: 150%;}
+.special {color:#A19264; font-family:Segoe UI;}
+div.content {
+	margin-left:3%;
+	padding:100px 50px;
+	height:1000px;
+	background-color:#DEE7E8;
+	}
+
+div.nav{
+	position: fixed;
+	z-index: 100;
+	height: 80px;
+	width: 100%;
+	background-color: #C4D6D6;
+    }
+ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+li {float: left;}
+li:last-child {float:right;}
+
+li a {
+    display: block;
+	padding: 30px;
+    color: black;
+	text-align: center;
+    text-decoration: none;
+	font-family:Segoe UI;
+	font-weight: bold;
+}
+
+li a:hover {background-color: #D7E8E8;}
+
+div.property {
+	position: relative;
+	margin: 30px;
+	width: 27%;
+	border: 1px solid #ccc;
+	background-color: white;
+	float: left;
+}
+div.property img {
+	padding: 2px;
+	width: 100%;
+	height: 180px;
+}
+
+div.property:hover img {opacity: 0.3;}
+
+div.middle {
+	opacity: 0;
+	transition: .5s ease;
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%)
+}
+
+div.property:hover .middle {
+	opacity: 1;
+	background-color: silver;
+	color: black;
+	font-size: 16px;
+	padding: 16px 32px;
+}
+
+div.desc {
+	padding: 5px;
+	text-align: center;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+}
+
