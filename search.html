@@ -2,23 +2,102 @@
 <html>
     <head>
         <meta charset='utf-8'>
-        <title>superestate.com</title>
-		<link rel="stylesheet" type="text/css" href="styles.css"></link>
+        <title>SuperEstate Search</title>
+        <link rel="stylesheet" type="text/css" href="styles.css"></link>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $( function() {
+            $( "#slider-range" ).slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [ 75, 300 ],
+                slide: function( event, ui ) {
+                $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                }
+            });
+            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+                " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+            } );
+        </script>
+
+        <style>
+            div.content {
+                width: 75%;
+                border: 5px solid gray;
+                height: 10%;
+                position: fixed;
+                top: 100px;
+                padding: 20px 10px;
+            }
+            .ui-slider-horizontal {
+                height: 8px;
+                width: 200px;
+                margin: 10px;
+            }
+            .ui-slider .ui-slider-handle {
+                width: 5px;
+            }
+            input[type=text] {
+                width: 100px;
+            }
+        </style>
     </head>
     <body>
 		<div class="nav">
 			<ul>
 				<li><img src = "logo.jpg" alt="SuperEstate logo" width="93" height="80"></li>
-				<li><a href="#news">Search a house</a></li>
+				<li><a href="search.html">Search a house</a></li>
 				<li><a href="#contact">Sell a house</a></li>
 				<li><a href="#about">Agents</a></li>
 				<li><a href="#about">Contact us</a></li>
 				<li><a href="#account" class="special">My property</a></li>
 			</ul>
-		</div>
+        </div>
 		<div class="content">
+            <form method="POST" action="search_details.html">
+                <p>
+                    <label for="amount">Price range:</label>
+                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                </p>
+                
+                <div id="slider-range"></div>
 
-		
+                <p>Bedrooms</p>
+                <input type="radio" id="any_bedroom" name="bedrooms" value="any_bedroom">
+                <label for="any_bedroom">Any</label>
+                <input type="radio" id="one_bedroom" name="bedrooms" value="one_bedroom">
+                <label for="one_bedroom">1+</label>
+                <input type="radio" id="two_bedroom" name="bedrooms" value="two_bedroom">
+                <label for="two_bedroom">2+</label>
+                <input type="radio" id="three_bedroom" name="bedrooms" value="three_bedroom">
+                <label for="three_bedroom">3+</label>
+                <input type="radio" id="four_bedroom" name="bedrooms" value="four_bedroom">
+                <label for="four_bedroom">4+</label>
+                <input type="radio" id="five_bedroom" name="bedrooms" value="five_bedroom">
+                <label for="five_bedroom">5+</label>
+
+                <p>Bathrooms</p>
+                <input type="radio" id="any_bathroom" name="bathrooms" value="any_bathroom">
+                <label for="any_bathroom">Any</label>
+                <input type="radio" id="one_bathroom" name="bathrooms" value="one_bathroom">
+                <label for="one_bathroom">1+</label>
+                <input type="radio" id="two_bathroom" name="bathrooms" value="onehalf_bathroom">
+                <label for="onehalf_bathroom">1.5+</label>
+                <input type="radio" id="three_bathroom" name="bathrooms" value="two_bathroom">
+                <label for="two_bathroom">2+</label>
+                <input type="radio" id="four_bathroom" name="bathrooms" value="three_bathroom">
+                <label for="three_bathroom">3+</label>
+                <input type="radio" id="five_bathroom" name="bathrooms" value="four_bathroom">
+                <label for="four_bathroom">4+</label>
+
+                <p>Building Type</p>
+
+                <input type = "submit" value = "Search">
+            </form>
 		</div>
     </body>
 </html>
