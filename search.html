@@ -46,7 +46,14 @@
             }
             .column {
                 float: left;
-                width: 20%;
+                padding: 0px;
+            }
+            .equal {
+                width: 23%;
+            }
+            .right {
+                float: left;
+                width: 8%;
                 padding: 0px;
             }
             input[type=radio] {
@@ -63,6 +70,15 @@
                 background-image: none;
                 background-color:#8282ba;
             }
+            .search-details {
+                position: absolute;
+                top: 250px;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+            }
         </style>
     </head>
     <body>
@@ -77,8 +93,8 @@
 			</ul>
         </div>
 		<div class="content">
-            <form method="POST" action="search_details.html">
-                <div class="column">
+            <form action="index.html" target="ignore" onsubmit="this.reset();">
+                <div class="column equal">
                     <p>
                         <label for="amount">Price range:</label>
                         <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
@@ -86,7 +102,7 @@
                     
                     <div id="slider-range"></div>
                 </div>
-                <div class="column">
+                <div class="column equal">
                     <p>Bedrooms</p>
                     <input type="radio" id="any_bedroom" name="bedrooms" value="any_bedroom">
                     <label for="any_bedroom">Any</label>
@@ -101,7 +117,7 @@
                     <input type="radio" id="five_bedroom" name="bedrooms" value="five_bedroom">
                     <label for="five_bedroom">5+</label>
                 </div>
-                <div class="column">
+                <div class="column equal">
                     <p>Bathrooms</p>
                     <input type="radio" id="any_bathroom" name="bathrooms" value="any_bathroom">
                     <label for="any_bathroom">Any</label>
@@ -116,13 +132,24 @@
                     <input type="radio" id="four_bathroom" name="bathrooms" value="four_bathroom">
                     <label for="four_bathroom">4+</label>
                 </div>
-                <div class="column">
+                <div class="column equal">
                     <p>Building Type</p>
+                    <input type="checkbox" id="house" name="buildings" value="house">
+                    <label for="house">House</label>
+                    <input type="checkbox" id="manufactured" name="buildings" value="manufactured">
+                    <label for="manufactured">Manufactured</label>
+                    <input type="checkbox" id="condo" name="buildings" value="condo">
+                    <label for="condo">Condo</label>
+                    <input type="checkbox" id="townhouse" name="buildings" value="townhouse">
+                    <label for="townhouse">Townhouse</label>
                 </div>
-                <div class="column">
+                <div class="column right">
                     <input type = "submit" value = "Search">
                 </div>
             </form>
-		</div>
+        </div>
+        <div class="search-container">
+            <iframe class="search-details" name="ignore"></iframe>
+        </div>
     </body>
 </html>
