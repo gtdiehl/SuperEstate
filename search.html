@@ -49,6 +49,20 @@
                 width: 20%;
                 padding: 0px;
             }
+            input[type=radio] {
+                display: none;
+                margin: 10px;
+            }
+            input[type=radio] + label {
+                display:inline-block;
+                background-color: #e7e7e7;
+                border: 1px;
+                border-style: solid;
+            }
+            input[type=radio]:checked + label { 
+                background-image: none;
+                background-color:#8282ba;
+            }
         </style>
     </head>
     <body>
@@ -93,13 +107,13 @@
                     <label for="any_bathroom">Any</label>
                     <input type="radio" id="one_bathroom" name="bathrooms" value="one_bathroom">
                     <label for="one_bathroom">1+</label>
-                    <input type="radio" id="two_bathroom" name="bathrooms" value="onehalf_bathroom">
+                    <input type="radio" id="onehalf_bathroom" name="bathrooms" value="onehalf_bathroom">
                     <label for="onehalf_bathroom">1.5+</label>
-                    <input type="radio" id="three_bathroom" name="bathrooms" value="two_bathroom">
+                    <input type="radio" id="two_bathroom" name="bathrooms" value="two_bathroom">
                     <label for="two_bathroom">2+</label>
-                    <input type="radio" id="four_bathroom" name="bathrooms" value="three_bathroom">
+                    <input type="radio" id="three_bathroom" name="bathrooms" value="three_bathroom">
                     <label for="three_bathroom">3+</label>
-                    <input type="radio" id="five_bathroom" name="bathrooms" value="four_bathroom">
+                    <input type="radio" id="four_bathroom" name="bathrooms" value="four_bathroom">
                     <label for="four_bathroom">4+</label>
                 </div>
                 <div class="column">
