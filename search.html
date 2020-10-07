@@ -140,16 +140,18 @@
 
         <style>
             div.searchContent {
-                width: 75%;
-                border: 5px solid gray;
-                height: 10%;
+                width: 90%;
+                height: 20%;
                 position: fixed;
                 top: 100px;
-                padding: 20px 10px 0px;
+                padding: 10px 10px 0px;
+                margin-left:3%;
+                background-image: url("images/bridgebackground.jpg");
+                background-size: 100% 100%;
             }
             .ui-slider-horizontal {
                 height: 8px;
-                width: 200px;
+                width: 50%;
                 margin: 10px;
             }
             .ui-slider .ui-slider-handle {
@@ -160,15 +162,25 @@
             }
             .column {
                 float: left;
-                padding: 0px;
+                padding: 10px;
             }
-            .equal {
-                width: 23%;
+            .left {
+                width: 20%;
+            }
+            .middle1 {
+                width: 15%;
+                text-align: center;
+            }
+            .middle2 {
+                width: 15%;
+            }
+            .middle3 {
+                width: 30%;
             }
             .right {
                 float: left;
                 width: 8%;
-                padding: 0px;
+                padding: 20px;
             }
             input[type=radio] {
                 display: none;
@@ -209,8 +221,7 @@
 			</ul>
 		</div>
 		<div class="searchContent">
-            <form id="searchForm">
-                <div class="column equal">
+                <div class="column left">
                     <p>
                         <label for="amount">Price range:</label>
                         <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
@@ -218,7 +229,7 @@
                     
                     <div id="slider-range"></div>
                 </div>
-                <div class="column equal">
+                <div class="column middle1">
                     <p>Bedrooms</p>
                     <input type="radio" id="any_bedroom" name="bedrooms" value="0" checked>
                     <label for="any_bedroom">Any</label>
@@ -233,7 +244,7 @@
                     <input type="radio" id="five_bedroom" name="bedrooms" value="5">
                     <label for="five_bedroom">5+</label>
                 </div>
-                <div class="column equal">
+                <div class="column middle2">
                     <p>Bathrooms</p>
                     <input type="radio" id="any_bathroom" name="bathrooms" value="0"  checked>
                     <label for="any_bathroom">Any</label>
@@ -248,7 +259,7 @@
                     <input type="radio" id="four_bathroom" name="bathrooms" value="4">
                     <label for="four_bathroom">4+</label>
                 </div>
-                <div class="column equal">
+                <div class="column middle3">
                     <p>Building Type</p>
                     <input type="checkbox" id="house" name="buildings" value="House">
                     <label for="house">House</label>
@@ -262,7 +273,6 @@
                 <div class="column right">
                     <button type="submit">Search</button>
                 </div>
-            </form>
         </div>
         <div class="search-container">
             <iframe class="search-details" id="searchFrame"></iframe>
