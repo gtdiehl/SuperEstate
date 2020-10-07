@@ -40,6 +40,8 @@ li a {
 }
 
 li a:hover {background-color: #D7E8E8;}
+li a.homepage {padding: 0px;}
+li a.homepage:hover {background-color: #C4D6D6;}
 
 div.property {
 	position: relative;
