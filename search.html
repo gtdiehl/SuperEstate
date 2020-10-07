@@ -6,23 +6,11 @@
         <link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+        <script src="scripts/search.js"></script>
+        <script src="scripts/utils.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
-            $( function() {
-            $( "#slider-range" ).slider({
-                range: true,
-                min: 10000,
-                max: 2000000,
-                values: [ 20000, 2000000 ],
-                slide: function( event, ui ) {
-                $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-                }
-            });
-            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-                " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-            } );
-
             const homes = [
                 {
                 "ref": 1,
@@ -126,72 +114,6 @@
                 }
             ]
             
-            function searchHomes() {
-                var resultHomes = [];
-                var minPrice = 0;
-                var maxPrice = 0;
-                var varnumBathrooms = 0
-                var numBedrooms = 0
-                var buildingType = [];
-
-                document.getElementsByName('bedrooms').forEach(element => {
-                    if(element.checked)
-                        numBedrooms = element.value;
-                });
-
-                document.getElementsByName('bathrooms').forEach(element => {
-                    if(element.checked)
-                        numBathrooms = element.value;
-                });  
-
-                document.getElementsByName('buildings').forEach(element => {
-                    if(element.checked)
-                        buildingType.push(element.value);
-                });
-
-                minPrice = $( "#slider-range" ).slider( "values", 0 );
-                maxPrice = $( "#slider-range" ).slider( "values", 1 );
-
-                homes.forEach(element => {
-                    if(minPrice <= element.Price && maxPrice >= element.Price)
-                        if(numBedrooms <= element.Bedrooms)
-                            if(numBathrooms <= element.Bathooms)
-                                buildingType.forEach(type => {
-                                    if(element.Type == type)
-                                        resultHomes.push(element);
-                                });
-                });
-                displaySearchResults(resultHomes)
-            }
-
-            function displaySearchResults(results) {
-                var ifrm = document.getElementById('someFrame');
-                ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
-
-                 ifrm.document.open();
-                ifrm.document.write("<div class=\"content\">");
-                results.forEach(element => {
-                    ifrm.document.write("<div class=\"property\">");
-                    ifrm.document.write("<a href=\"images/house1.jpg\">");
-                    ifrm.document.write("<img src=\"images/house1.jpg\" alt=\"house\">");
-                    ifrm.document.write("</a>");
-                    ifrm.document.write("<div class=\"middle\">Details</div>");
-                    ifrm.document.write("<div class=\"desc\">" + element.Price + "</div>");
-                    ifrm.document.write("</div>");
-                });
-                ifrm.document.write("</div>");
-
-                var head = ifrm.document.getElementsByTagName('head')[0];
-                console.log(head);
-                var style = ifrm.document.createElement("link");
-                style.href = "styles/styles.css";
-                style.type = "text/css";
-                style.rel = 'stylesheet';
-                head.append(style);
-
-                ifrm.document.close();
-            }
-
             function domLoaded() {
                 let form  = document.getElementById('searchForm');
                 form.addEventListener('submit', (event) => {
@@ -199,6 +121,21 @@
                     searchHomes();
                 });
             }
+
+            $( function() {
+                $( "#slider-range" ).slider({
+                    range: true,
+                    min: 10000,
+                    max: 2000000,
+                    values: [ 20000, 2000000 ],
+                    slide: function( event, ui ) {
+                    $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                    }
+                });
+                var minAmount = numberWithCommas($( "#slider-range" ).slider( "values", 0 ));
+                var maxAmount = numberWithCommas($( "#slider-range" ).slider( "values", 1 ));
+                $( "#amount" ).val( "$" + minAmount + " - $" + maxAmount );
+            } );
         </script>
 
         <style>
@@ -270,7 +207,7 @@
 				<li><a href="#about">Contact us</a></li>
 				<li><a href="#account" class="special">My property</a></li>
 			</ul>
-        </div>
+		</div>
 		<div class="searchContent">
             <form id="searchForm">
                 <div class="column equal">
@@ -328,7 +265,7 @@
             </form>
         </div>
         <div class="search-container">
-            <iframe class="search-details" id="someFrame"></iframe>
+            <iframe class="search-details" id="searchFrame"></iframe>
         </div>
     </body>
 </html>
