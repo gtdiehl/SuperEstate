@@ -12,9 +12,9 @@
             $( function() {
             $( "#slider-range" ).slider({
                 range: true,
-                min: 0,
-                max: 500,
-                values: [ 75, 300 ],
+                min: 10000,
+                max: 2000000,
+                values: [ 20000, 2000000 ],
                 slide: function( event, ui ) {
                 $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
                 }
@@ -22,10 +22,187 @@
             $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
                 " - $" + $( "#slider-range" ).slider( "values", 1 ) );
             } );
+
+            const homes = [
+                {
+                "ref": 1,
+                "Street": "692 Gale Dr",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 3,
+                "Bathooms": 2,
+                "Price": 900000,
+                "Type": "Condo"
+                },
+                {
+                "ref": 2,
+                "Street": "605 El Patio Dr",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 2,
+                "Bathooms": 1,
+                "Price": 800000,
+                "Type": "Manufactured"
+                },
+                {
+                "ref": 3,
+                "Street": "999 Linda Dr",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 5,
+                "Bathooms": 3,
+                "Price": 1250000,
+                "Type": "House"
+                },
+                {
+                "ref": 4,
+                "Street": "704 Duncanville Ct",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 3,
+                "Bathooms": 3,
+                "Price": 775000,
+                "Type": "House"
+                },
+                {
+                "ref": 5,
+                "Street": "184 Lu Anne Dr",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 1,
+                "Bathooms": 1,
+                "Price": 550000,
+                "Type": "Condo"
+                },
+                {
+                "ref": 6,
+                "Street": "N 1st St",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 2,
+                "Bathooms": 1,
+                "Price": 650000,
+                "Type": "Manufactured"
+                },
+                {
+                "ref": 7,
+                "Street": "775 Almarida",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 2,
+                "Bathooms": 1,
+                "Price": 625000,
+                "Type": "Condo"
+                },
+                {
+                "ref": 8,
+                "Street": "1067 Erin Way",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 3,
+                "Bathooms": 1.5,
+                "Price": 750000,
+                "Type": "TownHouse"
+                },
+                {
+                "ref": 9,
+                "Street": "134 Salice Way",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 6,
+                "Bathooms": 7,
+                "Price": 1500000,
+                "Type": "House"
+                },
+                {
+                "ref": 10,
+                "Street": "91 N 1st St",
+                "City": "San Jose",
+                "ZIP": 95125,
+                "Bedrooms": 1,
+                "Bathooms": 1,
+                "Price": 925000,
+                "Type": "Condo"
+                }
+            ]
+            
+            function searchHomes() {
+                var resultHomes = [];
+                var minPrice = 0;
+                var maxPrice = 0;
+                var varnumBathrooms = 0
+                var numBedrooms = 0
+                var buildingType = [];
+
+                document.getElementsByName('bedrooms').forEach(element => {
+                    if(element.checked)
+                        numBedrooms = element.value;
+                });
+
+                document.getElementsByName('bathrooms').forEach(element => {
+                    if(element.checked)
+                        numBathrooms = element.value;
+                });  
+
+                document.getElementsByName('buildings').forEach(element => {
+                    if(element.checked)
+                        buildingType.push(element.value);
+                });
+
+                minPrice = $( "#slider-range" ).slider( "values", 0 );
+                maxPrice = $( "#slider-range" ).slider( "values", 1 );
+
+                homes.forEach(element => {
+                    if(minPrice <= element.Price && maxPrice >= element.Price)
+                        if(numBedrooms <= element.Bedrooms)
+                            if(numBathrooms <= element.Bathooms)
+                                buildingType.forEach(type => {
+                                    if(element.Type == type)
+                                        resultHomes.push(element);
+                                });
+                });
+                displaySearchResults(resultHomes)
+            }
+
+            function displaySearchResults(results) {
+                var ifrm = document.getElementById('someFrame');
+                ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
+
+                 ifrm.document.open();
+                ifrm.document.write("<div class=\"content\">");
+                results.forEach(element => {
+                    ifrm.document.write("<div class=\"property\">");
+                    ifrm.document.write("<a href=\"images/house1.jpg\">");
+                    ifrm.document.write("<img src=\"images/house1.jpg\" alt=\"house\">");
+                    ifrm.document.write("</a>");
+                    ifrm.document.write("<div class=\"middle\">Details</div>");
+                    ifrm.document.write("<div class=\"desc\">" + element.Price + "</div>");
+                    ifrm.document.write("</div>");
+                });
+                ifrm.document.write("</div>");
+
+                var head = ifrm.document.getElementsByTagName('head')[0];
+                console.log(head);
+                var style = ifrm.document.createElement("link");
+                style.href = "styles/styles.css";
+                style.type = "text/css";
+                style.rel = 'stylesheet';
+                head.append(style);
+
+                ifrm.document.close();
+            }
+
+            function domLoaded() {
+                let form  = document.getElementById('searchForm');
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    searchHomes();
+                });
+            }
         </script>
 
         <style>
-            div.content {
+            div.searchContent {
                 width: 75%;
                 border: 5px solid gray;
                 height: 10%;
@@ -42,7 +219,7 @@
                 width: 5px;
             }
             input[type=text] {
-                width: 100px;
+                width: 150px;
             }
             .column {
                 float: left;
@@ -81,7 +258,7 @@
             }
         </style>
     </head>
-    <body>
+    <body onload="domLoaded();">
 		<div class="nav">
 			<ul>
 				<li><img src = "images/logo.jpg" alt="SuperEstate logo" width="93" height="80"></li>
@@ -92,8 +269,8 @@
 				<li><a href="#account" class="special">My property</a></li>
 			</ul>
         </div>
-		<div class="content">
-            <form action="index.html" target="ignore" onsubmit="this.reset();">
+		<div class="searchContent">
+            <form id="searchForm">
                 <div class="column equal">
                     <p>
                         <label for="amount">Price range:</label>
@@ -104,52 +281,52 @@
                 </div>
                 <div class="column equal">
                     <p>Bedrooms</p>
-                    <input type="radio" id="any_bedroom" name="bedrooms" value="any_bedroom">
+                    <input type="radio" id="any_bedroom" name="bedrooms" value="0" checked>
                     <label for="any_bedroom">Any</label>
-                    <input type="radio" id="one_bedroom" name="bedrooms" value="one_bedroom">
+                    <input type="radio" id="one_bedroom" name="bedrooms" value="1">
                     <label for="one_bedroom">1+</label>
-                    <input type="radio" id="two_bedroom" name="bedrooms" value="two_bedroom">
+                    <input type="radio" id="two_bedroom" name="bedrooms" value="2">
                     <label for="two_bedroom">2+</label>
-                    <input type="radio" id="three_bedroom" name="bedrooms" value="three_bedroom">
+                    <input type="radio" id="three_bedroom" name="bedrooms" value="3">
                     <label for="three_bedroom">3+</label>
-                    <input type="radio" id="four_bedroom" name="bedrooms" value="four_bedroom">
+                    <input type="radio" id="four_bedroom" name="bedrooms" value="4">
                     <label for="four_bedroom">4+</label>
-                    <input type="radio" id="five_bedroom" name="bedrooms" value="five_bedroom">
+                    <input type="radio" id="five_bedroom" name="bedrooms" value="5">
                     <label for="five_bedroom">5+</label>
                 </div>
                 <div class="column equal">
                     <p>Bathrooms</p>
-                    <input type="radio" id="any_bathroom" name="bathrooms" value="any_bathroom">
+                    <input type="radio" id="any_bathroom" name="bathrooms" value="0"  checked>
                     <label for="any_bathroom">Any</label>
-                    <input type="radio" id="one_bathroom" name="bathrooms" value="one_bathroom">
+                    <input type="radio" id="one_bathroom" name="bathrooms" value="1">
                     <label for="one_bathroom">1+</label>
-                    <input type="radio" id="onehalf_bathroom" name="bathrooms" value="onehalf_bathroom">
+                    <input type="radio" id="onehalf_bathroom" name="bathrooms" value="1.5">
                     <label for="onehalf_bathroom">1.5+</label>
-                    <input type="radio" id="two_bathroom" name="bathrooms" value="two_bathroom">
+                    <input type="radio" id="two_bathroom" name="bathrooms" value="2">
                     <label for="two_bathroom">2+</label>
-                    <input type="radio" id="three_bathroom" name="bathrooms" value="three_bathroom">
+                    <input type="radio" id="three_bathroom" name="bathrooms" value="3">
                     <label for="three_bathroom">3+</label>
-                    <input type="radio" id="four_bathroom" name="bathrooms" value="four_bathroom">
+                    <input type="radio" id="four_bathroom" name="bathrooms" value="4">
                     <label for="four_bathroom">4+</label>
                 </div>
                 <div class="column equal">
                     <p>Building Type</p>
-                    <input type="checkbox" id="house" name="buildings" value="house">
+                    <input type="checkbox" id="house" name="buildings" value="House">
                     <label for="house">House</label>
-                    <input type="checkbox" id="manufactured" name="buildings" value="manufactured">
+                    <input type="checkbox" id="manufactured" name="buildings" value="Manufactured">
                     <label for="manufactured">Manufactured</label>
-                    <input type="checkbox" id="condo" name="buildings" value="condo">
+                    <input type="checkbox" id="condo" name="buildings" value="Condo">
                     <label for="condo">Condo</label>
-                    <input type="checkbox" id="townhouse" name="buildings" value="townhouse">
+                    <input type="checkbox" id="townhouse" name="buildings" value="Townhouse">
                     <label for="townhouse">Townhouse</label>
                 </div>
                 <div class="column right">
-                    <input type = "submit" value = "Search">
+                    <button type="submit">Search</button>
                 </div>
             </form>
         </div>
         <div class="search-container">
-            <iframe class="search-details" name="ignore"></iframe>
+            <iframe class="search-details" id="someFrame"></iframe>
         </div>
     </body>
 </html>
