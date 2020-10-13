@@ -1,4 +1,5 @@
-function searchHomes() {
+function searchHomes(homes) {
+    console.log(homes);
     var resultHomes = [];
     var minPrice = 0;
     var maxPrice = 0;
@@ -48,8 +49,8 @@ function displaySearchResults(results) {
         ifrm.document.write("<p>Sorted by Price</p>");
         results.forEach(element => {
             ifrm.document.write("<div class=\"property\">");
-            ifrm.document.write("<a href=\"images/house1.jpg\">");
-            ifrm.document.write("<img src=\"images/house1.jpg\" alt=\"house\">");
+            ifrm.document.write("<a href=\"" +  element.image + "\">");
+            ifrm.document.write("<img src=\"" + element.image + "\" alt=\"house\">");
             ifrm.document.write("</a>");
             ifrm.document.write("<div class=\"middle\">Details</div>");
             ifrm.document.write("<div class=\"desc\">$" + numberWithCommas(element.Price) + "</div>");
