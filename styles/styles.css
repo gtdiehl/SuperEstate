@@ -6,7 +6,7 @@
 }
 body {height:100%; background-color: rgba(33,136,136,0.6);}
 h1 {color:#B6A11A; font-family:Segoe UI; font-size: 150%;}
-.special {color:#A19264; font-family:Segoe UI;}
+.navList .special {color:#A19264; font-family:Segoe UI;}
 div.content {
 	margin-left:3%;
 	padding:100px 50px;
@@ -26,10 +26,10 @@ ul {
     overflow: hidden;
 }
 
-li {float: left;}
-li:last-child {float:right;}
+.navList {float: left;}
+.navList:last-child {float:right;}
 
-li a {
+.navList a {
     display: block;
 	padding: 30px;
     color: black;
@@ -39,9 +39,9 @@ li a {
 	font-weight: bold;
 }
 
-li a:hover {background-color: #D7E8E8;}
-li a.homepage {padding: 0px;}
-li a.homepage:hover {background-color: #C4D6D6;}
+.navList a:hover {background-color: #D7E8E8;}
+.navList a.homepage {padding: 0px;}
+.navList a.homepage:hover {background-color: #C4D6D6;}
 
 div.property {
 	position: relative;
