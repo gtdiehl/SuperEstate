@@ -111,8 +111,11 @@
                     myDataObj = JSON.parse(event.target.result);
                     myDataObj.forEach(element => {
                         if(element.ref == property_id) {
-                            document.getElementById("propertyDetailsList").innerHTML += ('<li>Bedrooms: ' + element.Bedrooms +'</li>');
-                            document.getElementById("propertyDetailsList").innerHTML += ('<li>Bathrooms: ' + element.Bathrooms + '</li>');
+                            document.getElementById("propertyPrice").innerText = "$" + numberWithCommas(element.Price);
+                            document.getElementById("propertyDetailsList").innerHTML += ('<li>' + element.Bedrooms + ' bedrooms / ' +
+                                element.Bathrooms + ' bathrooms</li>');
+                            document.getElementById("propertyDetailsList").innerHTML += ('<li>' + element.Sqft + ' sqft</li>');
+                            document.getElementById("propertyDetailsList").innerHTML += ('<li>Built in ' + element.YearBuilt + '</li>');
                             document.getElementById("property-photo").src = element.image;
                         }
                     });
@@ -195,11 +198,13 @@
     <body onload="domLoaded();">
         <div id="displayContent" class="displayContent">
             <div class="photo-container">
-                <img id="property-photo" class="property-photo" src="" alt="Property for Sale">
+                <img id="property-photo" class="property-photo" alt="Property for Sale">
                 <button class="property-button property-display-left" onclick="plusDivs(-1)">&#10094;</button>
                 <button class="property-button property-display-right" onclick="plusDivs(+1)">&#10095;</button>
             </div>
             <div class="propertyDetails">
+                <p id=propertyPrice></p>
+                <p><b>Property Details</b></p>
                 <ul id="propertyDetailsList"></ul>
             </div>
         </div>
