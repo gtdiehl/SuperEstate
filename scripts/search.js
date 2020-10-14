@@ -48,7 +48,6 @@ function displaySearchResults(results) {
         ifrm.document.write("<p>Sorted by Price</p>");
         results.forEach(element => {
             ifrm.document.write("<div class=\"property\">");
-            ifrm.document.write("<a href=\"" +  element.image + "\">");
             ifrm.document.write("<img src=\"" + element.image + "\" alt=\"house\">");
             ifrm.document.write("</a>");
             ifrm.document.write("<div class=\"middle\">Details</div>");
@@ -63,7 +62,6 @@ function displaySearchResults(results) {
     ifrm.document.write("</div>");
 
     var head = ifrm.document.getElementsByTagName('head')[0];
-    console.log(head);
     var style = ifrm.document.createElement("link");
     style.href = "styles/styles.css";
     style.type = "text/css";
