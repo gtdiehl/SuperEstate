@@ -49,8 +49,7 @@ function displaySearchResults(results) {
         results.forEach(element => {
             ifrm.document.write("<div class=\"property\">");
             ifrm.document.write("<img src=\"" + element.image + "\" alt=\"house\">");
-            ifrm.document.write("</a>");
-            ifrm.document.write("<div class=\"middle\">Details</div>");
+            ifrm.document.write("<div class=\"middle\"><a href=\"display.html?property_id=" + element.ref + "\">Details</a></div>");
             ifrm.document.write("<div class=\"desc\">$" + numberWithCommas(element.Price) + "</div>");
             ifrm.document.write("</div>");
         });
