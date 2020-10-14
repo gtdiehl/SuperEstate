@@ -1,9 +1,8 @@
 function searchHomes(homes) {
-    console.log(homes);
     var resultHomes = [];
     var minPrice = 0;
     var maxPrice = 0;
-    var varnumBathrooms = 0
+    var numBathrooms = 0
     var numBedrooms = 0
     var buildingType = [];
 
@@ -28,7 +27,7 @@ function searchHomes(homes) {
     homes.forEach(element => {
         if(minPrice <= element.Price && maxPrice >= element.Price)
             if(numBedrooms <= element.Bedrooms)
-                if(numBathrooms <= element.Bathooms)
+                if(numBathrooms <= element.Bathrooms)
                     buildingType.forEach(type => {
                         if(element.Type == type)
                             resultHomes.push(element);
