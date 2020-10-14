@@ -9,7 +9,9 @@ const homeData = [
    "Price": 900000,
    "Type": "Condo",
    "Rank": 1,
-   "image": "images/ref1.jpg"
+   "image": "images/ref1.jpg",
+   "Sqft": 1200,
+   "YearBuilt": 2001
    },
    {
    "ref": 2,
@@ -21,7 +23,9 @@ const homeData = [
    "Price": 800000,
    "Type": "Manufactured",
    "Rank": 2,
-   "image": "images/ref2.jpg"
+   "image": "images/ref2.jpg",
+   "Sqft": 1150,
+   "YearBuilt": 2001
    },
    {
    "ref": 3,
@@ -33,7 +37,9 @@ const homeData = [
    "Price": 1250000,
    "Type": "House",
    "Rank": 3,
-   "image": "images/ref3.jpg"
+   "image": "images/ref3.jpg",
+   "Sqft": 2700,
+   "YearBuilt": 2001
    },
    {
    "ref": 4,
@@ -45,7 +51,9 @@ const homeData = [
    "Price": 775000,
    "Type": "House",
    "Rank": 4,
-   "image": "images/ref4.jpg"
+   "image": "images/ref4.jpg",
+   "Sqft": 2000,
+   "YearBuilt": 2001
    },
    {
    "ref": 5,
@@ -57,7 +65,9 @@ const homeData = [
    "Price": 550000,
    "Type": "Condo",
    "Rank": 5,
-   "image": "images/ref5.jpg"
+   "image": "images/ref5.jpg",
+   "Sqft": 1050,
+   "YearBuilt": 2001
    },
    {
    "ref": 6,
@@ -69,7 +79,9 @@ const homeData = [
    "Price": 650000,
    "Type": "Manufactured",
    "Rank": 6,
-   "image": "images/ref6.jpg"
+   "image": "images/ref6.jpg",
+   "Sqft": 1250,
+   "YearBuilt": 2001
    },
    {
    "ref": 7,
@@ -81,7 +93,9 @@ const homeData = [
    "Price": 625000,
    "Type": "Condo",
    "Rank": 7,
-   "image": "images/ref7.jpg"
+   "image": "images/ref7.jpg",
+   "Sqft": 1450,
+   "YearBuilt": 2001
    },
    {
    "ref": 8,
@@ -93,7 +107,9 @@ const homeData = [
    "Price": 750000,
    "Type": "TownHouse",
    "Rank": 8,
-   "image": "images/ref8.jpg"
+   "image": "images/ref8.jpg",
+   "Sqft": 1725,
+   "YearBuilt": 2001
    },
    {
    "ref": 9,
@@ -105,7 +121,9 @@ const homeData = [
    "Price": 1500000,
    "Type": "House",
    "Rank": 9,
-   "image": "images/ref9.jpg"
+   "image": "images/ref9.jpg",
+   "Sqft": 3200,
+   "YearBuilt": 2001
    },
    {
    "ref": 10,
@@ -117,7 +135,9 @@ const homeData = [
    "Price": 925000,
    "Type": "Condo",
    "Rank": 10,
-   "image": "images/ref10.jpg"
+   "image": "images/ref10.jpg",
+   "Sqft": 950,
+   "YearBuilt": 2001
    }
 ]
 
