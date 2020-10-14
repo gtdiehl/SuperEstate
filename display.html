@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>superestate.com</title>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
+        
+        <script>
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const property_id = urlParams.get('property_id')
+        </script>
+        <style>
+            .displayContent {
+                width: 90%;
+                height: 20%;
+                position: fixed;
+                top: 100px;
+                padding: 10px 10px 0px;
+                margin-left:3%;
+            }
+
+            .photo {
+                float: left;
+            }
+
+            .propertyDetails {
+                float: left;
+
+            }
+
+            .propertyDetailsList {
+                list-style-type: disc;
+            }
+
+        </style>
+    </head>
+    <body>
+		<div class="nav">
+			<ul>
+				<li class="navList"><a href="index.html" class="homepage">
+					<img src = "images/logo.jpg" alt="SuperEstate logo" width="140" height="75">
+				</a></li>
+				<li class="navList"><a href="search.html">Search a house</a></li>
+				<li class="navList"><a href="#sell">Sell a house</a></li>
+				<li class="navList"><a href="#about">Agents</a></li>
+				<li class="navList"><a href="#about">Contact us</a></li>
+				<li class="navList"><a href="#account" class="special">My property</a></li>
+			</ul>
+        </div>
+        <div class="displayContent">
+            <div class="photo">
+                <img src="images/ref1.jpg" alt="Property for Sale" width=75% height=75% >
+            </div>
+            <div class="propertyDetails">
+                <ul class="propertyDetailsList">
+                    <li>Bedrooms: </li>
+                    <li>Bathooms: </li>
+                    <li>Sqft: </li>
+                    <li>Year Built: </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
