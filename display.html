@@ -5,10 +5,58 @@
         <title>superestate.com</title>
         <link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
         
+        <script src="scripts/search.js"></script>
+        <script src="scripts/utils.js"></script>
         <script>
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const property_id = urlParams.get('property_id')
+            var myDataObj;
+            function domLoaded() {
+                loadHomeData();
+            }
+
+            function loadHomeData() {
+                var reader = new FileReader();
+                var data = JSON.stringify(homeData);
+                const blob = new Blob([data], {type:"application/json"});
+
+                reader.onload = function(event) {
+                    const queryString = window.location.search;
+                    const urlParams = new URLSearchParams(queryString);
+                    const property_id = urlParams.get('property_id');
+
+                    myDataObj = JSON.parse(event.target.result);
+                    myDataObj.forEach(element => {
+                        if(element.ref == property_id) {
+                            document.getElementById("propertyDetailsList").innerHTML += ('<li>Bedrooms: ' + element.Bedrooms +'</li>');
+                            document.getElementById("propertyDetailsList").innerHTML += ('<li>Bathrooms: ' + element.Bathrooms + '</li>');
+                            document.getElementById("property-photo").src = element.image;
+                        }
+                    });
+                };
+
+                reader.onerror = function(event) {
+                    console.error("File could not be read! Code " + event.target.error.code);
+                };
+
+                reader.readAsText(blob);
+            }         
+
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = x.length} ;
+                        for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";
+                        }
+                x[slideIndex-1].style.display = "block";
+            }
         </script>
         <style>
             .displayContent {
@@ -20,22 +68,46 @@
                 margin-left:3%;
             }
 
-            .photo {
+            .photo-container {
                 float: left;
+                width: auto;
+                height: auto;
             }
 
             .propertyDetails {
                 float: left;
-
             }
 
-            .propertyDetailsList {
+            #propertyDetailsList {
                 list-style-type: disc;
+            }
+
+            .property-display-left {
+                position: absolute;
+                top: 100%;
+                left: 0%;
+            }
+
+            .property-display-right {
+                position: absolute;
+                top: 100%;
+                right: 0%;
+            }
+
+            .property-button {
+                padding: 8px 16px;
+                margin-left: 1%;
+                overflow: hidden;
+            }
+
+            .property-photo {
+                width: 75%;
+                height: 75%;
             }
 
         </style>
     </head>
-    <body>
+    <body onload="domLoaded();">
 		<div class="nav">
 			<ul>
 				<li class="navList"><a href="index.html" class="homepage">
@@ -49,16 +121,13 @@
 			</ul>
         </div>
         <div class="displayContent">
-            <div class="photo">
-                <img src="images/ref1.jpg" alt="Property for Sale" width=75% height=75% >
+            <div class="photo-container">
+                <img id="property-photo" class="property-photo" src="" alt="Property for Sale">
+                <button class="property-button property-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="property-button property-display-right" onclick="plusDivs(+1)">&#10095;</button>
             </div>
             <div class="propertyDetails">
-                <ul class="propertyDetailsList">
-                    <li>Bedrooms: </li>
-                    <li>Bathooms: </li>
-                    <li>Sqft: </li>
-                    <li>Year Built: </li>
-                </ul>
+                <ul id="propertyDetailsList"></ul>
             </div>
         </div>
     </body>
