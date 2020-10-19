@@ -21,41 +21,17 @@
 		<div class="content">
 			<h1>Neighborhood, San Jose</h1>
 			
-			<div class="property">
-				<img src="images/house1.jpg" alt="house">
-				<div class="middle"><a href="display.html?property_id=1&display_nav=True">Details</a></div>
-				<div class="desc">$1,550,000</div>
-			</div>
-			
-			<div class="property">
-				<img src="images/house2.jpg" alt="house">
-				<div class="middle"><a href="display.html?property_id=2&display_nav=True">Details</a></div>
-				<div class="desc">$1,199,000</div>
-			</div>
-			
-			<div class="property">
-				<img src="images/house3.jpg" alt="house">
-				<div class="middle"><a href="display.html?property_id=3&display_nav=True">Details</a></div>
-				<div class="desc">$1,347,000</div>
-			</div>
-			
-			<div class="property">
-				<img src="images/house4.jpg" alt="house">
-				<div class="middle"><a href="display.html?property_id=4&display_nav=True">Details</a></div>
-				<div class="desc">$1,120,000</div>
-			</div>
-			
-			<div class="property">
-				<img src="images/house5.jpg" alt="house">
-				<div class="middle"><a href="display.html?property_id=5&display_nav=True">Details</a></div>
-				<div class="desc">$893,000</div>
-			</div>
-			
-			<div class="property">
-				<img src="images/house6.jpg" alt="house">
-				<div class="middle"><a href="display.html?property_id=6&display_nav=True">Details</a></div>
-				<div class="desc">$910,000</div>
-			</div>
+			<script>
+				var i;
+				for (i=1; i<=6; i++) {
+					document.writeln('<div class="property">');
+					document.writeln('<img src="images/house'+i+'.jpg" alt="house">');
+					document.writeln('<div class="middle">');
+					document.writeln('<a href="display.php?id='+i+' ">Details</a></div>');
+					document.writeln('<iframe src="price.php?id='+i+' " width="100%" height="35"></iframe>');
+					document.writeln('</div>');
+				}
+			</script>
 
 		
 		</div>
