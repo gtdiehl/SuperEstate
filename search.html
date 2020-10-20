@@ -125,6 +125,9 @@
             label {
                 padding: 2px 5px 2px 5px;
             }
+            #grid-container {
+                display: grid;
+            }
         </style>
     </head>
     <body onload="domLoaded();">
@@ -139,65 +142,67 @@
 				<li class="navList"><a href="#about">Contact us</a></li>
 				<li class="navList"><a href="#account" class="special">My property</a></li>
 			</ul>
-		</div>
-		<div class="searchContent">
-            <form id="searchForm">
-                <div class="column left">
-                    <p>
-                        <label for="amount">Price range:</label>
-                        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-                    </p>
-                    
-                    <div id="slider-range"></div>
-                </div>
-                <div class="column middle1">
-                    <p>Bedrooms</p>
-                    <input type="radio" id="any_bedroom" name="bedrooms" value="0" checked>
-                    <label for="any_bedroom">Any</label>
-                    <input type="radio" id="one_bedroom" name="bedrooms" value="1">
-                    <label for="one_bedroom">1+</label>
-                    <input type="radio" id="two_bedroom" name="bedrooms" value="2">
-                    <label for="two_bedroom">2+</label>
-                    <input type="radio" id="three_bedroom" name="bedrooms" value="3">
-                    <label for="three_bedroom">3+</label>
-                    <input type="radio" id="four_bedroom" name="bedrooms" value="4">
-                    <label for="four_bedroom">4+</label>
-                    <input type="radio" id="five_bedroom" name="bedrooms" value="5">
-                    <label for="five_bedroom">5+</label>
-                </div>
-                <div class="column middle2">
-                    <p>Bathrooms</p>
-                    <input type="radio" id="any_bathroom" name="bathrooms" value="0"  checked>
-                    <label for="any_bathroom">Any</label>
-                    <input type="radio" id="one_bathroom" name="bathrooms" value="1">
-                    <label for="one_bathroom">1+</label>
-                    <input type="radio" id="onehalf_bathroom" name="bathrooms" value="1.5">
-                    <label for="onehalf_bathroom">1.5+</label>
-                    <input type="radio" id="two_bathroom" name="bathrooms" value="2">
-                    <label for="two_bathroom">2+</label>
-                    <input type="radio" id="three_bathroom" name="bathrooms" value="3">
-                    <label for="three_bathroom">3+</label>
-                    <input type="radio" id="four_bathroom" name="bathrooms" value="4">
-                    <label for="four_bathroom">4+</label>
-                </div>
-                <div class="column middle3">
-                    <p>Building Type</p>
-                    <input type="checkbox" id="house" name="buildings" value="House">
-                    <label for="house">House</label>
-                    <input type="checkbox" id="manufactured" name="buildings" value="Manufactured">
-                    <label for="manufactured">Manufactured</label>
-                    <input type="checkbox" id="condo" name="buildings" value="Condo">
-                    <label for="condo">Condo</label>
-                    <input type="checkbox" id="townhouse" name="buildings" value="Townhouse">
-                    <label for="townhouse">Townhouse</label>
-                </div>
-                <div class="column right">
-                    <input type = "submit" value = "Search">
-                </div>
-            </form>
         </div>
-        <div class="search-container">
-            <iframe class="search-details" id="searchFrame"></iframe>
+        <div class="grid-container">
+            <div class="searchContent">
+                <form id="searchForm">
+                    <div class="column left">
+                        <p>
+                            <label for="amount">Price range:</label>
+                            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                        </p>
+                        
+                        <div id="slider-range"></div>
+                    </div>
+                    <div class="column middle1">
+                        <p>Bedrooms</p>
+                        <input type="radio" id="any_bedroom" name="bedrooms" value="0" checked>
+                        <label for="any_bedroom">Any</label>
+                        <input type="radio" id="one_bedroom" name="bedrooms" value="1">
+                        <label for="one_bedroom">1+</label>
+                        <input type="radio" id="two_bedroom" name="bedrooms" value="2">
+                        <label for="two_bedroom">2+</label>
+                        <input type="radio" id="three_bedroom" name="bedrooms" value="3">
+                        <label for="three_bedroom">3+</label>
+                        <input type="radio" id="four_bedroom" name="bedrooms" value="4">
+                        <label for="four_bedroom">4+</label>
+                        <input type="radio" id="five_bedroom" name="bedrooms" value="5">
+                        <label for="five_bedroom">5+</label>
+                    </div>
+                    <div class="column middle2">
+                        <p>Bathrooms</p>
+                        <input type="radio" id="any_bathroom" name="bathrooms" value="0"  checked>
+                        <label for="any_bathroom">Any</label>
+                        <input type="radio" id="one_bathroom" name="bathrooms" value="1">
+                        <label for="one_bathroom">1+</label>
+                        <input type="radio" id="onehalf_bathroom" name="bathrooms" value="1.5">
+                        <label for="onehalf_bathroom">1.5+</label>
+                        <input type="radio" id="two_bathroom" name="bathrooms" value="2">
+                        <label for="two_bathroom">2+</label>
+                        <input type="radio" id="three_bathroom" name="bathrooms" value="3">
+                        <label for="three_bathroom">3+</label>
+                        <input type="radio" id="four_bathroom" name="bathrooms" value="4">
+                        <label for="four_bathroom">4+</label>
+                    </div>
+                    <div class="column middle3">
+                        <p>Building Type</p>
+                        <input type="checkbox" id="house" name="buildings" value="House">
+                        <label for="house">House</label>
+                        <input type="checkbox" id="manufactured" name="buildings" value="Manufactured">
+                        <label for="manufactured">Manufactured</label>
+                        <input type="checkbox" id="condo" name="buildings" value="Condo">
+                        <label for="condo">Condo</label>
+                        <input type="checkbox" id="townhouse" name="buildings" value="Townhouse">
+                        <label for="townhouse">Townhouse</label>
+                    </div>
+                    <div class="column right">
+                        <input type = "submit" value = "Search">
+                    </div>
+                </form>
+            </div>
+            <div class="search-container">
+                <iframe class="search-details" id="searchFrame"></iframe>
+            </div>
         </div>
     </body>
 </html>
