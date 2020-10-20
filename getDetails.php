@@ -1,8 +1,8 @@
 <?php
-$servername=DB_HOST;
-$username="superestate";
-$password="super12345";
-$dbname="superestate";
+$servername=getenv('DB_HOST');
+$username=getenv('DB_USERNAME');
+$password=getenv('DB_PASSWORD');
+$dbname=getenv('DB_DATABASE');
 $get_id=$_GET['id'];
 
 //create connection
