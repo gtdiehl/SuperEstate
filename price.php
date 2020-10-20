@@ -1,5 +1,5 @@
 <?php
-$servername="localhost";
+$servername=DB_HOST;
 $username="superestate";
 $password="super12345";
 $dbname="superestate";
@@ -10,7 +10,7 @@ $conn=mysqli_connect($servername, $username, $password, $dbname);
 
 //check connection
 if (!$conn){
-	die("Connection failed: ".mysqli_connect_error());
+	die("Connection failed to $servername: ".mysqli_connect_error());
 }
 
 $sql="select * from property where property_id='$search_id' ";
