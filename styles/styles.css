@@ -10,7 +10,7 @@ h1 {color:#B6A11A; font-family:Segoe UI; font-size: 150%;}
 div.content {
 	margin-left:3%;
 	padding:100px 50px;
-	height:1000px;
+	height:600px;
 	background-color:#DEE7E8;
 	}
 
@@ -75,5 +75,53 @@ div.property:hover .middle {
 	color: black;
 	font-size: 16px;
 	padding: 16px 32px;
+}
+
+.displayContent {
+	width: 90%;
+	height: 20%;
+	position: fixed;
+	top: 100px;
+	padding: 10px 10px 0px;
+	margin-left:3%;
+}
+
+.photo-container {
+	float: left;
+	width: 50%;
+}
+
+.propertyDetails {
+	float: right;
+	right: 30%;
+	width: 40%;
+	height: 55%;
+}
+
+#propertyDetailsList {
+	list-style-type: disc;
+}
+
+.property-display-left {
+	position: absolute;
+	top: 45%;
+	left: 4%;
+}
+
+.property-display-right {
+	position: absolute;
+	top: 45%;
+	left: 49%;
+}
+
+.property-button {
+	padding: 8px 16px;
+	margin-left: 1%;
+	overflow: hidden;
+}
+
+.property-photo {
+	width: 100%;
+	height: auto;
 }
 
