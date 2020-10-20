@@ -49,7 +49,7 @@ function displaySearchResults(results) {
         results.forEach(element => {
             ifrm.document.write("<div class=\"property\">");
             ifrm.document.write("<img src=\"" + element.image + "\" alt=\"house\">");
-            ifrm.document.write("<div class=\"middle\"><a href=\"display_home.html?property_id=" + element.ref + "&display_nav=true\">Details</a></div>");
+            ifrm.document.write("<div class=\"middle\"><a href=\"display_home.html?id=" + element.ref + "&display_nav=true\">Details</a></div>");
             ifrm.document.write("<div class=\"desc\">$" + numberWithCommas(element.Price) + "</div>");
             ifrm.document.write("</div>");
         });
@@ -61,10 +61,20 @@ function displaySearchResults(results) {
     ifrm.document.write("</div>");
 
     var head = ifrm.document.getElementsByTagName('head')[0];
-    var style = ifrm.document.createElement("link");
-    style.href = "styles/styles.css";
-    style.type = "text/css";
-    style.rel = 'stylesheet';
+    var styleLink = ifrm.document.createElement("link");
+    styleLink.href = "styles/styles.css";
+    styleLink.type = "text/css";
+    styleLink.rel = 'stylesheet';
+    head.append(styleLink);
+
+    var style = ifrm.document.createElement("style");
+    style.innerHTML = 
+        'body {' +
+            'text-align:center;' +
+            'font-family:Microsoft YaHei;' +
+            'font-weight:bold;' +
+            'margin:5px;' +
+        '}';
     head.append(style);
 
     ifrm.document.close();
