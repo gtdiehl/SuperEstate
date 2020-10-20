@@ -111,13 +111,13 @@
 		<div class="content">
 			<div class="photo-container">
 				<script src="scripts/getURLid.js"></script>
-				<script>document.writeln('<img src="images/house'+ getURLParam('property_id') +'.jpg" class="property-photo" alt="Property for Sale">');</script>
+				<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" class="property-photo" alt="Property for Sale">');</script>
 				<button class="property-button property-display-left" onclick="plusDivs(-1)">&#10094;</button>
 				<button class="property-button property-display-right" onclick="plusDivs(+1)">&#10095;</button>
 			</div>
 			<div class="propertyDetails">
 				<script>
-					document.writeln('<iframe src="getDetails.php?id='+ getURLParam('property_id') +' width="100%" height="100%"></iframe>');
+					document.writeln('<iframe src="getDetails.php?id='+ getURLParam('id') +' width="100%" height="100%"></iframe>');
 				</script>
 			</div>
 		</div>
