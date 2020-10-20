@@ -1,5 +1,5 @@
 <?php
-$servername=DB_HOST;
+$servername=getenv('DB_HOST');
 $username="superestate";
 $password="super12345";
 $dbname="superestate";
