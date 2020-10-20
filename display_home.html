@@ -19,21 +19,17 @@
 			</ul>
 		</div>
 		<div class="content">
-			<h1>Neighborhood, San Jose</h1>
-			
-			<script>
-				var i;
-				for (i=1; i<=6; i++) {
-					document.writeln('<div class="property">');
-					document.writeln('<img src="images/house'+i+'.jpg" alt="house">');
-					document.writeln('<div class="middle">');
-					document.writeln('<a href="display_home.html?id='+i+' ">Details</a></div>');
-					document.writeln('<iframe src="price.php?id='+i+' " width="100%" height="35"></iframe>');
-					document.writeln('</div>');
-				}
-			</script>
-
-		
+			<div class="photo-container">
+				<script src="scripts/getURLid.js"></script>
+				<script>document.writeln('<img src="images/house'+id+'.jpg" class="property-photo" alt="Property for Sale">');</script>
+				<button class="property-button property-display-left" onclick="plusDivs(-1)">&#10094;</button>
+				<button class="property-button property-display-right" onclick="plusDivs(+1)">&#10095;</button>
+			</div>
+			<div class="propertyDetails">
+				<script>
+					document.writeln('<iframe src="getDetails.php?id='+id+' width="100%" height="100%"></iframe>');
+				</script>
+			</div>
 		</div>
     </body>
 </html>
