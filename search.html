@@ -58,9 +58,9 @@
         <style>
             .searchContent {
                 width: 100%;
-                height: 20%;
-                position: fixed;
-                top: 100px;
+                height: 170px;
+                position: absolute;
+                top: 80px;
                 padding: 10px 10px 0px;
                 margin-left:3%;
                 background-image: url("images/bridgebackground.jpg");
@@ -115,18 +115,16 @@
             }
             .search-details {
                 position: absolute;
-                top: 250px;
+                top: 259px;
                 left: 0;
                 bottom: 0;
                 right: 0;
                 width: 100%;
                 height: 100%;
+                margin-left: 3%;
             }
             label {
                 padding: 2px 5px 2px 5px;
-            }
-            .grid-container {
-                display: grid;
             }
         </style>
     </head>
@@ -143,7 +141,7 @@
 				<li class="navList"><a href="#account" class="special">My property</a></li>
 			</ul>
         </div>
-        <div class="grid-container">
+        <div class="container">
             <div class="searchContent">
                 <form id="searchForm">
                     <div class="column left">
@@ -201,7 +199,7 @@
                 </form>
             </div>
             <div class="search-container">
-                <iframe class="search-details" id="searchFrame"></iframe>
+                <iframe class="search-details" id="searchFrame" scrolling="no"></iframe>
             </div>
         </div>
     </body>

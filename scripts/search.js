@@ -42,7 +42,7 @@ function displaySearchResults(results) {
     ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
 
     ifrm.document.open();
-    ifrm.document.write("<div class=\"content\">");
+    ifrm.document.write("<div class=\"content\" style=\"height: 100%;\">");
     if(results.length > 0)
     {
         ifrm.document.write("<p>Sorted by Price</p>");
