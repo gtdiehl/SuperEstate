@@ -17,7 +17,18 @@ if (!$conn){
 	die("Connection failed to $servername: ".mysqli_connect_error());
 }
 
-$sql="select property_id from property where bed_count >= '$search_bedrooms' AND bath_count >= '$search_bathrooms' AND price >= '$search_minprice' AND price <= '$search_maxprice' AND '$search_building'";
+$sql="select property_id from property where bed_count >= '$search_bedrooms' AND bath_count >= '$search_bathrooms' AND price >= '$search_minprice' AND price <= '$search_maxprice' AND ";
+
+$numItems = count($search_building);
+$i = 0;
+if ($numItems > 0) {
+    foreach($search_building as &$type) {
+        $sql += "type = '$type'";
+        if (++$i != $numItems) {
+            $sql += " or ";
+        }
+    }
+}
 
 echo "$sql";
 $result=mysqli_query($conn,$sql);
