@@ -74,6 +74,7 @@ function displaySearchResults(results) {
             'font-family:Microsoft YaHei;' +
             'font-weight:bold;' +
             'margin:5px;' +
+            'padding-right:0;' +
         '}';
     head.append(style);
 
