@@ -6,7 +6,6 @@
 }
 body {height:100%; background-color: rgba(33,136,136,0.6);}
 h1 {color:#B6A11A; font-family:Segoe UI; font-size: 150%;}
-.navList .special {color:#A19264; font-family:Segoe UI;}
 div.content {
 	margin-left:3%;
 	padding:100px 50px;
@@ -14,6 +13,7 @@ div.content {
 	background-color:#DEE7E8;
 	}
 
+/*NavList*/
 div.nav{
 	position: fixed;
 	z-index: 100;
@@ -21,6 +21,7 @@ div.nav{
 	width: 100%;
 	background-color: #C4D6D6;
     }
+
 ul {
     list-style-type: none;
     overflow: hidden;
@@ -28,6 +29,7 @@ ul {
 
 .navList {float: left;}
 .navList:last-child {float:right;}
+.navList .special {color:#A19264; font-family:Segoe UI;}
 
 .navList a {
     display: block;
@@ -43,6 +45,7 @@ ul {
 .navList a.homepage {padding: 0px;}
 .navList a.homepage:hover {background-color: #C4D6D6;}
 
+/*Property box*/
 div.property {
 	position: relative;
 	margin: 30px;
@@ -51,6 +54,7 @@ div.property {
 	background-color: white;
 	float: left;
 }
+
 div.property img {
 	padding: 2px;
 	width: 100%;
@@ -77,29 +81,15 @@ div.property:hover .middle {
 	padding: 16px 32px;
 }
 
-.displayContent {
-	width: 90%;
-	height: 20%;
-	position: fixed;
-	top: 100px;
-	padding: 10px 10px 0px;
-	margin-left:3%;
-}
-
+/*Display page*/
 .photo-container {
 	float: left;
 	width: 50%;
 }
 
-.propertyDetails {
-	float: right;
-	right: 30%;
-	width: 40%;
-	height: 55%;
-}
-
-#propertyDetailsList {
-	list-style-type: disc;
+.property-photo {
+	width: 100%;
+	height: auto;
 }
 
 .property-display-left {
@@ -120,8 +110,11 @@ div.property:hover .middle {
 	overflow: hidden;
 }
 
-.property-photo {
-	width: 100%;
-	height: auto;
+.propertyDetails {
+	float: right;
+	right: 30%;
+	width: 40%;
+	height: 55%;
 }
+
 
