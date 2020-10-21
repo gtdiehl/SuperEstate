@@ -64,6 +64,10 @@
                         urlSearchParams += element.value;
                     });
                 }
+
+                var urlString = "getSearchResults.php" + urlSearchParams;
+                console.log(urlString);
+                document.getElementById("searchFrame").setAttribute("src", urlString);
             }
 
             function loadHomeData() {
@@ -242,7 +246,7 @@
                 </form>
             </div>
             <div class="search-container">
-                <iframe class="getSearchResults.php?bed_count=1" id="searchFrame" scrolling="no"></iframe>
+                <iframe class="search-details" id="searchFrame" scrolling="no"></iframe>
             </div>
         </div>
     </body>
