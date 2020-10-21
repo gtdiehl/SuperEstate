@@ -38,16 +38,15 @@ echo "<style type='text/css'>";
 echo "body{text-align:center;font-family:Microsoft YaHei; font-weight:bold; margin:5px}";
 echo "</style>";
 
-echo "<div class=\"content\" style=\"height: 100%; padding: 10px; margin-left: 0;\">";
+echo "<div class='content' style='height: 100%; padding: 10px; margin-left: 0;'>";
 if (mysqli_num_rows($result)>0){
     echo "<p>Sorted by Price</p>";
 	while ($row=mysqli_fetch_array($result)){
-        echo "<div class=\"property\">";
-        echo "<img src=\"images/house$row['property_id'].jpg\" alt=\"house\">";
-        echo "<div class=\"middle\"><a href=\"display_home.html?id=$row['property_id']&display_nav=true\">Details</a></div>";
-        echo "<div class=\"desc\">$ number_format($row["price"]</div>");
+        echo "<div class='property'>";
+        echo "<img src='images/house" . $row['property_id'] . ".jpg' alt='house'>";
+        echo "<div class='middle'><a href='display_home.html?id=" . $row['property_id'] . "&display_nav=true'>Details</a></div>";
+        echo "<div class='desc'>$ " . number_format($row["price"]) . "</div>";
         echo "</div>";
-        //echo number_format($row["price"]);
         
 	}
 }else{
