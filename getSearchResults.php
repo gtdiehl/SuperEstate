@@ -30,8 +30,10 @@ if ($numItems > 0) {
     }
 }
 
-echo "$sql";
+$sql .= " order by price desc";
+
 $result=mysqli_query($conn,$sql);
+echo $result;
 
 //echo "<style type='text/css'>";
 //echo "body{text-align:center;font-family:Microsoft YaHei; font-weight:bold; margin:5px}";
