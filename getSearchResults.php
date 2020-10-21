@@ -17,7 +17,7 @@ if (!$conn){
 	die("Connection failed to $servername: ".mysqli_connect_error());
 }
 
-$sql="select property_id from property where bed_count >= '$search_bedrooms' AND bath_count >= '$search_bathrooms' AND price >= '$search_minprice' AND price <= '$search_maxprice' AND ";
+$sql="select * from property where bed_count >= '$search_bedrooms' AND bath_count >= '$search_bathrooms' AND price >= '$search_minprice' AND price <= '$search_maxprice' AND ";
 
 $numItems = count($search_building);
 $i = 0;
@@ -33,18 +33,17 @@ if ($numItems > 0) {
 $sql .= " order by price desc";
 
 $result=mysqli_query($conn,$sql);
-echo $result;
 
-//echo "<style type='text/css'>";
-//echo "body{text-align:center;font-family:Microsoft YaHei; font-weight:bold; margin:5px}";
-//echo "</style>";
+echo "<style type='text/css'>";
+echo "body{text-align:center;font-family:Microsoft YaHei; font-weight:bold; margin:5px}";
+echo "</style>";
 
-//if (mysqli_num_rows($result)>0){
-//	while ($row=mysqli_fetch_array($result)){
-//		echo number_format($row["price"]);
-//	}
-//}else{
-//	echo "<p>No result</p>";
-//}
+if (mysqli_num_rows($result)>0){
+	while ($row=mysqli_fetch_array($result)){
+		echo number_format($row["price"]);
+	}
+}else{
+	echo "<p>No result</p>";
+}
 
 ?>
