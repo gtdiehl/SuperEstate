@@ -5,7 +5,7 @@
     top: 80px;
     padding: 10px 10px 0px;
     margin-left:3%;
-    background-image: url("images/bridgebackground.jpg");
+    background-image: url("../images/bridgebackground.jpg");
     background-size: 100% 100%;
 }
 #slider-range {
