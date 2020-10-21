@@ -6,8 +6,8 @@ $dbname=getenv('DB_DATABASE');
 $search_bedrooms=$_GET['bed_count'];
 $search_bathrooms=$_GET['bath_count'];
 $search_building=$_GET['building'];
-$search_minprice=$_GET['minPrice'];
-$search_maxprice=$_GET['maxPrice'];
+$search_minprice=$_GET['min_price'];
+$search_maxprice=$_GET['max_price'];
 
 //create connection
 $conn=mysqli_connect($servername, $username, $password, $dbname);
