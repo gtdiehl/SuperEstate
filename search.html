@@ -4,6 +4,7 @@
         <meta charset='utf-8'>
         <title>SuperEstate Search</title>
         <link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
+        <link rel="stylesheet" type="text/css" href="styles/searchStyles.css"></link>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
         <script src="scripts/search.js"></script>
@@ -11,81 +12,14 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
-            var myDataObj;
-            var urlSearchParams;
-
             function domLoaded() {
                 let form  = document.getElementById('searchForm');
                 form.addEventListener('submit', (event) => {
                     event.preventDefault();
-                    createURLSearchString();
+                    document.getElementById("searchFrame").setAttribute("src", createURLSearchString());
                 });
-
-                loadHomeData();
             }
 
-            function createURLSearchString() {
-                var minPrice = 0;
-                var maxPrice = 0;
-                var numBathrooms = 0
-                var numBedrooms = 0
-                var buildingType = [];
-
-                document.getElementsByName('bedrooms').forEach(element => {
-                    if(element.checked)
-                        numBedrooms = element.value;
-                });
-
-                document.getElementsByName('bathrooms').forEach(element => {
-                    if(element.checked)
-                        numBathrooms = element.value;
-                });  
-
-                document.getElementsByName('buildings').forEach(element => {
-                    if(element.checked)
-                        buildingType.push(element.value);
-                });
-
-                minPrice = $( "#slider-range" ).slider( "values", 0 );
-                maxPrice = $( "#slider-range" ).slider( "values", 1 );
-
-                urlSearchParams = "?bed_count=";
-                urlSearchParams += numBedrooms;
-                urlSearchParams += "&bath_count=";
-                urlSearchParams += numBathrooms;
-                urlSearchParams += "&min_price=";
-                urlSearchParams += minPrice;
-                urlSearchParams += "&max_price=";
-                urlSearchParams += maxPrice;
-                
-                if(buildingType.length > 0) {
-                    buildingType.forEach(element => {
-                        urlSearchParams += "&building%5B%5D=";
-                        urlSearchParams += element;
-                    });
-                }
-
-                var urlString = "getSearchResults.php" + urlSearchParams;
-                console.log(urlString);
-                document.getElementById("searchFrame").setAttribute("src", urlString);
-            }
-
-            function loadHomeData() {
-                var reader = new FileReader();
-                var data = JSON.stringify(homeData);
-                const blob = new Blob([data], {type:"application/json"});
-
-                reader.onload = function(event) {
-                    myDataObj = JSON.parse(event.target.result);
-                };
-
-                reader.onerror = function(event) {
-                    console.error("File could not be read! Code " + event.target.error.code);
-                };
-
-                reader.readAsText(blob);
-            }
-            
             $( function() {
                 $( "#slider-range" ).slider({
                     range: true,
@@ -101,79 +35,6 @@
                 $( "#amount" ).val( "$" + minAmount + " - $" + maxAmount );
             } );
         </script>
-
-        <style>
-            .searchContent {
-                width: 95%;
-                height: 170px;
-                position: absolute;
-                top: 80px;
-                padding: 10px 10px 0px;
-                margin-left:3%;
-                background-image: url("images/bridgebackground.jpg");
-                background-size: 100% 100%;
-            }
-            #slider-range {
-                height: 8px;
-                width: 80%;
-                margin: 10px;
-            }
-            .ui-slider .ui-slider-handle {
-                width: 5px;
-            }
-            input[type=text] {
-                width: 150px;
-            }
-            .column {
-                float: left;
-                padding: 10px;
-                text-align: center;
-            }
-            .left {
-                width: 20%;
-            }
-            .middle1 {
-                width: 15%;
-            }
-            .middle2 {
-                width: 15%;
-            }
-            .middle3 {
-                width: 30%;
-            }
-            .right {
-                float: left;
-                width: 8%;
-                padding: 20px;
-            }
-            input[type=radio], input[type=checkbox] {
-                display: none;
-                margin: 10px;
-            }
-            input[type=radio] + label, input[type=checkbox] + label {
-                display:inline-block;
-                background-color: #e7e7e7;
-                border: 1px;
-                border-style: solid;
-            }
-            input[type=radio]:checked + label, input[type=checkbox]:checked + label { 
-                background-image: none;
-                background-color:#8282ba;
-            }
-            .search-details {
-                position: absolute;
-                top: 259px;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                width: 96%;
-                height: 100%;
-                margin-left: 3%;
-            }
-            label {
-                padding: 2px 5px 2px 5px;
-            }
-        </style>
     </head>
     <body onload="domLoaded();">
 		<div class="nav">
