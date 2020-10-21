@@ -18,23 +18,19 @@ if (!$conn){
 }
 
 $sql="select property_id from property where bed_count >= '$search_bedrooms' AND bath_count >= '$search_bathrooms' AND price >= '$search_minprice' AND price <= '$search_maxprice' AND ";
-echo "$sql";
 
 $numItems = count($search_building);
-//echo "$numItems";
-
 $i = 0;
 if ($numItems > 0) {
     foreach($search_building as &$type) {
-        echo "$type";
-        $sql += "type = '$type'";
+        $sql .= "type = '$type'";
         if (++$i != $numItems) {
-            $sql += " or ";
+            $sql .= " or ";
         }
     }
 }
 
-//echo "$sql";
+echo "$sql";
 $result=mysqli_query($conn,$sql);
 
 //echo "<style type='text/css'>";
