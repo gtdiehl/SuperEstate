@@ -20,6 +20,8 @@ if (!$conn){
 $sql="select property_id from property where bed_count >= '$search_bedrooms' AND bath_count >= '$search_bathrooms' AND price >= '$search_minprice' AND price <= '$search_maxprice' AND ";
 echo "$sql";
 
+var_dump($search_building);
+
 $numItems = count($search_building);
 echo "$numItems";
 
