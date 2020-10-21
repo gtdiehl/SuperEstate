@@ -1,3 +1,4 @@
+body{overflow: hidden;}
 h4{text-align: center;}
 label {font-weight: bold}
 .container {
@@ -8,7 +9,7 @@ label {font-weight: bold}
 	
 .searchContent {
     width: 96%;
-    height: 270px;
+    height: 220px;
     position: absolute;
     top: 80px;
     background-image: url("../images/searchCriteriaBackground.jpg");
@@ -87,7 +88,7 @@ input[type=checkbox]:checked + label {
 
 .search-details {
     position: absolute;
-    top: 370px;
+    top: 310px;
     width: 93%;
     height: 600px;
     margin-left: 3%;
