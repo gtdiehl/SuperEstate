@@ -36,7 +36,7 @@ $result=mysqli_query($conn,$sql);
 
 echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
 echo "<style type='text/css'>";
-echo "body{text-align:center;font-family:Microsoft YaHei; font-weight:bold; margin:5px}";
+echo "body{text-align:center;font-family:Microsoft YaHei; font-weight:bold; margin:5px; background-color: #DEE7E8}";
 echo "</style>";
 
 echo "<div class='content' style='height: 100%; padding: 10px; margin-left: 0;'>";
