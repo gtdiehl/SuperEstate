@@ -5,7 +5,7 @@
     top: 80px;
     padding: 10px 10px 0px;
     margin-left:3%;
-    background-image: url("../images/bridgebackground.jpg");
+    background-image: url("../images/searchCriteriaBackground.jpg");
     background-size: 100% 100%;
 }
 #slider-range {
@@ -62,9 +62,15 @@ input[type=radio]:checked + label, input[type=checkbox]:checked + label {
     bottom: 0;
     right: 0;
     width: 96%;
-    height: 100%;
+    height: calc(100% - 300px);
     margin-left: 3%;
 }
 label {
     padding: 2px 5px 2px 5px;
+}
+#submitButton {
+    border: outset;
+}
+#submitImage {
+    height: 50px;
 }
