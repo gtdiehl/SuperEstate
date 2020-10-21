@@ -13,27 +13,27 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             function domLoaded() {
+                $( function() {
+                    $( "#slider-range" ).slider({
+                        range: true,
+                        min: 10000,
+                        max: 2000000,
+                        values: [ 20000, 2000000 ],
+                        slide: function( event, ui ) {
+                            $( "#amount" ).val( "$" + numberWithCommas(ui.values[ 0 ]) + " - $" + numberWithCommas(ui.values[ 1 ]) );
+                        }
+                    });
+                    var minAmount = numberWithCommas($( "#slider-range" ).slider( "values", 0 ));
+                    var maxAmount = numberWithCommas($( "#slider-range" ).slider( "values", 1 ));
+                    $( "#amount" ).val( "$" + minAmount + " - $" + maxAmount );
+                } );
+
                 let form  = document.getElementById('searchForm');
                 form.addEventListener('submit', (event) => {
                     event.preventDefault();
                     document.getElementById("searchFrame").setAttribute("src", createURLSearchString());
                 });
             }
-
-            $( function() {
-                $( "#slider-range" ).slider({
-                    range: true,
-                    min: 10000,
-                    max: 2000000,
-                    values: [ 20000, 2000000 ],
-                    slide: function( event, ui ) {
-                        $( "#amount" ).val( "$" + numberWithCommas(ui.values[ 0 ]) + " - $" + numberWithCommas(ui.values[ 1 ]) );
-                    }
-                });
-                var minAmount = numberWithCommas($( "#slider-range" ).slider( "values", 0 ));
-                var maxAmount = numberWithCommas($( "#slider-range" ).slider( "values", 1 ));
-                $( "#amount" ).val( "$" + minAmount + " - $" + maxAmount );
-            } );
         </script>
     </head>
     <body onload="domLoaded();">
