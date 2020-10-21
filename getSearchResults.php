@@ -4,10 +4,10 @@ $username=getenv('DB_USERNAME');
 $password=getenv('DB_PASSWORD');
 $dbname=getenv('DB_DATABASE');
 $search_bedrooms=$_GET['bed_count'];
-$search_bedrooms=$_GET['bath_count'];
-$search_bedrooms=$_GET['building'];
-$search_bedrooms=$_GET['minPrice'];
-$search_bedrooms=$_GET['maxPrice'];
+$search_bathrooms=$_GET['bath_count'];
+$search_building=$_GET['building'];
+$search_minprice=$_GET['minPrice'];
+$search_maxprice=$_GET['maxPrice'];
 
 //create connection
 $conn=mysqli_connect($servername, $username, $password, $dbname);
@@ -17,8 +17,10 @@ if (!$conn){
 	die("Connection failed to $servername: ".mysqli_connect_error());
 }
 
-//$sql="select * from property where property_id='$search_id' ";
-//$result=mysqli_query($conn,$sql);
+$sql="select property_id from property where bed_count >= '$search_bedrooms' AND bath_count >= '$search_bathrooms' AND price >= '$search_minprice' AND price <= '$search_maxprice' AND '$search_building'";
+
+echo "$sql";
+$result=mysqli_query($conn,$sql);
 
 //echo "<style type='text/css'>";
 //echo "body{text-align:center;font-family:Microsoft YaHei; font-weight:bold; margin:5px}";
