@@ -11,7 +11,6 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
-            var myDataObj;
             var urlSearchParams;
 
             function domLoaded() {
@@ -20,8 +19,6 @@
                     event.preventDefault();
                     createURLSearchString();
                 });
-
-                loadHomeData();
             }
 
             function createURLSearchString() {
@@ -68,22 +65,6 @@
                 var urlString = "getSearchResults.php" + urlSearchParams;
                 console.log(urlString);
                 document.getElementById("searchFrame").setAttribute("src", urlString);
-            }
-
-            function loadHomeData() {
-                var reader = new FileReader();
-                var data = JSON.stringify(homeData);
-                const blob = new Blob([data], {type:"application/json"});
-
-                reader.onload = function(event) {
-                    myDataObj = JSON.parse(event.target.result);
-                };
-
-                reader.onerror = function(event) {
-                    console.error("File could not be read! Code " + event.target.error.code);
-                };
-
-                reader.readAsText(blob);
             }
             
             $( function() {
