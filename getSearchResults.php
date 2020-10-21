@@ -36,7 +36,7 @@ if ($numItems > 0) {
 }
 
 $sql .= " order by price ASC";
-
+echo "$sql";
 $result=mysqli_query($conn,$sql);
 
 echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
