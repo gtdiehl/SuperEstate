@@ -17,7 +17,12 @@ if (!$conn){
 	die("Connection failed to $servername: ".mysqli_connect_error());
 }
 
-$sql="select * from property where bed_count >= '$search_bedrooms' AND bath_count >= '$search_bathrooms' AND price >= '$search_minprice' AND price <= '$search_maxprice' AND ";
+$sql="select * from property
+	where bed_count >= '$search_bedrooms'
+	AND bath_count >= '$search_bathrooms'
+	AND price >= '$search_minprice'
+	AND price <= '$search_maxprice'
+	AND ";
 
 $numItems = count($search_building);
 $i = 0;
@@ -30,28 +35,29 @@ if ($numItems > 0) {
     }
 }
 
-$sql .= " order by price desc";
+$sql .= " order by price ASC";
 
 $result=mysqli_query($conn,$sql);
 
 echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
 echo "<style type='text/css'>";
-echo "body{text-align:center;font-family:Microsoft YaHei; font-weight:bold; margin:5px}";
+echo "body{text-align:center; font-family:Microsoft YaHei;
+	font-weight:bold; background-color:#DEE7E8;}";
+echo "h1, p {text-align:left;}";
 echo "</style>";
 
-echo "<div class='content' style='height: 100%; padding: 10px; margin-left: 0;'>";
+
 if (mysqli_num_rows($result)>0){
-    echo "<p>Sorted by Price</p>";
+	echo "<h1>".mysqli_num_rows($result)." results</h1>";
+    echo "<p>Sorted by Price (Low to High)</p>";
 	while ($row=mysqli_fetch_array($result)){
         echo "<div class='property'>";
         echo "<img src='images/house" . $row['property_id'] . ".jpg' alt='house'>";
-        echo "<div class='middle'><a href='display_home.html?id=" . $row['property_id'] . "&display_nav=true'>Details</a></div>";
-        echo "<div class='desc'>$ " . number_format($row["price"]) . "</div>";
-        echo "</div>";
+        echo "<div class='middle'><a href='display.html?id=".$row['property_id']."' target='_blank'>Details</a></div>";
+        echo "<div>$ " . number_format($row["price"]) . "</div></div>";
         
 	}
 }else{
 	echo "<p>No homes found.</p>";
 }
-echo "</div>";
 ?>
