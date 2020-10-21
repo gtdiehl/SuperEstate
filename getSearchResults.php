@@ -1,8 +1,8 @@
 <?php
-$servername="localhost";
-$username="superestate";
-$password="super12345";
-$dbname="superestate";
+$servername=getenv('DB_HOST');
+$username=getenv('DB_USERNAME');
+$password=getenv('DB_PASSWORD');
+$dbname=getenv('DB_DATABASE');
 $search_bedrooms=$_GET['bed_count'];
 $search_bathrooms=$_GET['bath_count'];
 $search_building=$_GET['building'];
@@ -27,16 +27,17 @@ $sql="select * from property
 $numItems = count($search_building);
 $i = 0;
 if ($numItems > 0) {
+    $sql .= "(";
     foreach($search_building as &$type) {
         $sql .= "type = '$type'";
         if (++$i != $numItems) {
             $sql .= " or ";
         }
     }
+    $sql .= ")";
 }
 
 $sql .= " order by price ASC";
-
 $result=mysqli_query($conn,$sql);
 
 echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
