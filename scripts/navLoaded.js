@@ -1,4 +1,4 @@
-function domLoaded()
+function navLoaded()
 {
 	let div = document.createElement("div");
 	div.setAttribute("class", "nav");
