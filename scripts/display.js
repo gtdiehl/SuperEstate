@@ -12,6 +12,7 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("photo-container");
+  console.log("SL: " + slides);
 
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
