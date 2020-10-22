@@ -51,15 +51,18 @@
 					var videoCount;
 					$(document).ready(function() {
 						$.get('getPropertyPhotos.php', {id:getURLParam('id')}, function(data) {
+							console.log("D: " + data);
 							var dataArray = data.split(",");
+							console.log("DA: " + dataArray);
 							photoCount = dataArray[0];
 							videoCount = dataArray[1];
+							console.log("PC: " + photoCount);
 						});
 					});
-					console.log(photoCount);
+					console.log("PC1: " + photoCount);
 					for(var i=1;i<photoCount+1;++i)
 					{
-						console.log(photoCount);
+						console.log("PH2: " + photoCount);
 						document.writeln("<div class='photo-container'>");
 						document.writeln("<img src='images/house" + getURLParam('id') + "_" + i + ".jpg' class='property-photo' alt='Property for Sale'>");
 						document.writeln("</div>");
