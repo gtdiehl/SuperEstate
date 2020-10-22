@@ -58,16 +58,16 @@
 							videoCount = dataArray[1];
 							console.log("PC: " + photoCount);
 
-							s = document.getElementsByClassName("slides-container");
+							s = document.getElementsByClassName("slides-container")[0];
 							console.log("S: " + s);
 
 							console.log("PC1: " + photoCount);
 							for(var i=1;i<parseInt(photoCount)+1;++i)
 							{
 								console.log("PH2: " + photoCount);
-								s[0].innerHTML = "<div class='photo-container'>";
-								s[0].innerHTML = "<img src='images/house" + getURLParam('id') + "_" + i + ".jpg' class='property-photo' alt='Property for Sale'>";
-								s[0].innerHTML = "</div>";
+								s.innerHTML = "<div class='photo-container'>";
+								s.innerHTML = "<img src='images/house" + getURLParam('id') + "_" + i + ".jpg' class='property-photo' alt='Property for Sale'>";
+								s.innerHTML = "</div>";
 							}
 						});
 					});
