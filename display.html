@@ -72,11 +72,31 @@
 
 								showSlides(1);
 							}
+
+							if(photoCount > 0)
+							{
+								var prevNode = document.createElement("a");
+								prevNode.setAttribute("class", "prev");
+								prevNode.setAttribute("onclick", "plusSlides(-1)");
+								var prevTextNode = document.createTextNode("&#10094;");
+								prevNode.appendChild(prevTextNode);
+
+								var nextNode = document.createElement("a");
+								nextNode.setAttribute("class", "next");
+								nextNode.setAttribute("onclick", "plusSlides(+1)");
+								var nextTextNode = document.createTextNode("&#10095;");
+								nextNode.appendChild(nextTextNode);
+
+								s.appendChild(prevNode);
+								s.appendChild(nextNode);
+							}
 						});
 					});
 				</script>
+				<!--
 				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 				<a class="next" onclick="plusSlides(+1)">&#10095;</a>
+				-->
 			</div>
 			<div class="propertyDetails">
 				<script>
