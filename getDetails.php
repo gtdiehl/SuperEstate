@@ -19,6 +19,8 @@ $result=mysqli_query($conn,$sql);
 echo "<style type='text/css'>";
 echo "body{background-color:#EFEFEF; font-family:Segoe UI; font-weight:bold; padding:8px}";
 echo "h2 {color:#3C7E7E;}";
+echo "a:link{text-align:center;display:inline-block;padding-left:30px;}";
+echo "a:visited{color:#112CF5;};";
 echo "</style>";
 
 if (mysqli_num_rows($result)>0){
@@ -30,8 +32,8 @@ if (mysqli_num_rows($result)>0){
 		echo "<li>".$row["sqft"]." sqft</li>";
 		echo "<li>Built in ".$row["build_year"]."</li></ul>";
 		echo "<br><br><br>";
-		echo "<p style='text-align:center;color:#112CF5;'><u>Neighborhood Information<br>For Zip Code ";
-		echo $row["zipcode"]."</u></p>";
+		echo "<a href='#Neighborhood'>Neighborhood Information<br>For Zip Code ";
+		echo $row["zipcode"]."</a>";
 	}
 }else{
 	echo "<h2>No result</h2>";

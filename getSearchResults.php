@@ -16,28 +16,26 @@ $conn=mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn){
 	die("Connection failed to $servername: ".mysqli_connect_error());
 }
+$sql="SELECT * FROM `property` 
+	WHERE (`price` BETWEEN $search_minprice AND $search_maxprice) 
+	AND (`bed_count` >= $search_bedrooms)
+	AND (`bath_count` >= $search_bathrooms) 
+	AND (";
 
-$sql="select * from property
-	where bed_count >= '$search_bedrooms'
-	AND bath_count >= '$search_bathrooms'
-	AND price >= '$search_minprice'
-	AND price <= '$search_maxprice'
-	AND ";
 
 $numItems = count($search_building);
 $i = 0;
 if ($numItems > 0) {
-    $sql .= "(";
     foreach($search_building as &$type) {
-        $sql .= "type = '$type'";
+        $sql .= "`type` like '$type'";
         if (++$i != $numItems) {
-            $sql .= " or ";
+            $sql .= " OR ";
         }
     }
-    $sql .= ")";
 }
 
-$sql .= " order by price ASC";
+$sql .= ") ORDER BY `price` ASC";
+
 $result=mysqli_query($conn,$sql);
 
 echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
