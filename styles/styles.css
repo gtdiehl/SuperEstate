@@ -113,8 +113,9 @@ div.property:hover .middle {
 .propertyDetails {
 	float: right;
 	right: 30%;
-	width: 50%;
+	width: 45%;
 	height: 55%;
+	margin-left: 2%;
 }
 
 
