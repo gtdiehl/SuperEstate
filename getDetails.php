@@ -29,7 +29,8 @@ if (mysqli_num_rows($result)>0){
 		echo "<p>Property Details</p>";
 		echo "<ul>";
 		echo "<li>".$row["bed_count"]." bedrooms / ".$row["bath_count"]." bathrooms</li>";
-		echo "<li>".$row["sqft"]." sqft</li>";
+		echo "<li>".number_format($row["sqft"])." sqft</li>";
+		echo "<li>".$row["parking_type"]."</li>";
 		echo "<li>Built in ".$row["build_year"]."</li></ul>";
 		echo "<br><br><br>";
 		echo "<a href='#Neighborhood'>Neighborhood Information<br>For Zip Code ";
