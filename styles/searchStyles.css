@@ -1,4 +1,4 @@
-body {overflow:auto;}
+body{overflow: hidden;} /* Remove scrollbar from main window, so only the results scrollbar appears */
 h4{text-align: center;}
 label {font-weight: bold}
 .container {
@@ -9,7 +9,7 @@ label {font-weight: bold}
 	
 .searchContent {
     width: 96%;
-    height: 250px;
+    height: 220px; /* Moving up a bit so background does not take up so much room */
     position: absolute;
     top: 80px;
     background-image: url("../images/searchCriteriaBackground.jpg");
@@ -90,7 +90,7 @@ input[type=checkbox]:checked + label {
     position: absolute;
     top: 310px;
     width: 93%;
-    height: 600px;
+    height: calc(100% - 300px); /* Calculating height to show all properties. Slight cutoff of scrollbar at bottom */
     margin-left: 3%;
 	margin-right: 3%;
 }
