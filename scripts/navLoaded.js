@@ -80,4 +80,10 @@ function navLoaded()
 	mypropertyLink.appendChild(mypropertyText);
 
 	document.body.insertBefore(div, document.body.firstChild);
+
+	$(document).ready(function() {
+		$.get('getPropertyPhotos.php', function(data) {
+			alert(data);
+		});
+	});
 }
