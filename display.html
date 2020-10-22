@@ -78,13 +78,13 @@
 								var prevNode = document.createElement("a");
 								prevNode.setAttribute("class", "prev");
 								prevNode.setAttribute("onclick", "plusSlides(-1)");
-								var prevTextNode = document.createTextNode("&#10094;");
+								var prevTextNode = document.createTextNode('\u10094');
 								prevNode.appendChild(prevTextNode);
 
 								var nextNode = document.createElement("a");
 								nextNode.setAttribute("class", "next");
 								nextNode.setAttribute("onclick", "plusSlides(+1)");
-								var nextTextNode = document.createTextNode("&#10095;");
+								var nextTextNode = document.createTextNode('\u10095');
 								nextNode.appendChild(nextTextNode);
 
 								s.appendChild(prevNode);
