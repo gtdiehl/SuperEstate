@@ -64,10 +64,21 @@
 							console.log("PC1: " + photoCount);
 							for(var i=1;i<parseInt(photoCount)+1;++i)
 							{
+								var divNode = document.createElement("div");
+								divNode.setAttribute("class", "photo-container");
+								var imgNode = document.createElement("img");
+								imgNode.setAttribute("src", ("images/house" + getURLParam('id') + "_" + i + ".jpg"));
+								imgNode.setAttribute("alt", "Property for Sale");
+
+								divNode.appendChild(imgNode);
+								s.appendChild(divNode);
+
 								console.log("PH2: " + photoCount);
+								/**
 								s.innerHTML = "<div class='photo-container'>";
 								s.innerHTML = "<img src='images/house" + getURLParam('id') + "_" + i + ".jpg' class='property-photo' alt='Property for Sale'>";
 								s.innerHTML = "</div>";
+								*/
 							}
 						});
 					});
