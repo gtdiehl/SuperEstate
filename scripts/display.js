@@ -7,6 +7,7 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+  var slideIndex = n;
   var i;
   var slides = document.getElementsByClassName("photo-container");
   console.log("SL: " + slides);
