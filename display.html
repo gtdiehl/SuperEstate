@@ -56,9 +56,11 @@
 			<div class="propertyDetails">
 				<script>
 					document.writeln('<iframe src="getDetails.php?id='+ getURLParam('id') +' width="100%" height="100%"></iframe>');
-					$.get('getPropertyPhotos.php', function(data) {
-						alert(data);
-					});
+					$(document).ready(function() {
+						$.get('getPropertyPhotos.php', function(data) {
+							alert(data);
+						});
+					}
 				</script>
 			</div>
 		</div>
