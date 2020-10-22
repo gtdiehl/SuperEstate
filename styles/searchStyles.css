@@ -9,7 +9,7 @@ label {font-weight: bold}
 	
 .searchContent {
     width: 96%;
-    height: 220px;
+    height: 250px;
     position: absolute;
     top: 80px;
     background-image: url("../images/searchCriteriaBackground.jpg");
