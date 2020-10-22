@@ -54,10 +54,15 @@
 							var dataArray = data.split(",");
 							photoCount = dataArray[0];
 							videoCount = dataArray[1];
-							console.log(photoCount);
-							console.log(videoCount);
 						});
 					});
+
+					for(var i=1;i<photoCount+1;++i)
+					{
+						document.writeln("<div class='photo-container'>");
+						document.writeln("<img src='images/house" + getURLParam('id') + "_" + i + ".jpg' class='property-photo' alt='Property for Sale'>");
+						document.writeln("</div>");
+					}
 				</script>
 				<!--
 				<div class="photo-container">
