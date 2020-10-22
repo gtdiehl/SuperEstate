@@ -1,9 +1,13 @@
 function createURLSearchString() {
     var minPrice = 0;
     var maxPrice = 0;
-    
-	var numBedrooms = document.getElementsByName('bedrooms').value;
-	var numBathrooms = document.getElementsByName('bathrooms').value;
+	
+	var e1=document.querySelector('#bedrooms').value;
+	var numBedrooms=parseInt(e1);
+	
+	var e2=document.querySelector('#bathrooms').value;
+	var numBathrooms=parseFloat(e2);
+	
     var buildingType = [];
 	
 	document.getElementsByName('buildings').forEach(element => {
