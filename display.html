@@ -4,15 +4,95 @@
         <meta charset='utf-8'>
         <title>superestate.com</title>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
+		<script src="scripts/getURLParam.js"></script>
+		<script src="scripts/navLoaded.js"></script>
+		<script src="scripts/display.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		
 	</head>
-    <script src="scripts/navLoaded.js"></script>
+	<style>
+		.slides-container {
+			position: absolute;
+			margin: auto;
+		}
+		.prev, .next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 16px;
+			margin-top: -22px;
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+		.prev {
+			left: 0;
+		}
+		.next {
+			border-radius: 3px 0 0 3px;
+			right: calc(50% + 2px);
+		}
+		.prev:hover, .next:hover {
+			background-color: rgba(0,0,0,0.8);
+		}
+	</style>
     <body onload="navLoaded();">
 		<div class="content">
-			<div class="photo-container">
-				<script src="scripts/getURLParam.js"></script>
-				<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" class="property-photo" alt="Property for Sale">');</script>
-				<button class="property-button property-display-left" onclick="plusDivs(-1)">&#10094;</button>
-				<button class="property-button property-display-right" onclick="plusDivs(+1)">&#10095;</button>
+			<div class="slides-container">
+				<div class="photo-container">
+					<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" class="property-photo" alt="Property for Sale">');</script>
+				</div>
+				<script>
+					var photoCount;
+					var videoCount;
+					$(document).ready(function() {
+						$.get('getPropertyPhotos.php', {id:getURLParam('id')}, function(data) {
+							var dataArray = data.split(",");
+							photoCount = dataArray[0];
+							videoCount = dataArray[1];
+
+							s = document.getElementsByClassName("slides-container")[0];
+
+							for(var i=1;i<parseInt(photoCount)+1;++i)
+							{
+								var divNode = document.createElement("div");
+								divNode.setAttribute("class", "photo-container");
+								var imgNode = document.createElement("img");
+								imgNode.setAttribute("src", ("images/house" + getURLParam('id') + "_" + i + ".jpg"));
+								imgNode.setAttribute("alt", "Property for Sale");
+								imgNode.setAttribute("class", "property-photo");
+
+								divNode.appendChild(imgNode);
+								s.appendChild(divNode);
+
+								showSlides(1);
+							}
+
+							if(photoCount > 0)
+							{
+								var prevNode = document.createElement("a");
+								prevNode.setAttribute("class", "prev");
+								prevNode.setAttribute("onclick", "plusSlides(-1)");
+								var prevTextNode = document.createTextNode('\u2b05');
+								prevNode.appendChild(prevTextNode);
+
+								var nextNode = document.createElement("a");
+								nextNode.setAttribute("class", "next");
+								nextNode.setAttribute("onclick", "plusSlides(+1)");
+								var nextTextNode = document.createTextNode('\u27a1');
+								nextNode.appendChild(nextTextNode);
+
+								s.appendChild(prevNode);
+								s.appendChild(nextNode);
+							}
+						});
+					});
+				</script>
 			</div>
 			<div class="propertyDetails">
 				<script>
