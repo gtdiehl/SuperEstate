@@ -4,15 +4,56 @@
         <meta charset='utf-8'>
         <title>superestate.com</title>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
+		<script src="scripts/getURLParam.js"></script>
+		<script src="scripts/navLoaded.js"></script>
+		
 	</head>
-    <script src="scripts/navLoaded.js"></script>
+	<style>
+		.slides-container {
+			max-width: fit-content;
+			max-height: fit-content;
+			position: relative;
+			margin: auto;
+		}
+		.prev, .next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 16px;
+			margin-top: -22px;
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+		.prev {
+			left: 0;
+		}
+		.next {
+			border-radius: 3px 0 0 3px;
+			right: calc(50% + 2px);
+		}
+		.prev:hover, .next:hover {
+			background-color: rgba(0,0,0,0.8);
+		}
+	</style>
     <body onload="navLoaded();">
 		<div class="content">
-			<div class="photo-container">
-				<script src="scripts/getURLParam.js"></script>
-				<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" class="property-photo" alt="Property for Sale">');</script>
-				<button class="property-button property-display-left" onclick="plusDivs(-1)">&#10094;</button>
-				<button class="property-button property-display-right" onclick="plusDivs(+1)">&#10095;</button>
+			<div class="slides-container">
+				<div class="photo-container">
+					<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" class="property-photo" alt="Property for Sale">');</script>
+				</div>
+				<div class="photo-container">
+					<img src="images/house2.jpg" class="property-photo" alt="Property for Sale">
+				</div>
+				<div class="photo-container">
+					<img src="images/house3.jpg" class="property-photo" alt="Property for Sale">
+				</div>
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(+1)">&#10095;</a>
 			</div>
 			<div class="propertyDetails">
 				<script>
@@ -20,5 +61,7 @@
 				</script>
 			</div>
 		</div>
+		<!-- Load the script at the end after the elements are created -->
+		<script src="scripts/display.js"></script>
     </body>
 </html>
