@@ -110,7 +110,6 @@
 						$(document).ready(function() {
 							$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
 								propertyAddress = data;
-								console.log(propertyAddress);
 								displayMap(propertyAddress, "map");
 							});
 						});
