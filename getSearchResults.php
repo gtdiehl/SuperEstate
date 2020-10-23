@@ -42,7 +42,8 @@ echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
 echo "<style type='text/css'>";
 echo "body{text-align:center; font-family:Microsoft YaHei;
 	font-weight:bold; background-color:#DEE7E8;}";
-echo "h1, p {text-align:left;}";
+echo "h1 {text-align:left;padding:30px 0px 0px 30px;}";
+echo "p {text-align:left;padding-left:30px;}";
 echo "</style>";
 
 
