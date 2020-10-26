@@ -77,10 +77,11 @@
 						var propertyAddress;
 						$(document).ready(function() {
 							$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
-								propertyAddress = data.replace(/, /g, "%20");
-
 								// Uses Apple WebMap
 								displayMap(propertyAddress, "map");
+
+								// Only needed when using Google via html
+								//propertyAddress = data.replace(/, /g, "%20");
 
 								// Uses Google Maps
 								// Does not work due to Googles security X-Frame-Options
