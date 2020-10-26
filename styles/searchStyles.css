@@ -1,4 +1,3 @@
-body{overflow: hidden;} /* Remove scrollbar from main window, so only the results scrollbar appears */
 h4{text-align: center;}
 label {font-weight: bold}
 .container {
@@ -8,6 +7,7 @@ label {font-weight: bold}
 	}
 	
 .searchContent {
+    margin-left:3%;
     width: 96%;
     height: 220px; /* Moving up a bit so background does not take up so much room */
     position: absolute;
@@ -87,10 +87,10 @@ input[type=checkbox]:checked + label {
 
 
 .search-details {
+	margin-left:3%;
     position: absolute;
-    top: 310px;
-    width: 93%;
-    height: calc(100% - 300px); /* Calculating height to show all properties. Slight cutoff of scrollbar at bottom */
-    margin-left: 3%;
-	margin-right: 3%;
+	top: 300px;
+    height: 270px;
+	width: 96%;
+	background-color:#DEE7E8;
 }
