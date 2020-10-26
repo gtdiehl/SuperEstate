@@ -13,6 +13,7 @@ function displayMap(address, mapElementName) {
     });
 
     geocoder.lookup(address, function(err, data) {
+        console.log(data);
         latitude = data.results[0].coordinate.latitude;
         longitude = data.results[0].coordinate.longitude;
         home = new mapkit.Coordinate(latitude, longitude);
