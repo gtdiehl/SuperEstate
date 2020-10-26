@@ -78,6 +78,7 @@
 						$(document).ready(function() {
 							$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
 								// Uses Apple WebMap
+								propertyAddress = data;
 								displayMap(propertyAddress, "map");
 
 								// Only needed when using Google via html
