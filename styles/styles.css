@@ -81,41 +81,5 @@ div.property:hover .middle {
 	padding: 16px 32px;
 }
 
-/*Display page*/
-.photo-container {
-	float: left;
-	width: 50%;
-}
-
-.property-photo {
-	width: 100%;
-	height: auto;
-}
-
-.property-display-left {
-	position: absolute;
-	top: 45%;
-	left: 4%;
-}
-
-.property-display-right {
-	position: absolute;
-	top: 45%;
-	left: 49%;
-}
-
-.property-button {
-	padding: 8px 16px;
-	margin-left: 1%;
-	overflow: hidden;
-}
-
-.propertyDetails {
-	float: right;
-	right: 30%;
-	width: 45%;
-	height: 55%;
-	margin-left: 2%;
-}
 
 
