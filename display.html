@@ -79,8 +79,20 @@
 							$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
 								propertyAddress = data.replace(/, /g, "%20");
 								//displayMap(propertyAddress, "map");
-								document.writeln("<iframe width=\"380\" height=\"250\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" id=\"gmap_canvas\"" +
-									"src=\"https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=" + propertyAddress + "+(home)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\"></iframe><script type='text/javascript' src='script.js?id=d0d67ecd61b6b3e5f5d38c97769c0007f04c8e4f'><\/script>");
+								p = document.getElementById("map");
+								var iframeNode = document.createElement("iframe");
+								iframeNode.setAttribute("id", "gmap_canvas");
+								iframeNode.setAttribute("src", "https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=" + propertyAddress + "+(home)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed");
+
+								var scriptNode = document.createElement("script");
+								scriptNode.setAttribute("text", "text/javascript");
+								scriptNode.setAttribute("src", "script.js?id=d0d67ecd61b6b3e5f5d38c97769c0007f04c8e4f");
+
+								p.appendChild(iframeNode);
+								p.appendChild(scriptNode);
+
+								//document.writeln("<iframe width=\"380\" height=\"250\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" id=\"gmap_canvas\"" +
+								//	"src=\"https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=" + propertyAddress + "+(home)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\"></iframe><script type='text/javascript' src='script.js?id=d0d67ecd61b6b3e5f5d38c97769c0007f04c8e4f'><\/script>");
 							});
 						});
 					</script>
