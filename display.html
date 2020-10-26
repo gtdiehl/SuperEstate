@@ -77,9 +77,25 @@
 						var propertyAddress;
 						$(document).ready(function() {
 							$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
+								// Uses Apple WebMap
 								propertyAddress = data;
-								console.log(propertyAddress);
 								displayMap(propertyAddress, "map");
+
+								// Only needed when using Google via http
+								//propertyAddress = data.replace(/, /g, "%20");
+
+								// Uses Google Maps
+								// Does not work due to Googles security X-Frame-Options
+								//p = document.getElementById("map");
+								//var iframeNode = document.createElement("iframe");
+								//iframeNode.setAttribute("id", "map");
+								//iframeNode.setAttribute("src", "https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=" + propertyAddress + "+(home)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed");
+								//p.appendChild(iframeNode);
+
+								// Uses Google Maps
+								// This works but will only display the map
+								//document.writeln("<iframe id=\"map\"" +
+								//	"src=\"https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=" + propertyAddress + "+(home)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\"></iframe>");
 							});
 						});
 					</script>
