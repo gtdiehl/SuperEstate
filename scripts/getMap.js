@@ -37,8 +37,6 @@ function displayGoogleMap(address, mapObject) {
 }
 
 function geocodeAddress(geocoder, resultsMap, address) {
-    console.log(address);
-    console.log(resultsMap);
     geocoder.geocode({ address: address }, (results, status) => {
       if (status === "OK") {
           console.log("got ok");
