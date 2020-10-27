@@ -39,7 +39,7 @@ function navLoaded()
 	unorderedList.appendChild(listItem3);
 	
 	let sellLink = document.createElement("A");
-	sellLink.setAttribute("href", "#sell");
+	sellLink.setAttribute("href", "sell.html");
 	listItem3.appendChild(sellLink);
 
 	let sellText = document.createTextNode("Sell a house");
