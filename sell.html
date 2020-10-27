@@ -15,6 +15,11 @@
 
         .sellGrid label { text-align:left; }
         
+        h1 {
+            text-align: center;
+            color: black;
+        }
+
         label:after { content: ":"; }
 
         small { grid-column-start: 2; }
@@ -27,6 +32,7 @@
     <body onload="navLoaded();">
 		<div class="content">
             <div class="sell">
+                <h1>Sell My Home</h1>
                 <form class="sellForm" method="" action="">
                     <div class="sellGrid">
                         <label for="fname">First Name</label><input type="text" id="fname" required>
