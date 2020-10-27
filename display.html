@@ -12,7 +12,10 @@
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
-		
+		<script
+		src="https://maps.googleapis.com/maps/api/js?key=***REMOVED***&callback=initMap&libraries=&v=weekly"
+		defer
+	  ></script>
 	</head>
 	
     <body onload="navLoaded();">
@@ -22,6 +25,15 @@
 					<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" class="property-photo" alt="Property for Sale">');</script>
 				</div>
 				<script>
+					let map;
+
+					function initMap() {
+						map = new google.maps.Map(document.getElementById("map"), {
+							center: { lat: -34.397, lng: 150.644 },
+							zoom: 8,
+						});
+					}
+
 					var photoCount;
 					var videoCount;
 					$(document).ready(function() {
@@ -77,25 +89,12 @@
 						var propertyAddress;
 						$(document).ready(function() {
 							$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
-								// Uses Apple WebMap
-								propertyAddress = data;
-								displayMap(propertyAddress, "map");
+								// Uses Apple MapKit JS
+								//propertyAddress = data;
+								//displayAppleMap(propertyAddress, "map");
 
-								// Only needed when using Google via http
-								//propertyAddress = data.replace(/, /g, "%20");
-
-								// Uses Google Maps
-								// Does not work due to Googles security X-Frame-Options
-								//p = document.getElementById("map");
-								//var iframeNode = document.createElement("iframe");
-								//iframeNode.setAttribute("id", "map");
-								//iframeNode.setAttribute("src", "https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=" + propertyAddress + "+(home)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed");
-								//p.appendChild(iframeNode);
-
-								// Uses Google Maps
-								// This works but will only display the map
-								//document.writeln("<iframe id=\"map\"" +
-								//	"src=\"https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=" + propertyAddress + "+(home)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\"></iframe>");
+								// Uses Google Map JS
+								displayGoogleMap(propertyAddress, map);
 							});
 						});
 					</script>
