@@ -37,9 +37,12 @@ function displayGoogleMap(address, mapObject) {
 }
 
 function geocodeAddress(geocoder, resultsMap, address) {
-    const address = document.getElementById("address").value;
+    console.log(address);
+    console.log(resultsMap);
     geocoder.geocode({ address: address }, (results, status) => {
       if (status === "OK") {
+          console.log("got ok");
+          console.log(results[0]);
         resultsMap.setCenter(results[0].geometry.location);
         new google.maps.Marker({
           map: resultsMap,
