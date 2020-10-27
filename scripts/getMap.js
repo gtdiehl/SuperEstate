@@ -30,24 +30,3 @@ function displayAppleMap(address, mapElementName) {
     var map = new mapkit.Map(mapElementName);
     map.mapType = mapkit.Map.MapTypes.Hybrid;
 }
-
-function displayGoogleMap(address, mapObject) {
-    const geocoder = new google.maps.Geocoder();
-    geocodeAddress(geocoder, mapObject, address);
-}
-
-function geocodeAddress(geocoder, resultsMap, address) {
-    geocoder.geocode({ address: address }, (results, status) => {
-      if (status === "OK") {
-          console.log("got ok");
-          console.log(results[0]);
-        resultsMap.setCenter(results[0].geometry.location);
-        new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location,
-        });
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
-  }
