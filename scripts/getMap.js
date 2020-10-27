@@ -3,7 +3,7 @@ const jwt_token = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlM0VkpSWkg1U1Eif
                   "WF0IjoxNjAzNDE5NTI1LjM1MiwiZXhwIjoxNjA0NjI5MTI1LjM1Mn0.JNLjP1fnc_nQ9T7uUPTKKM2svgU0KUyF89qxaJ" +
                   "-dnoNbgP0je-EjI7ysJmzBWxhJoNlzq-UPHPMDJxue5x_tCg"
 
-function displayMap(address, mapElementName) {
+function displayAppleMap(address, mapElementName) {
     var latitude, longitude, home;
     var MarkerAnnotation = mapkit.MarkerAnnotation,
         clickAnnotation;
@@ -13,6 +13,7 @@ function displayMap(address, mapElementName) {
     });
 
     geocoder.lookup(address, function(err, data) {
+        console.log(data);
         latitude = data.results[0].coordinate.latitude;
         longitude = data.results[0].coordinate.longitude;
         home = new mapkit.Coordinate(latitude, longitude);
