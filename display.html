@@ -78,13 +78,10 @@
 							$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
 								propertyAddress = data;
 								
-								// Uses Apple WebMap
+								// Uses Apple MapKit JS
 								//displayAppleMap(propertyAddress, "map");
 
-								// Only needed when using Google via http
-								//propertyAddress = data.replace(/, /g, "%20");
-
-								// Uses Google Maps
+								// Uses Google Maps Embed API
 								p = document.getElementById("map");
 								var iframeNode = document.createElement("iframe");
 								iframeNode.setAttribute("id", "map");
