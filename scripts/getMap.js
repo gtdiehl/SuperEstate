@@ -3,7 +3,7 @@ const jwt_token = ***REMOVED***+
                   ***REMOVED*** +
                   ***REMOVED***
 
-function displayMap(address, mapElementName) {
+function displayAppleMap(address, mapElementName) {
     var latitude, longitude, home;
     var MarkerAnnotation = mapkit.MarkerAnnotation,
         clickAnnotation;
@@ -13,6 +13,7 @@ function displayMap(address, mapElementName) {
     });
 
     geocoder.lookup(address, function(err, data) {
+        console.log(data);
         latitude = data.results[0].coordinate.latitude;
         longitude = data.results[0].coordinate.longitude;
         home = new mapkit.Coordinate(latitude, longitude);
