@@ -12,10 +12,6 @@
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
-		<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHoKTlzPooE2GOaFauWyvrzYjBxxY9wms&callback=initMap&libraries=&v=weekly"
-		defer
-	  ></script>
 	</head>
 	
     <body onload="navLoaded();">
@@ -94,11 +90,6 @@
 								iframeNode.setAttribute("id", "map");
 								iframeNode.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=AIzaSyDHoKTlzPooE2GOaFauWyvrzYjBxxY9wms&q=" + propertyAddress);
 								p.appendChild(iframeNode);
-
-								// Uses Google Maps
-								// This works but will only display the map
-								//document.writeln("<iframe id=\"map\"" +
-								//	"src=\"https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=" + propertyAddress + "+(home)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\"></iframe>");
 							});
 						});
 					</script>
