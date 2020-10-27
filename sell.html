@@ -6,9 +6,39 @@
 		<link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
     </head>
     <script src="scripts/navLoaded.js"></script>
+    <style>
+        .sellGrid {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            grid-gap:5px;
+        }
+
+        .sellGrid label { text-align:left; }
+        
+        label:after { content: ":"; }
+
+        small { grid-column-start: 2; }
+
+        #info {
+            width: 75%;
+            height: 200px;
+        }
+    </style>
     <body onload="navLoaded();">
 		<div class="content">
-
+            <div class="sell">
+                <form class="sellForm" method="" action="">
+                    <div class="sellGrid">
+                        <label for="fname">First Name</label><input type="text" id="fname" required>
+                        <label for="lname">Last Name</label><input type="text" id="lname" required>
+                        <label for="phone">Phone Number (optional)</label><input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                            <small>Format: 123-456-7890</small>
+                        <label for="email">E-Mail Address</label><input type="email" id="email">
+                    </div>
+                    <br><br><label for="info">Details about your home</label><br><textarea id="info"></textarea><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
 		</div>
     </body>
 </html>
