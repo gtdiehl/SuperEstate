@@ -25,15 +25,6 @@
 					<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" class="property-photo" alt="Property for Sale">');</script>
 				</div>
 				<script>
-					let map;
-
-					function initMap() {
-						map = new google.maps.Map(document.getElementById("map"), {
-							center: { lat: -34.397, lng: 150.644 },
-							zoom: 16,
-						});
-					}
-
 					var photoCount;
 					var videoCount;
 					$(document).ready(function() {
@@ -90,12 +81,24 @@
 						$(document).ready(function() {
 							$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
 								propertyAddress = data;
-
-								// Uses Apple MapKit JS
+								
+								// Uses Apple WebMap
 								//displayAppleMap(propertyAddress, "map");
 
-								// Uses Google Map JS
-								displayGoogleMap(propertyAddress, map);
+								// Only needed when using Google via http
+								//propertyAddress = data.replace(/, /g, "%20");
+
+								// Uses Google Maps
+								p = document.getElementById("map");
+								var iframeNode = document.createElement("iframe");
+								iframeNode.setAttribute("id", "map");
+								iframeNode.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=***REMOVED***&q=" + propertyAddress);
+								p.appendChild(iframeNode);
+
+								// Uses Google Maps
+								// This works but will only display the map
+								//document.writeln("<iframe id=\"map\"" +
+								//	"src=\"https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=" + propertyAddress + "+(home)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\"></iframe>");
 							});
 						});
 					</script>
