@@ -1,7 +1,7 @@
 
 
 body {height:100%; background-color: rgba(33,136,136,0.6);}
-h4{text-align: center;}
+h4{text-align: center}
 label {font-weight: bold}
 .container {
 	margin-left:3%;
@@ -9,19 +9,18 @@ label {font-weight: bold}
 	background-color:#DEE7E8;
     }
 
-h2{text-align: center;}
-label {color: blue; font-weight: bold}
+h2{text-align: center; color: blue}
+label {font-weight: bold}
 .container {
 	margin-left:3%;
 	height:1000px;
     background-color:#DEE7E8;
     }
     
-h3{text-align: center;}
-label {color: blue; font-weight: bold}
+h3{text-align: center; color: blue}
+label {font-weight: bold}
 .container {
 	margin-left:3%;
 	height:1000px;
     background-color:#DEE7E8;
     }
-   
