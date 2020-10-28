@@ -1,8 +1,8 @@
 <?php
-$servername="localhost";
-$username="superestate";
-$password="super12345";
-$dbname="superestate";
+$servername=getenv('DB_HOST');
+$username=getenv('DB_USERNAME');
+$password=getenv('DB_PASSWORD');
+$dbname=getenv('DB_DATABASE');
 $get_id=$_GET['id'];
 
 //create connection
@@ -10,7 +10,7 @@ $conn=mysqli_connect($servername, $username, $password, $dbname);
 
 //check connection
 if (!$conn){
-	die("Connection failed: ".mysqli_connect_error());
+	die("Connection failed to $servername: ".mysqli_connect_error());
 }
 
 $sql="select * from property where property_id='$get_id' ";
@@ -25,6 +25,25 @@ echo "</style>";
 
 if (mysqli_num_rows($result)>0){
 	while ($row=mysqli_fetch_array($result)){
+		$zipcode = $row["zipcode"];
+
+		switch ($zipcode) {
+			case 95125:
+				$guide = "willowglenng.html";
+				break;
+			case 95112:
+				$guide = "index.html";
+				break;
+			case 95148:
+				$guide = "index.html";
+				break;
+			case 95117:
+				$guide = "index.html";
+				break;
+			default:
+				$guide = "index.html";
+		}
+
 		echo "<h2>$".number_format($row["price"])."</h2>";
 		echo "<p>Property Details</p>";
 		echo "<ul>";
@@ -33,8 +52,8 @@ if (mysqli_num_rows($result)>0){
 		echo "<li>".$row["parking_type"]."</li>";
 		echo "<li>Built in ".$row["build_year"]."</li></ul>";
 		echo "<br><br><br>";
-		echo "<a href='#Neighborhood'>Neighborhood Information<br>For Zip Code ";
-		echo $row["zipcode"]."</a>";
+		echo "<a href='" . $guide ."' target='_blank'>Neighborhood Information<br>For Zip Code ";
+		echo $zipcode."</a>";
 	}
 }else{
 	echo "<h2>No result</h2>";

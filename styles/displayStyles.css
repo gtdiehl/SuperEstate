@@ -28,9 +28,9 @@
 }
 
 .propertyDetails {
-	float: right;
-	right: 30%;
-	width: 45%;
+	position: absolute; /** Changed from float:right to position:absolute to get the neighborhood link to be clickable */
+	right: 3%;
+	top: 13%;
 	height: 55%;
 	margin-left: 2%;
 }
