@@ -17,8 +17,8 @@
                     $( "#slider-range" ).slider({
                         range: true,
                         min: 10000,
-                        max: 2000000,
-                        values: [ 20000, 2000000 ],
+                        max: 6000000,
+                        values: [ 20000, 6000000 ],
                         slide: function( event, ui ) {
                             $( "#amount" ).val( "$" + numberWithCommas(ui.values[ 0 ]) + " - $" + numberWithCommas(ui.values[ 1 ]) );
                         }
