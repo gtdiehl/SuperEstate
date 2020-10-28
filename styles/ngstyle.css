@@ -9,18 +9,19 @@ label {font-weight: bold}
 	background-color:#DEE7E8;
     }
 
-h2{text-align: center; color: blue}
-label {font-weight: bold}
+h2{text-align: center}
+label {font-weight: bold; color: gold}
 .container {
 	margin-left:3%;
 	height:1000px;
     background-color:#DEE7E8;
     }
     
-h3{text-align: center; color: blue}
-label {font-weight: bold}
+h3{text-align: center}
+label {font-weight: bold; color: gold}
 .container {
 	margin-left:3%;
 	height:1000px;
     background-color:#DEE7E8;
     }
+   
