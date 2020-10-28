@@ -52,7 +52,7 @@ if (mysqli_num_rows($result)>0){
 		echo "<li>".$row["parking_type"]."</li>";
 		echo "<li>Built in ".$row["build_year"]."</li></ul>";
 		echo "<br><br><br>";
-		echo "<a href='" . $guide ."'>Neighborhood Information<br>For Zip Code ";
+		echo "<a href='" . $guide ."' target='_blank'>Neighborhood Information<br>For Zip Code ";
 		echo $zipcode."</a>";
 	}
 }else{
