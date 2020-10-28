@@ -40,6 +40,7 @@
 	margin: auto;
 }
 
+/**
 .prev, .next {
 	cursor: pointer;
 	position: absolute;
@@ -54,6 +55,7 @@
 	border-radius: 0 3px 3px 0;
 	user-select: none;
 }
+*/
 
 .prev {
 	left: 0;
