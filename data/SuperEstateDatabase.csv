@@ -1,4 +1,4 @@
-property_id,post_time,price,bed_count,bath_count,type,sqft,parking_type,built_year,address,city,zipcode,photo_count,video_count
+property_id,post_time,price,bed_count,bath_count,type,sqft,parking_type,build_year,address,city,zipcode,photo_count,video_count
 1,10/18/20 22:00,154000,2,2,Condo,840,Carport,1980,5th St #3-1,San Jose,95112,2,0
 2,10/18/20 22:00,1098000,3,3,House,1298,Carport,1981,660 N 17th St,San Jose,95112,3,0
 3,10/18/20 22:00,1049000,3,3,House,1500,Carport,1982,1120 S 9th St,San Jose,95112,0,0
