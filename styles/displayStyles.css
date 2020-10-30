@@ -1,12 +1,22 @@
 /*Display page*/
+.container {
+	margin-left:3%;
+	padding:100px 50px;
+	height:800px;
+	background-color:#DEE7E8;
+	}
+
 .photo-container {
 	float: left;
 	width: 50%;
+	height: 50%;
 }
 
 .property-photo {
-	width: 100%;
-	height: auto;
+	width:550px;
+	height:400px;
+	object-fit:contain;
+	
 }
 
 .property-display-left {
@@ -28,16 +38,19 @@
 }
 
 .propertyDetails {
-	position: absolute; /** Changed from float:right to position:absolute to get the neighborhood link to be clickable */
-	right: 3%;
-	top: 13%;
-	height: 55%;
+	z-index: 80;
+	position: absolute;
+	left:700px;
+	width:500px;
+	height:400px;
 	margin-left: 2%;
 }
 
 .slides-container {
+	z-index: 90;
 	position: absolute;
 	margin: auto;
+	
 }
 
 .prev, .next {
@@ -61,7 +74,7 @@
 
 .next {
 	border-radius: 3px 0 0 3px;
-	right: calc(50% + 2px);
+	right: 15px;
 }
 
 .prev:hover, .next:hover {
@@ -69,6 +82,8 @@
 }
 
 #map {
-	height: 300px;
-	width: 300px;
+	position: absolute;
+	top: 270px;
+	width: 1140px;
+	height: 400px;
 }
