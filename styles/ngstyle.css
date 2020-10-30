@@ -1,14 +1,13 @@
 body {height:100%; background-color: rgba(33,136,136,0.6);}
 h1 {color:#B6A11A; font-family:Segoe UI; font-size: 150%;}
-h4{text-align: center}
-label {font-weight: bold}
+h2{text-align: center; font-family:Segoe UI;}
+h3{text-align: left; font-family:Segoe UI; color:#746D6D;}
+h4{text-align: center; font-family:Segoe UI; color:#1324A5;}
+
 .container {
 	margin-left:3%;
 	min-height:100px;
+	padding:100px 50px;
 	background-color:#DEE7E8;
+	height: 800px;
     }
-
-h2{text-align: center; color: #B6A11A}
-label {font-weight: bold}
-
-h3{text-align: center}
