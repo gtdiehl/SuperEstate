@@ -18,7 +18,7 @@
 		<div class="content">
 			<div class="slides-container">
 				<div class="photo-container">
-					<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" class="property-photo" alt="Property for Sale">');</script>
+					<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" alt="Property for Sale" width="100%" height="100%" class="property-photo">');</script>
 				</div>
 				<script>
 					var photoCount;
@@ -38,6 +38,8 @@
 								var imgNode = document.createElement("img");
 								imgNode.setAttribute("src", ("images/house" + getURLParam('id') + "_" + i + ".jpg"));
 								imgNode.setAttribute("alt", "Property for Sale");
+								imgNode.setAttribute("width", "100%");
+								imgNode.setAttribute("heigh", "100%");
 								imgNode.setAttribute("class", "property-photo");
 
 								divNode.appendChild(imgNode);
@@ -69,28 +71,27 @@
 			</div>
 			<div class="propertyDetails">
 				<script>
-					document.writeln('<iframe src="getDetails.php?id='+ getURLParam('id') +' width="100%" height="100%"></iframe>');
+					document.writeln('<iframe src="getDetails.php?id='+getURLParam('id')+'" width="100%" height="100%"></iframe>');
 				</script>
-				<div id="map">
-					<script>
-						var propertyAddress;
-						$(document).ready(function() {
-							$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
-								propertyAddress = data;
-								
-								// Uses Apple MapKit JS
-								//displayAppleMap(propertyAddress, "map");
+				
+			</div>
+			<div id="map">
+				<script>
+					var propertyAddress;
+					$(document).ready(function() {
+						$.get('getPropertyAddress.php', {id:getURLParam('id')}, function(data) {
+							propertyAddress = data;
 
-								// Uses Google Maps Embed API
-								p = document.getElementById("map");
-								var iframeNode = document.createElement("iframe");
-								iframeNode.setAttribute("id", "map");
-								iframeNode.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=***REMOVED***&q=" + propertyAddress);
-								p.appendChild(iframeNode);
-							});
+							// Uses Google Maps Embed API
+							p = document.getElementById("map");
+							var iframeNode = document.createElement("iframe");
+							iframeNode.setAttribute("id", "map");
+							iframeNode.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=***REMOVED***&q=" + propertyAddress);
+							
+							p.appendChild(iframeNode);
 						});
-					</script>
-				</div>
+					});
+				</script>
 			</div>
 		</div>
     </body>
