@@ -1,13 +1,28 @@
 body {height:100%; background-color: rgba(33,136,136,0.6);}
 h1 {color:#B6A11A; font-family:Segoe UI; font-size: 150%;}
 h2{text-align: center; font-family:Segoe UI;}
-h3{text-align: left; font-family:Segoe UI; color:#746D6D;}
-h4{text-align: center; font-family:Segoe UI; color:#1324A5;}
+h3{text-align: left; font-family:Segoe UI; color:#746D6D;font-weight: normal;}
 
 .container {
 	margin-left:3%;
 	min-height:100px;
 	padding:100px 50px;
 	background-color:#DEE7E8;
-	height: 800px;
+	height: 900px;
     }
+	
+.center {
+  text-align:center;
+  margin: 10px;
+}
+
+.special{
+	text-align: center;
+	color:#1324A5;
+	font-weight: bold;
+}
+
+.left{
+	display:inline-block;
+	width:500px;
+}
