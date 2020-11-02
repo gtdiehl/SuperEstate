@@ -18,6 +18,10 @@
             color: black;
         }
 
+        .sellLanding-section {
+            text-align: center;
+        }
+
         .splashHeader-columns {
             display: flex;
         }
@@ -70,8 +74,8 @@
 		<div class="content">
             <div class="splashHeader-columns">
                 <div class="splashHeader-column">
-                    <h1 class="splashHeader-Text1">Sell your home with SuperEstate!</h1>
-                    <h1 class="splashHeader-Text2">Whether you're ready to sell or looking for answers, we'll guide you with data and expertise specific to your area.</h1>
+                    <h2 class="splashHeader-Text1">Sell your home with SuperEstate!</h1>
+                    <h3 class="splashHeader-Text2">Whether you're ready to sell or looking for answers, we'll guide you with data and expertise specific to your area.</h1>
                 </div>
                 <div class="splashHeader-column">
                     <video class="splashHeader-video" autoplay loop muted>
@@ -79,17 +83,23 @@
                     </video>
                 </div>
             </div>
-            <form class="sellForm" method="" action="">
-                <div class="sellGrid">
-                    <label for="fname">First Name</label><input type="text" id="fname" required>
-                    <label for="lname">Last Name</label><input type="text" id="lname" required>
-                    <label for="phone">Phone Number (optional)</label><input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                        <small>Format: 123-456-7890</small>
-                    <label for="email">E-Mail Address</label><input type="email" id="email" required>
+            <section class="sellLanding-section">
+                <div class="sellForm-Container">
+                    <h2>Start by connecting with a local expert</h2>
+                    <h3>We'll match you with an advisor who knows your market best. Fill out the form below to get started right away.</h3>
+                    <form class="sellForm" method="" action="">
+                        <div class="sellGrid">
+                            <label for="fname">First Name</label><input type="text" id="fname" required>
+                            <label for="lname">Last Name</label><input type="text" id="lname" required>
+                            <label for="phone">Phone Number (optional)</label><input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                                <small>Format: 123-456-7890</small>
+                            <label for="email">E-Mail Address</label><input type="email" id="email" required>
+                        </div>
+                        <br><br><label for="info">Details about your home</label><br><textarea id="info"></textarea><br><br>
+                        <input type="submit" value="We're here to help">
+                    </form>
                 </div>
-                <br><br><label for="info">Details about your home</label><br><textarea id="info"></textarea><br><br>
-                <input type="submit" value="Submit">
-            </form>
+            </section>
 		</div>
     </body>
 </html>
