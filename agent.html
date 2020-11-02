@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>SuperEstate Search</title>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
+        <link rel="stylesheet" type="text/css" href="styles/agentStyles.css"></link>
+        
+    </head>
+	<script src="scripts/navLoaded.js"></script>
+    <body onload="navLoaded();domLoaded();">
+		<div class="searchContent">
+			<div class="searchbox">
+				<h4>SEARCH FOR AGENTS</h4>
+				<form id="searchForm">
+					<div class="column" style="width:30%;">
+						<label>Language</label><br>
+						<select id="bedrooms">
+							<option value="0" selected>Any</option>
+							<option value="Chinese">Chinese</option>
+							<option value="English">English</option>
+							<option value="French">French</option>
+							<option value="German">German</option>
+							<option value="Italian">Italian</option>
+							<option value="Japanese">Japanese</option>
+							<option value="Korean">Korean</option>
+							<option value="Portuguese">Portuguese</option>
+							<option value="Russian">Russian</option>
+							<option value="Spanish">Spanish</option>
+							<option value="Turkish">Turkish</option>
+						</select>
+					</div>
+					<div class="column" style="width:45%;">
+						<label>
+							<input type="text" name="name" size="30" maxlength="30" value="Name">
+						</label>
+					</div>
+					
+					<div class="column" style="width:15%;">
+						<button type="submit" id="submitButton">
+							<img src="images/searchButton_agent.png" id="submitImage">
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<iframe class="search-details" id="searchFrame"></iframe>
+    </body>
+</html>
