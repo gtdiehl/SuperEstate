@@ -46,20 +46,26 @@
     </style>
     <body onload="navLoaded();">
 		<div class="content">
-            <div class="sell">
-                <h1>Sell My Home</h1>
-                <form class="sellForm" method="" action="">
-                    <div class="sellGrid">
-                        <label for="fname">First Name</label><input type="text" id="fname" required>
-                        <label for="lname">Last Name</label><input type="text" id="lname" required>
-                        <label for="phone">Phone Number (optional)</label><input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                            <small>Format: 123-456-7890</small>
-                        <label for="email">E-Mail Address</label><input type="email" id="email" required>
-                    </div>
-                    <br><br><label for="info">Details about your home</label><br><textarea id="info"></textarea><br><br>
-                    <input type="submit" value="Submit">
-                </form>
+            <div class="splashHeader-columns">
+                <div class="splashHeader-column">
+                    <h1>Sell your home with SuperEstate!</h1>
+                    <h1>Whether you're ready to sell or looking for answers, we'll guide you with data and expertise specific to your area.</h1>
+                </div>
+                <div class="splashHeader-column">
+                    <video class="splashHeader-video" src="video/sell.3gp"></video>
+                </div>
             </div>
+            <form class="sellForm" method="" action="">
+                <div class="sellGrid">
+                    <label for="fname">First Name</label><input type="text" id="fname" required>
+                    <label for="lname">Last Name</label><input type="text" id="lname" required>
+                    <label for="phone">Phone Number (optional)</label><input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                        <small>Format: 123-456-7890</small>
+                    <label for="email">E-Mail Address</label><input type="email" id="email" required>
+                </div>
+                <br><br><label for="info">Details about your home</label><br><textarea id="info"></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
 		</div>
     </body>
 </html>
