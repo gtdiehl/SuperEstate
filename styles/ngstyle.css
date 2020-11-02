@@ -1,9 +1,22 @@
 body {height:100%; background-color: rgba(33,136,136,0.6);}
-h1 {color:#B6A11A; font-family:Segoe UI; font-size: 150%;}
-h2{text-align: center; font-family:Segoe UI;}
-h3{text-align: left; font-family:Segoe UI; color:#746D6D;}
+h1 {text-align: center; font-size: 200%;}
+h2{color:#B6A11A; font-family:Segoe UI; text-align: center; font-family:Segoe UI; padding-top: 1em;}
+h3{text-align: center; font-family:Segoe UI; color:black;}
+h3.description{text-align:left;}
 h4{text-align: center; font-family:Segoe UI; color:#1324A5;}
-
+div.content{
+	min-height: 600px;
+	height: 100%;
+}
+table{
+	table-layout: fixed;
+	text-align: center;
+	width: 100%;
+	
+}
+table td.top {
+	vertical-align: top;
+}
 .container {
 	margin-left:3%;
 	min-height:100px;
