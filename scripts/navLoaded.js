@@ -50,7 +50,7 @@ function navLoaded()
 	unorderedList.appendChild(listItem4);
 	
 	let aboutLink = document.createElement("A");
-	aboutLink.setAttribute("href", "#about");
+	aboutLink.setAttribute("href", "agent.html");
 	listItem4.appendChild(aboutLink);
 
 	let aboutText = document.createTextNode("Agents");
