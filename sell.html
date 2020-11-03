@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
     </head>
     <script src="scripts/navLoaded.js"></script>
+    <script src="https://unpkg.com/imask"></script>
     <style>
         div.content {
             position: absolute;
@@ -102,7 +103,7 @@
                         <div class="sellGrid">
                             <input class="sell-inputText" type="text" id="fname" placeholder="First Name" required>
                             <input class="sell-inputText" type="text" id="lname" placeholder="Last Name" required>
-                            <input class="sell-inputText" type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <input class="sell-inputText" type="tel" id="phone" placeholder="Phone Number (optional)">
                             <input class="sell-inputText" type="email" id="email" placeholder="E-Mail Address" required>
                         </div>
                         <label for="info">Details about your home</label><br><textarea id="info"></textarea><br><br>
@@ -110,6 +111,14 @@
                     </form>
                 </div>
             </section>
-		</div>
+        </div>
+        <script>
+            window.onload = function() {
+                var phoneMask = IMask(
+                document.getElementById('phone'), {
+                    mask: '(000) 000-0000'
+                });
+            };
+        </script>
     </body>
 </html>
