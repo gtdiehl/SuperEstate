@@ -82,7 +82,14 @@
             height: 200px;
         }
     </style>
-    <body onload="navLoaded();">
+    <body onload="navLoaded();
+        window.onload = function() {
+            var phoneMask = IMask(
+            document.getElementById('phone'), {
+                mask: '(000) 000-0000'
+                });
+            };"
+    >
 		<div class="content">
             <div class="splashHeader-columns">
                 <div class="splashHeader-column">
@@ -112,13 +119,5 @@
                 </div>
             </section>
         </div>
-        <script>
-            window.onload = function() {
-                var phoneMask = IMask(
-                document.getElementById('phone'), {
-                    mask: '(000) 000-0000'
-                });
-            };
-        </script>
     </body>
 </html>
