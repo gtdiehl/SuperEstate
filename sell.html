@@ -7,32 +7,68 @@
     </head>
     <script src="scripts/navLoaded.js"></script>
     <style>
+        .content {
+            position: absolute;
+            height: 78%;
+        }
+
+        .sell-inputText {
+            padding: 12px;
+        }
+
         .sellGrid {
             display: grid;
-            grid-template-columns: max-content max-content;
-            grid-gap:5px;
+            grid-gap: 24px;
+            grid-template-columns: 1fr 1fr;
+            margin: 24px 161px;
         }
 
         .sellGrid label { text-align:left; }
         h1 {
-            text-align: center;
             color: black;
         }
 
-        form, input, textarea {
+        .sellLanding-section {
+            text-align: center;
+        }
+
+        .splashHeader-columns {
+            display: flex;
+        }
+
+        .splashHeader-column {
+            position: relative;
+            width: 50%;
+        }
+
+        .splashHeader-column:first-child {
+            padding-right: 366px;
+        }
+
+        .splashHeader-column:last-child {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .splashHeader-Text1 {
+            font-size: 75px;
+            line-height: 1.25em;
+        }
+
+        input, textarea {
             border: 1px solid #000;
-            background-color: white;
         }
 
         form {
-            padding: 50px;
+            padding: 0px 15% 0px 15%;
         }
 
         input[type=submit] {
-            position: absolute;
             left: 40%;
             border-radius: 12px;
-            background-color: chartreuse;
+            background-color: #9ec6fb;
+            padding: 8px 16px;
+            font-size: 16px;
         }
 
         label:after { content: ":"; }
@@ -46,20 +82,33 @@
     </style>
     <body onload="navLoaded();">
 		<div class="content">
-            <div class="sell">
-                <h1>Sell My Home</h1>
-                <form class="sellForm" method="" action="">
-                    <div class="sellGrid">
-                        <label for="fname">First Name</label><input type="text" id="fname" required>
-                        <label for="lname">Last Name</label><input type="text" id="lname" required>
-                        <label for="phone">Phone Number (optional)</label><input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                            <small>Format: 123-456-7890</small>
-                        <label for="email">E-Mail Address</label><input type="email" id="email" required>
-                    </div>
-                    <br><br><label for="info">Details about your home</label><br><textarea id="info"></textarea><br><br>
-                    <input type="submit" value="Submit">
-                </form>
+            <div class="splashHeader-columns">
+                <div class="splashHeader-column">
+                    <h2 class="splashHeader-Text1">Sell your home with SuperEstate!</h1>
+                    <h3 class="splashHeader-Text2">Whether you're ready to sell or looking for answers, we'll guide you with data and expertise specific to your area.</h1>
+                </div>
+                <div class="splashHeader-column">
+                    <video class="splashHeader-video" autoplay loop muted>
+                        <source src="videos/sell.webm" type="video/webm">
+                    </video>
+                </div>
             </div>
+            <section class="sellLanding-section">
+                <div class="sellForm-Container">
+                    <h2>Start by connecting with a local expert</h2>
+                    <h3>We'll match you with an advisor who knows your market best. Fill out the form below to get started right away.</h3>
+                    <form class="sellForm" method="" action="">
+                        <div class="sellGrid">
+                            <input class="sell-inputText" type="text" id="fname" placeholder="First Name" required>
+                            <input class="sell-inputText" type="text" id="lname" placeholder="Last Name" required>
+                            <input class="sell-inputText" type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <input class="sell-inputText" type="email" id="email" placeholder="E-Mail Address" required>
+                        </div>
+                        <label for="info">Details about your home</label><br><textarea id="info"></textarea><br><br>
+                        <input type="submit" value="We're here to help">
+                    </form>
+                </div>
+            </section>
 		</div>
     </body>
 </html>
