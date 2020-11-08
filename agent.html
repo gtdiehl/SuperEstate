@@ -6,6 +6,21 @@
         <link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
         <link rel="stylesheet" type="text/css" href="styles/agentStyles.css"></link>
         
+		<script src="scripts/agent.js"></script>
+		<script>
+            function domLoaded() {
+				var AF= document.getElementById("agentFrame"); 
+                let form  = document.getElementById('searchForm');
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    document.getElementById("agentFrame").setAttribute("src", createURLSearchString());
+					AF.onload = function() {
+						AF.style.height="";
+						AF.style.height = parseInt(AF.contentWindow.document.body.scrollHeight) + 'px'; 
+					} 
+                });
+            }
+        </script>
     </head>
 	<script src="scripts/navLoaded.js"></script>
     <body onload="navLoaded();domLoaded();">
@@ -15,10 +30,9 @@
 				<form id="searchForm">
 					<div class="column" style="width:30%;">
 						<label>Language</label><br>
-						<select id="bedrooms">
-							<option value="0" selected>Any</option>
+						<select id="language">
 							<option value="Chinese">Chinese</option>
-							<option value="English">English</option>
+							<option value="English" selected>English</option>
 							<option value="French">French</option>
 							<option value="German">German</option>
 							<option value="Italian">Italian</option>
@@ -32,7 +46,7 @@
 					</div>
 					<div class="column" style="width:45%;">
 						<label>
-							<input type="text" name="name" size="30" maxlength="30" value="Name">
+							<input type="text" name="name" size="30" maxlength="30" value="Name" id="name">
 						</label>
 					</div>
 					
@@ -44,6 +58,6 @@
 				</form>
 			</div>
 		</div>
-		<iframe class="search-details" id="searchFrame"></iframe>
+		<iframe class="search-details" id="agentFrame"></iframe>
     </body>
 </html>
