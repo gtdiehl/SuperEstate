@@ -31,17 +31,6 @@ form {
     text-align: center;
 	background-color:white;
 }
-
-
-#slider-range {
-    height: 8px;
-    width: 80%;
-    margin: 10px;
-}
-
-.ui-slider .ui-slider-handle {width: 5px;}
-
-
 .column {
 	float: left;
 	height:70px;
