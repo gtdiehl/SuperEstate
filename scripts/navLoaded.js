@@ -60,21 +60,10 @@ function navLoaded()
 	listItem5.setAttribute("class", "navList");
 	unorderedList.appendChild(listItem5);
 	
-	let contactLink = document.createElement("A");
-	contactLink.setAttribute("href", "#about");
-	listItem5.appendChild(contactLink);
-
-	let contactText = document.createTextNode("Contact us");
-	contactLink.appendChild(contactText);
-
-	let listItem6 = document.createElement("LI");
-	listItem6.setAttribute("class", "navList");
-	unorderedList.appendChild(listItem6);
-	
 	let mypropertyLink = document.createElement("A");
 	mypropertyLink.setAttribute("href", "#account");
 	mypropertyLink.setAttribute("class", "special");
-	listItem6.appendChild(mypropertyLink);
+	listItem5.appendChild(mypropertyLink);
 
 	let mypropertyText = document.createTextNode("My property");
 	mypropertyLink.appendChild(mypropertyText);
