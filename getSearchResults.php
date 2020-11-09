@@ -54,7 +54,7 @@ if (mysqli_num_rows($result)>0){
     echo "<p>Sorted by Price (Low to High)</p>";
 	while ($row=mysqli_fetch_array($result)){
         echo "<div class='property'>";
-        echo "<img src='images/house" . $row['property_id'] . ".jpg' alt='house'>";
+        echo "<img src='images/house/house" . $row['property_id'] . ".jpg' alt='house'>";
         echo "<div class='middle'><a href='display.html?id=".$row['property_id']."' target='_blank'>Details</a></div>";
         echo "<div>$ " . number_format($row["price"]) . "</div></div>";
         
