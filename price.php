@@ -22,7 +22,7 @@ echo "</style>";
 
 if (mysqli_num_rows($result)>0){
 	while ($row=mysqli_fetch_array($result)){
-		echo "$ " . number_format($row["price"]);
+		echo "$" . number_format($row["price"]);
 	}
 }else{
 	echo "<p>No result</p>";
