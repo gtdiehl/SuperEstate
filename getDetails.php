@@ -34,13 +34,13 @@ if (mysqli_num_rows($result)>0){
 				$guide = "willowglenng.html";
 				break;
 			case 95112:
-				$guide = "index.html";
+				$guide = "downtown.html";
 				break;
 			case 95148:
-				$guide = "index.html";
+				$guide = "evergreen.html";
 				break;
 			case 95117:
-				$guide = "index.html";
+				$guide = "westsanjose.html";
 				break;
 			default:
 				$guide = "index.html";
