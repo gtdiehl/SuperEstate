@@ -18,7 +18,7 @@
 		<div class="container">
 			<div class="slides-container">
 				<div class="photo-container">
-					<script>document.writeln('<img src="images/house'+ getURLParam('id') +'.jpg" alt="Property for Sale" width="100%" height="100%" class="property-photo">');</script>
+					<script>document.writeln('<img src="images/house/house'+ getURLParam('id') +'.jpg" alt="Property for Sale" width="100%" height="100%" class="property-photo">');</script>
 				</div>
 				<script>
 					var photoCount;
@@ -36,7 +36,7 @@
 								var divNode = document.createElement("div");
 								divNode.setAttribute("class", "photo-container");
 								var imgNode = document.createElement("img");
-								imgNode.setAttribute("src", ("images/house" + getURLParam('id') + "_" + i + ".jpg"));
+								imgNode.setAttribute("src", ("images/house/house" + getURLParam('id') + "_" + i + ".jpg"));
 								imgNode.setAttribute("alt", "Property for Sale");
 								imgNode.setAttribute("width", "100%");
 								imgNode.setAttribute("heigh", "100%");
