@@ -4,7 +4,7 @@
 	padding-right: 5px;
 	border: 0;
 }
-body {height:100%; background-color: rgba(33,136,136,0.6);}
+body {height:100%; background-color: #7CB9B9;}
 h1 {color:#B6A11A; font-family:Segoe UI; font-size: 150%;}
 div.content {
 	margin-left:3%;
@@ -44,6 +44,54 @@ ul {
 .navList a:hover {background-color: #D7E8E8;}
 .navList a.homepage {padding: 0px;}
 .navList a.homepage:hover {background-color: #C4D6D6;}
+
+/*Footer*/
+footer {
+  margin-left:3%;
+  padding: 3px;
+  background-color: #7CB9B9;
+  color: #DEE7E8;
+  
+}
+footer h3 {
+	font-family: Segoe UI;
+	font-weight: bold;
+	color: #DEE7E8;
+}
+
+footer h4 {
+	font-family: Segoe UI;
+	font-weight: bold;
+	text-align:left;
+	color: black;
+}
+footer form{padding:0px}
+footer input[type=email]{
+	width:200px;
+	height: 20px;
+	padding:5px;
+	margin: 0px;
+	margin-top: 5px;
+	border: none;
+	font-family: Segoe UI;
+	color: #3A4141;
+}
+
+footer input[type=submit]{
+	width:130px;
+	height: 25px;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 5px;
+	background-color:#E8C96C;
+	border: none;
+	border-radius: 0px;
+	text-align:center;
+	font-family: Segoe UI;
+	font-weight: bold;
+	font-size:100%;
+	color: black;
+}
 
 /*Property box*/
 div.property {
