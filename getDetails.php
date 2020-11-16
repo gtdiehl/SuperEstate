@@ -54,7 +54,7 @@ if (mysqli_num_rows($result)>0){
 		echo "<li>".$row["parking_type"]."</li>";
 		echo "<li>Built in ".$row["build_year"]."</li></ul>";
 		echo "<h4>Overview</h4>";
-		echo "<p>Some details about the property. Some paragraph with some text.</p>";
+		echo "<p>".$row["description"]."</p>";
 		echo "<br><br>";
 		echo "<a href='".$guide."' target='_blank'>Neighborhood Information For Zip Code ";
 		echo $zipcode."</a>";
