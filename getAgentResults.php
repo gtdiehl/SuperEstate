@@ -1,8 +1,8 @@
 <?php
-$servername=getenv('DB_HOST');
-$username=getenv('DB_USERNAME');
-$password=getenv('DB_PASSWORD');
-$dbname=getenv('DB_DATABASE');
+$servername="localhost";
+$username="superestate";
+$password="super12345";
+$dbname="superestate";
 $search_language=$_GET['language'];
 $search_name=$_GET['name'];
 
