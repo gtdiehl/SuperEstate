@@ -14,7 +14,7 @@ if (!$conn){
 
 $sql="SELECT savedproperty FROM `account` WHERE `username`='superestate'";
 
-echo "<link rel='stylesheet' type='text/css' href='styles/agentStyles.css'></link>";
+echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
 
 $result=mysqli_query($conn,$sql);
 
