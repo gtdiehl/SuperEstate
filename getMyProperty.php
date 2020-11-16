@@ -12,7 +12,7 @@ if (!$conn){
 	die("Connection failed to $servername: ".mysqli_connect_error());
 }
 
-$sql="SELECT savedproperty FROM `account` WHERE `username`=superestate";
+$sql="SELECT savedproperty FROM `account` WHERE `username`='superestate'";
 
 $result=mysqli_query($conn,$sql);
 
