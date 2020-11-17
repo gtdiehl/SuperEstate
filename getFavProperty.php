@@ -1,6 +1,6 @@
 <?php
     include("config.php");
-    function getListofFavs($uname, $propertyId) {
+    function getListofFavs($uname, $propertyId, $db) {
         $sql="SELECT savedproperty FROM `account` WHERE `username`='$uname'";
 
         $result=mysqli_query($db,$sql);
@@ -37,7 +37,7 @@
                    $aResult['error'] = 'Error in arguments!';
                }
                else {
-                   $aResult['result'] = getListofFavs($_POST['arguments'][0], $_POST['arguments'][1]);
+                   $aResult['result'] = getListofFavs($_POST['arguments'][0], $_POST['arguments'][1], $db);
                }
                break;
 
