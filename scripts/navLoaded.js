@@ -62,6 +62,9 @@ function navLoaded()
 	let contactLink = document.createElement("A");
 	contactLink.setAttribute("href", "#footer");
 	listItem5.appendChild(contactLink);
+	
+	let contactText = document.createTextNode("Contact us");
+	contactLink.appendChild(contactText);
 
 	let listItem6 = document.createElement("LI");
 	listItem6.setAttribute("class", "navList");
