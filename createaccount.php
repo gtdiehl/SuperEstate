@@ -37,7 +37,7 @@
         <meta charset='utf-8'>
     </head>
     <link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
-    <link rel="stylesheet" type="text/css" href="login.css"></link>
+    <link rel="stylesheet" type="text/css" href="styles/login.css"></link>
     <script src="scripts/navLoaded.js"></script>
     <body onload="navLoaded();">
 <style>
