@@ -1,7 +1,7 @@
 <?php
     include("config.php");
 
-    function setListofFavs($uname, $propertyId) {
+    function setListofFavs($uname, $propertyId, $db) {
         $sql="SELECT savedproperty FROM `account` WHERE `username`='$uname'";
         
         if($propertyId < 0) {
@@ -63,7 +63,7 @@
                    $aResult['error'] = 'Error in arguments!';
                }
                else {
-                   $aResult['result'] = setListofFavs($_POST['arguments'][0], $_POST['arguments'][1]);
+                   $aResult['result'] = setListofFavs($_POST['arguments'][0], $_POST['arguments'][1], $db);
                }
                break;
 
