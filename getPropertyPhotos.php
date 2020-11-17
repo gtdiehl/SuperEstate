@@ -1,4 +1,5 @@
 <?php
+include("config.php");
 $property_id=$_GET['id'];
 
 $sql="SELECT photo_count, video_count FROM `property` WHERE `property_id`=$property_id";
