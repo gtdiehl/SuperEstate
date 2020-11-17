@@ -26,22 +26,17 @@
                 sort($a);
             }
         }
-
+        $a = array_filter($a);
         $favList = implode(',', $a);
-        error_log($favList);
 
         $sql = "SET SQL_SAFE_UPDATES=0";
         $result=mysqli_query($db,$sql);
-        error_log($result);
 
         $sql = "UPDATE account SET savedproperty = '$favList' WHERE username = '$uname'";
-        error_log($sql);
         $result=mysqli_query($db,$sql);
-        error_log($result);
 
         $sql = "SET SQL_SAFE_UPDATES=1";
         $result=mysqli_query($db,$sql);
-        error_log($result);
 
         mysqli_close($db);
         return !$isRemove;
