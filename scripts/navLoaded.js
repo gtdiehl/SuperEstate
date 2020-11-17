@@ -11,12 +11,12 @@ function navLoaded()
 	unorderedList.appendChild(listItem1);
 
 	let homeLink = document.createElement("A");
-	homeLink.setAttribute("href","index.html");
+	homeLink.setAttribute("href","/index.html");
 	homeLink.setAttribute("class", "homepage");
 	listItem1.appendChild(homeLink);
 	
 	let imgsrc = document.createElement("IMG");
-	imgsrc.setAttribute("src", "images/logo.jpg");
+	imgsrc.setAttribute("src", "/images/logo.jpg");
 	imgsrc.setAttribute("alt", "SuperEstate logo");
 	imgsrc.setAttribute("width", 140);
 	imgsrc.setAttribute("height", 75);
@@ -62,16 +62,13 @@ function navLoaded()
 	let contactLink = document.createElement("A");
 	contactLink.setAttribute("href", "#footer");
 	listItem5.appendChild(contactLink);
-	
-	let contactText = document.createTextNode("Contact us");
-	contactLink.appendChild(contactText);
 
 	let listItem6 = document.createElement("LI");
 	listItem6.setAttribute("class", "navList");
 	unorderedList.appendChild(listItem6);
 	
 	let mypropertyLink = document.createElement("A");
-	mypropertyLink.setAttribute("href", "myproperty.html");
+	mypropertyLink.setAttribute("href", "myproperty.php");
 	mypropertyLink.setAttribute("class", "special");
 	listItem6.appendChild(mypropertyLink);
 
@@ -317,7 +314,7 @@ function footerLoaded(){
 	let input1 = document.createElement("INPUT");
 	input1.setAttribute("id", "useremail");
 	input1.setAttribute("type", "email");
-	input1.setAttribute("placeholder", "example@gmail.com");
+	input1.setAttribute("value", "example@gmail.com");
 	input1.setAttribute("required", "required");
 	formSub.appendChild(input1);
 	let br2 = document.createElement("BR");

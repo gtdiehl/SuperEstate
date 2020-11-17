@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+   session_start();
+?>
 <html>
     <head>
         <meta charset='utf-8'>
@@ -9,18 +11,21 @@
 		<script src="scripts/navLoaded.js"></script>
 		<script src="scripts/display.js"></script>
 		<script src="scripts/getMap.js"></script>
+		<script src="scripts/utils.js"></script>
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
 	</head>
 	
-    <body onload="navLoaded();footerLoaded();">
+	<body onload="navLoaded();footerLoaded();">
+		<div class="fav">
+		</div>
 		<div class="container">
 			<div class="slides-container">
 				<div class="photo-container">
 					<script>document.writeln('<img src="images/house/house'+ getURLParam('id') +'.jpg" alt="Property for Sale" width="100%" height="100%" class="property-photo">');</script>
 				</div>
-				<script>
+				<script type="text/javascript">
 					var photoCount;
 					var videoCount;
 					$(document).ready(function() {
@@ -29,6 +34,21 @@
 							photoCount = dataArray[0];
 							videoCount = dataArray[1];
 
+							var isLoggedIn = "<?php echo $_SESSION['login_user']?>";
+							var clickedFavMethodStr = "clickedFav('" + isLoggedIn + "')";
+							console.log("isLog: " + clickedFavMethodStr);
+
+							if(isLoggedIn != "") {
+								t = document.getElementsByClassName("fav")[0];
+								var starNode = document.createElement("a");
+								starNode.setAttribute("class", "next");
+								starNode.setAttribute("id", "favStar");
+								starNode.setAttribute("onclick", clickedFavMethodStr);
+								t.appendChild(starNode);
+
+								isFavProperty(isLoggedIn);
+							}
+							
 							s = document.getElementsByClassName("slides-container")[0];
 
 							for(var i=1;i<parseInt(photoCount)+1;++i)
