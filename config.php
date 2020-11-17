@@ -1,7 +1,7 @@
 <?php
-   define('DB_SERVER', getenv('DB_HOST'));
-   define('DB_USERNAME', getenv('DB_USERNAME'));
-   define('DB_PASSWORD', getenv('DB_PASSWORD'));
-   define('DB_DATABASE', getenv('DB_DATABASE'));
+   define('DB_SERVER', 'localhost');
+   define('DB_USERNAME', 'superestate');
+   define('DB_PASSWORD', 'super12345');
+   define('DB_DATABASE', 'superestate');
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 ?>
