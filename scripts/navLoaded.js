@@ -317,7 +317,7 @@ function footerLoaded(){
 	let input1 = document.createElement("INPUT");
 	input1.setAttribute("id", "useremail");
 	input1.setAttribute("type", "email");
-	input1.setAttribute("value", "example@gmail.com");
+	input1.setAttribute("placeholder", "example@gmail.com");
 	input1.setAttribute("required", "required");
 	formSub.appendChild(input1);
 	let br2 = document.createElement("BR");
