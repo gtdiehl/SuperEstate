@@ -129,5 +129,8 @@ div.property:hover .middle {
 	padding: 16px 32px;
 }
 
-
+#myPropertyFrame {
+	height: 100%;
+	width: 100%;
+}
 

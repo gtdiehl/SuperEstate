@@ -1,21 +1,11 @@
 <?php
-$servername="localhost";
-$username="superestate";
-$password="super12345";
-$dbname="superestate";
+include("config.php");
 $search_bedrooms=$_GET['bed_count'];
 $search_bathrooms=$_GET['bath_count'];
 $search_building=$_GET['building'];
 $search_minprice=$_GET['min_price'];
 $search_maxprice=$_GET['max_price'];
 
-//create connection
-$conn=mysqli_connect($servername, $username, $password, $dbname);
-
-//check connection
-if (!$conn){
-	die("Connection failed to $servername: ".mysqli_connect_error());
-}
 $sql="SELECT * FROM `property` 
 	WHERE (`price` BETWEEN $search_minprice AND $search_maxprice) 
 	AND (`bed_count` >= $search_bedrooms)
@@ -38,7 +28,7 @@ if ($numItems > 0) {
 
 $sql .= ") ORDER BY `price` ASC";
 
-$result=mysqli_query($conn,$sql);
+$result=mysqli_query($db,$sql);
 
 echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
 echo "<style type='text/css'>";
@@ -55,7 +45,7 @@ if (mysqli_num_rows($result)>0){
 	while ($row=mysqli_fetch_array($result)){
         echo "<div class='property'>";
         echo "<img src='images/house/house" . $row['property_id'] . ".jpg' alt='house'>";
-        echo "<div class='middle'><a href='display.html?id=".$row['property_id']."' target='_blank'>Details</a></div>";
+        echo "<div class='middle'><a href='display.php?id=".$row['property_id']."' target='_blank'>Details</a></div>";
         echo "<div>$ " . number_format($row["price"]) . "</div></div>";
         
 	}
