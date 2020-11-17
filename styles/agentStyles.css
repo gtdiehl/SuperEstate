@@ -6,7 +6,7 @@ label {font-weight: bold}
     height: 220px; 
     position: absolute;
     top: 80px;
-    background-image: url("../images/agentBackground.jpg");
+    background-image: url("images/agentBackground.jpg");
     background-size: 100% 100%;
 }
 

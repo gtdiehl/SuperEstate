@@ -1,22 +1,15 @@
 <?php
-$servername="localhost";
-$username="superestate";
-$password="super12345";
-$dbname="superestate";
+include("config.php");
+$post_username=$_POST['username'];
 
-//create connection
-$conn=mysqli_connect($servername, $username, $password, $dbname);
-
-//check connection
-if (!$conn){
-	die("Connection failed to $servername: ".mysqli_connect_error());
-}
-
-$sql="SELECT savedproperty FROM `account` WHERE `username`='superestate'";
+$sql="SELECT savedproperty FROM `account` WHERE `username`='$post_username'";
 
 echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
 
-$result=mysqli_query($conn,$sql);
+echo "<h1>My Saved Properties</h1>";
+echo "<h2><a href = 'logout.php'>Sign Out</a></h2>";
+
+$result=mysqli_query($db,$sql);
 
 if (mysqli_num_rows($result)>0){
 	while ($row=mysqli_fetch_array($result)){
@@ -26,11 +19,11 @@ if (mysqli_num_rows($result)>0){
             echo "<div class='property'>";
             echo "<img src='images/house/house" .$b. ".jpg' alt='house'>";
             echo "<div class='middle'>";
-            echo "<a href='display.html?id=" .$b. " ' target='_blank'>Details</a></div>";
+            echo "<a href='display.php?id=" .$b. " ' target='_blank'>Details</a></div>";
             echo "<iframe src='price.php?id=" .$b. " ' width='100%' height='35'></iframe>";
             echo "</div>";
         }
 	}
 }
-
+mysqli_close($db);
 ?>

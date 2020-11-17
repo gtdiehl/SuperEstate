@@ -10,5 +10,5 @@ function sortByProperty(property){
           return -1;  
    
        return 0;  
-    }  
- }
+   }  
+}
