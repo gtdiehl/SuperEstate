@@ -51,8 +51,13 @@ footer {
   padding: 3px;
   background-color: #7CB9B9;
   color: #DEE7E8;
-  
 }
+
+footer table{
+	width:auto;
+	text-align: left;
+}
+
 footer h3 {
 	font-family: Segoe UI;
 	font-weight: bold;
