@@ -2,6 +2,8 @@
    session_start();
    
    if(session_destroy()) {
-      header("Location: login.php");
+         echo "<script>";
+         echo "window.parent.open('login.php', '_self');";
+         echo "</script>";
    }
 ?>
