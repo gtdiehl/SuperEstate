@@ -88,14 +88,7 @@
             height: 200px;
         }
     </style>
-    <body onload="navLoaded();footerLoaded();
-        window.onload = function() {
-            var phoneMask = IMask(
-            document.getElementById('phone'), {
-                mask: '(000) 000-0000'
-                });
-            };"
-    >
+    <body onload="navLoaded();footerLoaded();">
 		<div class="container">
             <div class="splashHeader-columns">
                 <div class="splashHeader-column">
@@ -129,6 +122,11 @@
             $("#submitForm").click(function() {
                 alert("Your information has been forwarded to our agents.");
             });
+
+            var phoneMask = IMask(
+                document.getElementById('phone'), {
+                    mask: '(000) 000-0000'
+                });
         </script>
     </body>
 </html>
