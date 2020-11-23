@@ -14,10 +14,22 @@
             <img style="padding-top: 2em;"src = "images/downtown/downtown.jpg" width = "600" height = "400" alt = "Downtown">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19774.407649850415!2d-121.89152857885111!3d37.33366788730976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcca3f83c3049%3A0x33f11bbbc2fa2490!2sDowntown%20San%20Jose%2C%20San%20Jose%2C%20CA!5e0!3m2!1sen!2sus!4v1604349163146!5m2!1sen!2sus" width="400" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
-		
-        <h2 style="padding-bottom: 1em;">What's it like living in Downtown San Jose</h2>
+         <div class="interests">
+            <p>What buyers love about this neighborhood: </p>
+            <b>
+              <div class="inner-interests">
+                central hub for music, art, food and nightlife<br />
+                largest urban center of Silicon Valley<br />
+                one of the largest tech clusters in Silicon Valley<br />
+                convenient methods of transportation<br />
+                over 250 multicultural restaurants to choose from
+              </div>
+            </b>
+         </div>
+
+        <h2 style="padding-top: 7em; padding-bottom: 2em;">What's it like living in Downtown San Jose</h2>
         <h3 class="description"> Primarily known as the business district, the heart of the city sees a lot of foot traffic. Hungry wanderers flock to San Pedro Square Market for artisan bites and beers before journeying to the SAP Center (also known as the “Shark Tank” to locals). The city’s downtown district is distinctively decked in teal and black at all times to support the San Jose Sharks. And whether it’s playoff season or the off-season, you’ll always see locals downtown, whether they are near The Tech Museum of Innovation or San Jose Museum of Art, rocking their Sharks gear.  </h3>
-        
+    
 		<table>
             <tr style="height: 100px;">
                 <td>
@@ -31,7 +43,7 @@
 		
         
         <h3 class="description">Downtown San Jose is known for its bustling beer bars and cocktail haunts, as well as theaters showing Broadway shows. There's a mix of casual and upscale restaurants, and for a quick bite, San Pedro Square Market is a popular choice. The Tech Museum of Innovation has hands-on displays, while the San Jose Museum of Art shows contemporary works. Plaza de César Chávez is a central park with fountains</h3>
-        
+    
         <h2 style="padding-top: 4em;">Schools</h2>
         <h3>
             <table>
@@ -82,11 +94,12 @@
                 <th><h2 style="padding-top: 4em; padding-bottom: 2em;">Parks</h2></th>
             </tr>
             <tr>
-                <td class="top">
+                <td class="new">
                     <table>
                         <tr style="height: 200px;">
                             <td><h3>San Jose Museum of Art</h3></td>
                             <td><img src="images/downtown/sanjosemuseumofart.jpg" alt="" width = "200px" height="150px"></td>
+        
                         </tr>
                         <tr style="height: 200px;">
                             <td><h3>The Tech Museum of Innovation</h3></td>
@@ -102,11 +115,12 @@
                         </tr>
                     </table>
                 </td>
-                <td class="top">
+                <td class="new">
                     <table>
                         <tr style="height: 200px;">
                             <td><h3>Monopoly in the Park</h3></td>
                             <td><img src="images/downtown/monopolyinthepark.jpg" alt="" width = "200px" height="150px"></td>
+                            
                         </tr>
                         <tr style="height: 200px;">
                             <td><h3>Guadalupe River Park</h3></td>
@@ -181,32 +195,37 @@
 					<img src="images/downtown/downtowngallery20.jpg" style="width:100%;height:100%;" onclick="zoom(this);">
 				</td>
 			</tr>
-		</table>
-		
+        </table>
+      
+
+
+    </div>
+
 		<div id="Modal" class="modal">
 
-		  <!-- The Close Button -->
+  
+        
 		  <span class="close">&times;</span>
 
-		  <!-- Modal Content (The Image) -->
+
 		  <img class="modal-content" id="img_zoom">
 		</div>
 		
 		<script>
-			// Get the modal
+		
 			var modal = document.getElementById("Modal");
 
-			// Get the image and insert it inside the modal
+			
 			var modalImg = document.getElementById("img_zoom");
 			function zoom(imgs){
 			  modal.style.display = "block";
 			  modalImg.src = imgs.src;
 			}
 
-			// Get the <span> element that closes the modal
+		
 			var span = document.getElementsByClassName("close")[0];
 
-			// When the user clicks on <span> (x), close the modal
+			
 			span.onclick = function() {
 			  modal.style.display = "none";
 			}
