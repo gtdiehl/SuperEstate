@@ -29,10 +29,22 @@ table td.top {
 }
 
 table td.top {
-	vertical-align: top;
-	width:20%;
+  vertical-align: top;
+  width:20%;
 	height:200px;
 	object-fit:cover;
+}
+
+.new {
+  padding: 50px;
+  transition: transform .2s; 
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.new img:hover {
+  transform: scale(1.5); 
 }
 
 .top img {
@@ -42,22 +54,22 @@ table td.top {
 
 .top img:hover {opacity: 0.7;}
 
-/* The Modal (background) */
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 101; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none; 
+  position: fixed; 
+  z-index: 101; 
+  padding-top: 100px; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
 }
 
-/* Modal Content (Image) */
+
 .modal-content {
   margin: auto;
   display: block;
@@ -66,7 +78,6 @@ table td.top {
   max-width: 700px;
 }
 
-/* Add Animation - Zoom in the Modal */
 .modal-content{
   animation-name: zoom;
   animation-duration: 0.6s;
@@ -77,7 +88,7 @@ table td.top {
   to {transform:scale(1)}
 }
 
-/* The Close Button */
+
 .close {
   position: absolute;
   top: 15px;
@@ -93,3 +104,22 @@ table td.top {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+
+.interests{font-size:32px;font-weight:700;color: navy}
+
+.interests p{font-size:32px;height:42px;float:left;margin-right:.3em;opacity:.5; padding-top: 2em; padding-bottom: 2em; top: 50%}
+
+.interests b{font-weight:700;float:left;overflow:hidden;height:37px;top:32px; margin-left:20em; margin-top: -100px}
+
+.interests .inner-interests{display:inline-block;color: lightseagreen;position:relative; white-space:nowrap;
+  top:0;left:0;-webkit-animation:move 6s;-moz-animation:move 6s;-ms-animation:move 6s;-o-animation:move 6s;
+  animation:move 6s;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;
+  -ms-animation-iteration-count:infinite;-o-animation-iteration-count:infinite;animation-iteration-count:infinite;
+  -webkit-animation-delay:1.3s;-moz-animation-delay:1.3s;-ms-animation-delay:1.3s;-o-animation-delay:1.3s;
+  animation-delay:1.3s}
+  @keyframes move{0%{top:0}20%{top:-40px}40%{top:-80px}60%{top:-120px}80%{top:-160px}}
+  
+
+  
