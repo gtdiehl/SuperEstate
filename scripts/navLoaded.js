@@ -359,13 +359,15 @@ function footerLoaded(){
 /**
  * Processes the e-mail and adds it to the company database
  * TODO: Send the e-mail to the database to be stored
- * TODO: Why is the check needed? Won't the input=email element check for this?
  */
 function buttonPressed() 
 {
-	var inputemail = document.getElementById("useremail").value;
-	if (inputemail.includes("@"))
-		window.alert("Thanks for subscribing to our newsletter!!");
-	else
-		window.alert("Please enter a valid email address!");
+	var f = document.getElementById('inputform');
+
+	// Let the input E-Mail field validate the input. Upon successful validation
+	// subscribe the e-mail address and alert the user.
+	if(f.checkValidity()) {
+	  f.submit();
+	  alert("Thank you for subscribing to our newsletter!")
+	}
 }
