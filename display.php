@@ -10,11 +10,9 @@
 		<script src="scripts/getURLParam.js"></script>
 		<script src="scripts/navLoaded.js"></script>
 		<script src="scripts/display.js"></script>
-		<script src="scripts/getMap.js"></script>  <!-- TODO: Remove import as file isn't used anymore -->
 		<script src="scripts/utils.js"></script>
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script> <!-- TODO: Remove import as file isn't used anymore -->
 	</head>
 	
 	<body onload="navLoaded();footerLoaded();">
