@@ -30,13 +30,6 @@
 	left: 49%;
 }
 
-/* TODO: Remove appears not to be used */
-.property-button {
-	padding: 8px 16px;
-	margin-left: 1%;
-	overflow: hidden;
-}
-
 .propertyDetails {
 	z-index: 80;
 	position: absolute;
