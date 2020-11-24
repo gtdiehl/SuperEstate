@@ -76,9 +76,8 @@
 								showSlides(1);
 							}
 
-							// TODO: Shouldn't this check for >1 ?
 							// Add prev and next buttons for the photo slideshow
-							if(photoCount > 0)
+							if(photoCount > 1)
 							{
 								var prevNode = document.createElement("a");
 								prevNode.setAttribute("class", "prev");
