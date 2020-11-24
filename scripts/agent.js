@@ -10,13 +10,7 @@ function createURLSearchString() {
 	var e1=document.querySelector('#language').value;
 
 	// Sets variable based on text input field
-	var sn=document.getElementById("name").value;
-
-	// TODO: Remove check and change input text in agent.html value attribute to placeholder
-	if (sn=="Name"||sn=="")
-		var e2="";
-	else
-		var e2=sn;
+	var e2=document.getElementById("name").value;
 
 	var urlSearchParams="";
 	urlSearchParams += "?language=";
