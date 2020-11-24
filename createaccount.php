@@ -1,36 +1,43 @@
 <?php
-   include("config.php");
-   session_start();
+  // Import global database connection variable
+  include("config.php");
+
+  // PHP method to start new or resume existing session
+  session_start();
    
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']);
-      $myemail = mysqli_real_escape_string($db,$_POST['email']); 
-      
-      $sql = "SELECT user_id FROM account WHERE username = '$myusername'";
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Username, Password, and E-Mail Address sent from the form
+    $myusername = mysqli_real_escape_string($db,$_POST['username']);
+    $mypassword = mysqli_real_escape_string($db,$_POST['password']);
+    $myemail = mysqli_real_escape_string($db,$_POST['email']); 
+
+    // SQL Query to check if username exists in the database
+    $sql = "SELECT user_id FROM account WHERE username = '$myusername'";
+    $result = mysqli_query($db,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
+
+    // Get count of number of rows returned from the SQL Query
+    $count = mysqli_num_rows($result);
+    
+    // If result matched $myusername, table row must be 1 row and will return an error saying account already exists.
+    // If $count is 0 add the user into the database
+    if($count == 0) {
+      // SQL INSERT statement to add the user details into the database
+      $sql="insert into account (username, password, email) VALUES ('$myusername', '$mypassword', '$myemail')";
       $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 0) {
-        $sql="insert into account (username, password, email) VALUES ('$myusername', '$mypassword', '$myemail')";
-        $result = mysqli_query($db,$sql);
-        error_log($result);
-        if($result) {
-          header("location: login.php");
-        } else {
-          $error = "Error while creating account.";
-        } 
+      error_log($result);
+
+      // Upon successful insertion re-direct user to login page. If a failure occurs display an error.
+      if($result) {
+        header("location: login.php");
       } else {
-        $error = "Account already exists. Please use a different username.";
-      }
-   }
+        $error = "Error while creating account.";
+      } 
+    } else {
+      $error = "Account already exists. Please use a different username.";
+    }
+  }
 ?>
 <html>
     <head>

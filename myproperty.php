@@ -1,5 +1,6 @@
 <?php
-   include('session.php');
+  // Import global database connection variable
+  include('session.php');
 ?>
 <html>
     <head>
@@ -12,8 +13,11 @@
     <body onload="navLoaded();footerLoaded();">
       <div class="content">
         <script type="text/javascript">
+          // Retrieve logged in user name from PHP sesssion info
           var x = "<?php echo $login_session ?>"; 
 
+          // Hidden form to submit username to server and display results in iFrame
+          // getMyProperty.php displays the results
           document.writeln('<form id="hiddenform" action="getMyProperty.php" target="my_iframe" method="post">');
           document.writeln("<input type='text' name='username' value='" + x + "'>");
           document.writeln('<input type="submit" value="post">');

@@ -1,11 +1,17 @@
+/**
+ * Creates the navigation header that is used throughout the SuperEstate website
+ */
 function navLoaded()
 {
+	// Create container to hold navigation bar
 	let div = document.createElement("div");
 	div.setAttribute("class", "nav");
 
+	// Create an unordered list
 	let unorderedList = document.createElement("UL");
 	div.appendChild(unorderedList);
 
+	// Populate the list with the logo
 	let listItem1 = document.createElement("LI");
 	listItem1.setAttribute("class", "navList");
 	unorderedList.appendChild(listItem1);
@@ -22,6 +28,7 @@ function navLoaded()
 	imgsrc.setAttribute("height", 75);
 	homeLink.appendChild(imgsrc);
 
+	// Add the Search page link
 	let listItem2 = document.createElement("LI");
 	listItem2.setAttribute("class", "navList");
 	unorderedList.appendChild(listItem2);
@@ -30,9 +37,10 @@ function navLoaded()
 	searchLink.setAttribute("href", "search.html");
 	listItem2.appendChild(searchLink);
 
-	let searchText = document.createTextNode("Search a house");
+	let searchText = document.createTextNode("Search for a house");
 	searchLink.appendChild(searchText);
 
+	// Add the Sell page link
 	let listItem3 = document.createElement("LI");
 	listItem3.setAttribute("class", "navList");
 	unorderedList.appendChild(listItem3);
@@ -44,6 +52,7 @@ function navLoaded()
 	let sellText = document.createTextNode("Sell a house");
 	sellLink.appendChild(sellText);
 
+	// Add the Agent page link
 	let listItem4 = document.createElement("LI");
 	listItem4.setAttribute("class", "navList");
 	unorderedList.appendChild(listItem4);
@@ -55,6 +64,7 @@ function navLoaded()
 	let aboutText = document.createTextNode("Agents");
 	aboutLink.appendChild(aboutText);
 	
+	// Add the Contact us page link
 	let listItem5 = document.createElement("LI");
 	listItem5.setAttribute("class", "navList");
 	unorderedList.appendChild(listItem5);
@@ -66,6 +76,7 @@ function navLoaded()
 	let contactText = document.createTextNode("Contact us");
 	contactLink.appendChild(contactText);
 
+	// Add the My Property page link
 	let listItem6 = document.createElement("LI");
 	listItem6.setAttribute("class", "navList");
 	unorderedList.appendChild(listItem6);
@@ -81,6 +92,9 @@ function navLoaded()
 	document.body.insertBefore(div, document.body.firstChild);
 }
 
+/**
+ * Creates the footer that is used through the SuperEstate website
+ */
 function footerLoaded(){
 	let footer = document.createElement("FOOTER");
 	footer.setAttribute("id", "footer");
@@ -342,6 +356,11 @@ function footerLoaded(){
 	document.body.insertBefore(footer, document.body.nextSibling);
 }
 
+/**
+ * Processes the e-mail and adds it to the company database
+ * TODO: Send the e-mail to the database to be stored
+ * TODO: Why is the check needed? Won't the input=email element check for this?
+ */
 function buttonPressed() 
 {
 	var inputemail = document.getElementById("useremail").value;

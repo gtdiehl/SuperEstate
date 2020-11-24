@@ -1,3 +1,4 @@
+// TODO: Remove file appears not to be used anymore
 /* Token expires on Nov 05 2020 */
 const jwt_token = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlM0VkpSWkg1U1EifQ.eyJpc3MiOiJXNjc1OE5OUUE5Iiwia" + 
                   "WF0IjoxNjAzNDE5NTI1LjM1MiwiZXhwIjoxNjA0NjI5MTI1LjM1Mn0.JNLjP1fnc_nQ9T7uUPTKKM2svgU0KUyF89qxaJ" +
