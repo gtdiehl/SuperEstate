@@ -1,3 +1,4 @@
+// TODO: Remove file appears not to be used anymore
 /* Token expires on Nov 05 2020 */
 const jwt_token = ***REMOVED***+ 
                   ***REMOVED*** +
