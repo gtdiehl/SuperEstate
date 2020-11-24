@@ -1,8 +1,12 @@
 <?php
+	// Import global database connection variable
 	include("config.php");
+
+	// Retrieve language and name values from the HTTP GET
 	$search_language=$_GET['language'];
 	$search_name=$_GET['name'];
 
+	// SQL Query to retrieve all agents that match specified language and name
 	$sql="SELECT * FROM `agent` 
 		WHERE (`fname` LIKE '%$search_name%' OR `lname` LIKE '%$search_name%') 
 		AND (`language` LIKE '%$search_language%')";
@@ -11,6 +15,7 @@
 
 	$result=mysqli_query($db,$sql);
 
+	// Sets the HTML styles for the Agents page
 	echo "<link rel='stylesheet' type='text/css' href='styles/agentStyles.css'></link>";
 	echo "<style type='text/css'>";
 	echo "*{margin:0; text-align:left; font-family:Microsoft YaHei UI;}";
@@ -23,7 +28,8 @@
 
 	echo "</style>";
 
-
+	// If the row count is more than 0, build the page using the fields from the row result
+	// If the row count is zero display no agents found
 	if (mysqli_num_rows($result)>0){
 		echo "<h2>".mysqli_num_rows($result)." results</h2>";
 		echo "<h3>Sorted by first name (A-Z)</h3>";
