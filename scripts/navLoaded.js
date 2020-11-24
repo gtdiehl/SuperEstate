@@ -364,8 +364,8 @@ function footerLoaded(){
 function buttonPressed() 
 {
 	var inputemail = document.getElementById("useremail").value;
-	//if (inputemail.includes("@"))
-	//	window.alert("Thanks for subscribing to our newsletter!!");
-	//else
-	//	window.alert("Please enter a valid email address!");
+	if (inputemail.includes("@"))
+		window.alert("Thanks for subscribing to our newsletter!!");
+	else
+		window.alert("Please enter a valid email address!");
 }
