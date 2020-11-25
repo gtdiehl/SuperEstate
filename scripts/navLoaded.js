@@ -301,7 +301,7 @@ function footerLoaded(){
 	let heading4_3 = document.createElement("H4");
 	inTd2_6.appendChild(heading4_3);
 	
-	let txtinfo3 = document.createTextNode("2836 Walnut Grove Ave,");
+	let txtinfo3 = document.createTextNode("2836 Walnut Grove Ave");
 	heading4_3.appendChild(txtinfo3);
 	let br=document.createElement("BR");
 	heading4_3.appendChild(br);
