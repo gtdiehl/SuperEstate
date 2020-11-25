@@ -120,8 +120,19 @@
         </div>
         <script>
             $("#submitForm").click(function() {
+                sendEmailToAgent();
                 alert("Your information has been forwarded to our agents.");
             });
+
+            function sendEmailToAgent() {
+                var fname = document.getElementById("fname").value;
+                var lname = document.getElementById("lname").value;
+                var phone = document.getElementById("phone").value;
+                var email = document.getElementById("email").value;
+                var info = document.getElementById("info").value;
+
+                // In the production system the users info would be sent in an e-mail to an agent
+            }
 
             var phoneMask = IMask(
                 document.getElementById('phone'), {
