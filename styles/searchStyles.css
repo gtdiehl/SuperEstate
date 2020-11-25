@@ -12,7 +12,7 @@ label {font-weight: bold}
     height: 220px; /* Moving up a bit so background does not take up so much room */
     position: absolute;
     top: 80px;
-    background-image: url("images/searchCriteriaBackground.jpg");
+    background-image: url("../images/searchCriteriaBackground.jpg");
     background-size: 100% 100%;
 }
 
