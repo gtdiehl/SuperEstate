@@ -79,3 +79,14 @@
 	width: 1140px;
 	height: 400px;
 }
+
+#favStar {
+	position: absolute;
+	top: 110px;
+	left: 669px;
+	color: black;
+	border: #3c7e7e;
+	border-style: double;
+	padding: 5px 10px;
+	cursor: pointer;
+}
