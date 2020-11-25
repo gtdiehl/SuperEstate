@@ -13,8 +13,14 @@
 
     // Display HTML text and logout link
     // TODO: Need a better layout!
-    echo "<h1>My Saved Properties</h1>";
-    echo "<h2><a href = 'logout.php'>Sign Out</a></h2>";
+    echo "<div class='savedPropertyTop'>";
+    echo "<div class='savePropertyColumn'>";
+    echo "<h1 id='savedPropertyHeading'>My Saved Properties</h1>";
+    echo "</div>";
+    echo "<div class='savePropertyColumn'>";
+    echo "<h2 id='floatRight'><a href = 'logout.php'>Sign Out</a></h2>";
+    echo "</div>";
+    echo "</div>";
 
     $result=mysqli_query($db,$sql);
 
