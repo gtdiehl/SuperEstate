@@ -61,7 +61,7 @@ function navLoaded()
 	sellLink.setAttribute("href", "sell.html");
 	listItem3.appendChild(sellLink);
 
-	let sellText = document.createTextNode("Sell a house");
+	let sellText = document.createTextNode("Sell your house");
 	sellLink.appendChild(sellText);
 
 	// Add the Agent page link
