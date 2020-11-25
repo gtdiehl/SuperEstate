@@ -1,8 +1,20 @@
+
+
 /**
  * Creates the navigation header that is used throughout the SuperEstate website
  */
 function navLoaded()
 {
+	// Give all pages access to jQuery
+	let jQueryScript = document.createElement("script");
+	jQueryScript.setAttribute("type", "text/javascript");
+	jQueryScript.setAttribute("src", "https://code.jquery.com/jquery-1.12.4.js");
+	let jQueryScriptUI = document.createElement("script");
+	jQueryScriptUI.setAttribute("type", "text/javascript");
+	jQueryScriptUI.setAttribute("src", "https://code.jquery.com/ui/1.12.1/jquery-ui.js");
+	document.getElementsByTagName("head")[0].appendChild(jQueryScript);
+	document.getElementsByTagName("head")[0].appendChild(jQueryScriptUI);
+
 	// Create container to hold navigation bar
 	let div = document.createElement("div");
 	div.setAttribute("class", "nav");
@@ -358,16 +370,35 @@ function footerLoaded(){
 
 /**
  * Processes the e-mail and adds it to the company database
- * TODO: Send the e-mail to the database to be stored
  */
 function buttonPressed() 
 {
 	var f = document.getElementById('inputform');
+	var e = document.getElementById('useremail').value;
 
 	// Let the input E-Mail field validate the input. Upon successful validation
 	// subscribe the e-mail address and alert the user.
 	if(f.checkValidity()) {
-	  f.submit();
-	  alert("Thank you for subscribing to our newsletter!")
+		postEmailtoDatabase(e);
+		alert("Thank you for subscribing to our newsletter!");
 	}
+}
+
+/**
+ * Posts the user's e-mail address to the server and inserts in
+ * the database
+ * 
+ * @param {string} email User's E-Mail Address from footer form
+ */
+function postEmailtoDatabase(email) {
+  // HTML POST to PHP backend, to run the fav() method from 
+  // the getFavProperty.php page using username and property ID as arguments
+  jQuery.ajax({
+    type: "POST",
+    url: 'setNewsletterEmail.php',
+    dataType: 'json',
+    data: {functionname: 'fav', arguments: [email]},
+
+    success: function (obj, textstatus) {}
+    });
 }
