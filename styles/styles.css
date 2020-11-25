@@ -139,23 +139,3 @@ div.property:hover .middle {
 	width: 100%;
 }
 
-/* My Property */
-#savedPropertyHeading {
-	color: #B97C7C;
-	font-size: 200%;
-}
-
-#savedPropertyColumn {
-	float: left;
-	width: 50%;
-}
-
-#floatRight {
-	float: right;
-}
-
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
-}
