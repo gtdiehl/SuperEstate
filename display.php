@@ -16,8 +16,6 @@
 	</head>
 	
 	<body onload="navLoaded();footerLoaded();">
-		<div class="fav">
-		</div>
 		<div class="container">
 			<div class="slides-container">
 				<div class="photo-container">
@@ -43,9 +41,8 @@
 							if(isLoggedIn != "") {
 								var clickedFavMethodStr = "clickedFav('" + isLoggedIn + "')";
 
-								t = document.getElementsByClassName("fav")[0];
+								t = document.getElementsByClassName("container")[0];
 								var starNode = document.createElement("a");
-								starNode.setAttribute("class", "next");
 								starNode.setAttribute("id", "favStar");
 								starNode.setAttribute("onclick", clickedFavMethodStr);
 								t.appendChild(starNode);
