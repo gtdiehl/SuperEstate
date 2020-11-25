@@ -107,7 +107,6 @@ function clickedFav(uname) {
  * @param {boolean} result Value to select the appropiate star icon
  */
 function setFavProperty(result) {
-  console.log(result);
   if(result) {
     document.getElementById("favStar").innerHTML = "\u2b50";
   } else {
