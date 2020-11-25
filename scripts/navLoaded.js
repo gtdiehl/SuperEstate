@@ -5,15 +5,18 @@
  */
 function navLoaded()
 {
-	// Give all pages access to jQuery
-	let jQueryScript = document.createElement("script");
-	jQueryScript.setAttribute("type", "text/javascript");
-	jQueryScript.setAttribute("src", "https://code.jquery.com/jquery-1.12.4.js");
-	let jQueryScriptUI = document.createElement("script");
-	jQueryScriptUI.setAttribute("type", "text/javascript");
-	jQueryScriptUI.setAttribute("src", "https://code.jquery.com/ui/1.12.1/jquery-ui.js");
-	document.getElementsByTagName("head")[0].appendChild(jQueryScript);
-	document.getElementsByTagName("head")[0].appendChild(jQueryScriptUI);
+	// Give all pages access to jQuery except search.html. Seems the slider in
+	// search.html does not work when the below section is added to that page.
+	if(window.location.pathname != "/search.html") { 
+		let jQueryScript = document.createElement("script");
+		jQueryScript.setAttribute("type", "text/javascript");
+		jQueryScript.setAttribute("src", "https://code.jquery.com/jquery-1.12.4.js");
+		let jQueryScriptUI = document.createElement("script");
+		jQueryScriptUI.setAttribute("type", "text/javascript");
+		jQueryScriptUI.setAttribute("src", "https://code.jquery.com/ui/1.12.1/jquery-ui.js");
+		document.getElementsByTagName("head")[0].appendChild(jQueryScript);
+		document.getElementsByTagName("head")[0].appendChild(jQueryScriptUI);
+	}
 
 	// Create container to hold navigation bar
 	let div = document.createElement("div");
@@ -178,7 +181,7 @@ function footerLoaded(){
 	inTr1_2.appendChild(inTd1_2);
 	
 	let igLink = document.createElement("A");
-	igLink.setAttribute("href", "https://www.instagram.com/sjsu/?hl=zh-tw");
+	igLink.setAttribute("href", "https://www.instagram.com/sjsu/");
 	inTd1_2.appendChild(igLink);
 	
 	let imgig = document.createElement("IMG");
@@ -274,7 +277,7 @@ function footerLoaded(){
 	let heading4_2 = document.createElement("H4");
 	inTd2_4.appendChild(heading4_2);
 	
-	let txtinfo2 = document.createTextNode("(408)859-7420");
+	let txtinfo2 = document.createTextNode("(408) 859-7420");
 	heading4_2.appendChild(txtinfo2);
 	
 	//address icon
@@ -302,7 +305,7 @@ function footerLoaded(){
 	heading4_3.appendChild(txtinfo3);
 	let br=document.createElement("BR");
 	heading4_3.appendChild(br);
-	let txtinfo3_2 = document.createTextNode("San Jose, CA, 95128");
+	let txtinfo3_2 = document.createTextNode("San Jose, CA 95128");
 	heading4_3.appendChild(txtinfo3_2);
 	
 	//table update
