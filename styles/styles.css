@@ -139,3 +139,39 @@ div.property:hover .middle {
 	width: 100%;
 }
 
+/* My Property */
+#savedPropertyHeading {
+	color: #B97C7C;
+	font-size: 200%;
+	padding-left: 25px;
+}
+
+.savedPropertyTop {
+	columns: auto 2;
+	padding-top: 10px;
+}
+
+.savedPropertyColumn {
+	box-sizing: border-box;
+}
+
+#floatRight {
+	float: right;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.noSavedProperties {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#propMesg {
+	top: 55%
+}
