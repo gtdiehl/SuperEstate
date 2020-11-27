@@ -35,64 +35,67 @@
                     document.getElementById("searchFrame").setAttribute("src", createURLSearchString());
 					SF.onload = function() {
 						SF.style.height="";
-						SF.style.height = parseInt(SF.contentWindow.document.body.scrollHeight) + 'px'; 
+						var searchHeight = parseInt(SF.contentWindow.document.body.scrollHeight)+80;
+						SF.style.height = searchHeight + 'px';
 					} 
                 });
             }
         </script>
     </head>
 	<script src="scripts/navLoaded.js"></script>
-    <body onload="navLoaded();domLoaded();">
-		<div class="searchContent">
-			<div class="searchbox">
-				<h4>SEARCH FOR PROPERTIES</h4>
-				<form id="searchForm">
-					<div class="column" style="width:25%;">
-						<label for="amount">Price range</label><br>
-						<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-						<div id="slider-range"></div>
-					</div>
-					<div class="column" style="width:15%;">
-						<label>Bedrooms</label><br>
-						<select id="bedrooms">
-							<option value="0" selected>Any</option>
-							<option value="1">1+</option>
-							<option value="2">2+</option>
-							<option value="3">3+</option>
-							<option value="4">4+</option>
-							<option value="5">5+</option>
-						</select>
-					</div>
-					<div class="column" style="width:15%;">
-						<label>Bathrooms</label><br>
-						<select id="bathrooms">
-							<option value="0" selected>Any</option>
-							<option value="1">1+</option>
-							<option value="1.5">1.5+</option>
-							<option value="2">2+</option>
-							<option value="3">3+</option>
-							<option value="4">4+</option>
-						</select>
-					</div>
-					<div class="column" style="width:25%;">
-						<label>Building Type</label><br>
-						<input type="checkbox" id="house" name="buildings" value="House" checked>
-						<label for="house">House</label>
-						<input type="checkbox" id="manufactured" name="buildings" value="Manufactured">
-						<label for="manufactured">Manufactured</label><br>
-						<input type="checkbox" id="condo" name="buildings" value="Condo">
-						<label for="condo">Condo</label>
-						<input type="checkbox" id="townhouse" name="buildings" value="Townhouse">
-						<label for="townhouse">Townhouse</label>
-					</div>
-					<div class="column" style="width:15%;">
-						<button type="submit" id="submitButton">
-							<img src="images/searchButton.png" id="submitImage">
-						</button>
-					</div>
-				</form>
+    <body onload="navLoaded();domLoaded();footerLoaded();">
+		<div class="container">
+			<div class="searchContent">
+				<div class="searchbox">
+					<h4>SEARCH FOR PROPERTIES</h4>
+					<form id="searchForm">
+						<div class="column" style="width:25%;">
+							<label for="amount">Price range</label><br>
+							<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+							<div id="slider-range"></div>
+						</div>
+						<div class="column" style="width:15%;">
+							<label>Bedrooms</label><br>
+							<select id="bedrooms">
+								<option value="0" selected>Any</option>
+								<option value="1">1+</option>
+								<option value="2">2+</option>
+								<option value="3">3+</option>
+								<option value="4">4+</option>
+								<option value="5">5+</option>
+							</select>
+						</div>
+						<div class="column" style="width:15%;">
+							<label>Bathrooms</label><br>
+							<select id="bathrooms">
+								<option value="0" selected>Any</option>
+								<option value="1">1+</option>
+								<option value="1.5">1.5+</option>
+								<option value="2">2+</option>
+								<option value="3">3+</option>
+								<option value="4">4+</option>
+							</select>
+						</div>
+						<div class="column" style="width:25%;">
+							<label>Building Type</label><br>
+							<input type="checkbox" id="house" name="buildings" value="House" checked>
+							<label for="house">House</label>
+							<input type="checkbox" id="manufactured" name="buildings" value="Manufactured">
+							<label for="manufactured">Manufactured</label><br>
+							<input type="checkbox" id="condo" name="buildings" value="Condo">
+							<label for="condo">Condo</label>
+							<input type="checkbox" id="townhouse" name="buildings" value="Townhouse">
+							<label for="townhouse">Townhouse</label>
+						</div>
+						<div class="column" style="width:15%;">
+							<button type="submit" id="submitButton">
+								<img src="images/searchButton.png" id="submitImage">
+							</button>
+						</div>
+					</form>
+				</div>
 			</div>
+			<iframe src="getSearchDefault.php" class="search-details" id="searchFrame"></iframe>
 		</div>
-		<iframe class="search-details" id="searchFrame"></iframe>
     </body>
 </html>
