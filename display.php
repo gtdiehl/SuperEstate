@@ -17,6 +17,27 @@
 	
 	<body onload="navLoaded();footerLoaded();">
 		<div class="container">
+			<div class="starbutton" >
+				<a href="#" id="defaultStar" onclick="starDefault();">&#x2606;<p>Save</p></a>
+				<script>
+					// Get current user if logged in
+					var isLoggedIn = "<?php echo $_SESSION['login_user']; ?>";
+					var t = document.getElementsByClassName("starbutton")[0];
+					
+					// If the user is logged in, show the favorite star icon selected/unselected
+					// based on if the property is apart of the user's favorite list in the database
+					if(isLoggedIn != "") {
+						var clickedFavMethodStr = "clickedFav('" + isLoggedIn + "')";
+						
+						var starNode = document.createElement("A");
+						starNode.setAttribute("id", "favStar");
+						starNode.setAttribute("onclick", clickedFavMethodStr);
+						t.appendChild(starNode);
+						isFavProperty(isLoggedIn);
+						document.getElementById("defaultStar").style.display = "none";
+					}
+				</script>
+			</div>
 			<div class="slides-container">
 				<div class="photo-container">
 					<!-- Get the property id from the window URL and add it to the image path to display the correct image -->
@@ -32,22 +53,6 @@
 							var dataArray = data.split(",");
 							photoCount = dataArray[0];
 							videoCount = dataArray[1];
-
-							// Get current user if logged in
-							var isLoggedIn = "<?php echo $_SESSION['login_user']?>";
-							
-							// If the user is logged in, show the favorite star icon selected/unselected
-							// based on if the property is apart of the user's favorite list in the database
-							if(isLoggedIn != "") {
-								var clickedFavMethodStr = "clickedFav('" + isLoggedIn + "')";
-
-								t = document.getElementsByClassName("container")[0];
-								var starNode = document.createElement("a");
-								starNode.setAttribute("id", "favStar");
-								starNode.setAttribute("onclick", clickedFavMethodStr);
-								t.appendChild(starNode);
-								isFavProperty(isLoggedIn);
-							}
 							
 							// Get a reference to the slides-container element for photos to be added to
 							s = document.getElementsByClassName("slides-container")[0];
@@ -72,7 +77,7 @@
 							}
 
 							// Add prev and next buttons for the photo slideshow
-							if(photoCount > 1)
+							if(photoCount > 0)
 							{
 								var prevNode = document.createElement("a");
 								prevNode.setAttribute("class", "prev");
@@ -90,9 +95,13 @@
 								s.appendChild(nextNode);
 							}
 						});
+						
+						
 					});
 				</script>
 			</div>
+			
+			
 			<div class="propertyDetails">
 				<script>
 					// Display getDetails.php page with property details that is retrieved from the database using the property id
