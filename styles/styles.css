@@ -47,10 +47,12 @@ ul {
 
 /*Footer*/
 footer {
-  margin-left:3%;
-  padding: 3px;
-  background-color: #7CB9B9;
-  color: #DEE7E8;
+	position: relative;
+	top:20px;
+	margin-left:3%;
+	padding: 3px;
+	background-color: #7CB9B9;
+	color: #DEE7E8;
 }
 
 footer table{
@@ -70,7 +72,12 @@ footer h4 {
 	text-align:left;
 	color: black;
 }
-footer form{padding:0px}
+footer form{
+	position: static;
+	padding:0px;
+	text-align: left;
+	background-color:#7CB9B9;
+}
 footer input[type=email]{
 	width:200px;
 	height: 20px;
