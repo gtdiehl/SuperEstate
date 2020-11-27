@@ -113,3 +113,7 @@ function setFavProperty(result) {
     document.getElementById("favStar").innerHTML = "\u2606";
   }
 }
+
+function starDefault() {
+  window.alert("Please login to continue!");
+}
