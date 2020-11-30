@@ -1,20 +1,25 @@
 <?php
+	// Import global database connection variable
 	include("config.php");
+
+	// PHP method to start new or resume existing session
 	session_start();
+
 	$error="";
    
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
-		// username and password sent from form 
-	  
+		// Username, Password, and E-Mail Address sent from the form
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
 		$mypassword = mysqli_real_escape_string($db,$_POST['password']);
 		$myemail = mysqli_real_escape_string($db,$_POST['email']); 
 
+		// SQL Query to check if username exists in the database
 		$sql = "SELECT user_id FROM account WHERE username = '$myusername'";
 		$result = mysqli_query($db,$sql);
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 		$active = $row['active'];
 
+		// Get count of number of rows returned from the SQL Query
 		$count = mysqli_num_rows($result);
 	  
 		// If result matched $myusername and $mypassword, table row must be 1 row
