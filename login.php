@@ -1,6 +1,10 @@
 <?php
+	// Import global database connection variable
 	include("config.php");
+
+	// PHP method to start new or resume existing session
 	session_start();
+
 	$error="";
 
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,6 +13,7 @@
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
 		$mypassword = mysqli_real_escape_string($db,$_POST['password']); 
 
+		// SQL Query to check if username with matching password exists in the database
 		$sql = "SELECT user_id FROM account WHERE username = '$myusername' and password = '$mypassword'";
 		$result = mysqli_query($db,$sql);
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -17,9 +22,11 @@
 		$count = mysqli_num_rows($result);
 
 		// If result matched $myusername and $mypassword, table row must be 1 row
+		// Which means user exists and re-direct to the My Property page.
 		if($count == 1) {
 			$_SESSION['login_user'] = $myusername;
 			header("location: myproperty.php");
+		// If user does not exist display the error to the user
 		}else {
 			$error = "Your Login Name or Password is invalid";
 		}
