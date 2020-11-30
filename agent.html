@@ -16,48 +16,51 @@
                     document.getElementById("agentFrame").setAttribute("src", createURLSearchString());
 					AF.onload = function() {
 						AF.style.height="";
-						AF.style.height = parseInt(AF.contentWindow.document.body.scrollHeight) + 'px'; 
+						var searchHeight = parseInt(AF.contentWindow.document.body.scrollHeight)+80;
+						AF.style.height = searchHeight + 'px'; 
 					} 
                 });
             }
         </script>
     </head>
 	<script src="scripts/navLoaded.js"></script>
-    <body onload="navLoaded();domLoaded();">
-		<div class="searchContent">
-			<div class="searchbox">
-				<h4>SEARCH FOR AGENTS</h4>
-				<form id="searchForm">
-					<div class="column" style="width:30%;">
-						<label>Language</label><br>
-						<select id="language">
-							<option value="Chinese">Chinese</option>
-							<option value="English" selected>English</option>
-							<option value="French">French</option>
-							<option value="German">German</option>
-							<option value="Italian">Italian</option>
-							<option value="Japanese">Japanese</option>
-							<option value="Korean">Korean</option>
-							<option value="Portuguese">Portuguese</option>
-							<option value="Russian">Russian</option>
-							<option value="Spanish">Spanish</option>
-							<option value="Turkish">Turkish</option>
-						</select>
-					</div>
-					<div class="column" style="width:45%;">
-						<label>
-							<input type="text" name="name" size="30" maxlength="30" placeholder="Name" id="name">
-						</label>
-					</div>
-					
-					<div class="column" style="width:15%;">
-						<button type="submit" id="submitButton">
-							<img src="images/searchButton_agent.png" id="submitImage">
-						</button>
-					</div>
-				</form>
+    <body onload="navLoaded();domLoaded();footerLoaded();">
+		<div class="container">
+			<div class="searchContent">
+				<div class="searchbox">
+					<h4>SEARCH FOR AGENTS</h4>
+					<form id="searchForm">
+						<div class="column" style="width:30%;">
+							<label>Language</label><br>
+							<select id="language">
+								<option value="Chinese">Chinese</option>
+								<option value="English" selected>English</option>
+								<option value="French">French</option>
+								<option value="German">German</option>
+								<option value="Italian">Italian</option>
+								<option value="Japanese">Japanese</option>
+								<option value="Korean">Korean</option>
+								<option value="Portuguese">Portuguese</option>
+								<option value="Russian">Russian</option>
+								<option value="Spanish">Spanish</option>
+								<option value="Turkish">Turkish</option>
+							</select>
+						</div>
+						<div class="column" style="width:45%;">
+							<label>
+								<input type="text" name="name" size="30" maxlength="30" placeholder="Name" id="name">
+							</label>
+						</div>
+						
+						<div class="column" style="width:15%;">
+							<button type="submit" id="submitButton">
+								<img src="images/searchButton_agent.png" id="submitImage">
+							</button>
+						</div>
+					</form>
+				</div>
 			</div>
+			<iframe class="search-details" id="agentFrame"></iframe>
 		</div>
-		<iframe class="search-details" id="agentFrame"></iframe>
     </body>
 </html>
