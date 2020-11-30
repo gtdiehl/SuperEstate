@@ -10,7 +10,7 @@
 
     // Link HTML Styles My Property page
     echo "<link rel='stylesheet' type='text/css' href='styles/styles.css'></link>";
-
+	echo "<style type='text/css'>body {background-color:#DEE7E8;}</style>";
     // Display HTML text and logout link
     echo "<div class='savedPropertyTop'>";
     echo "<div class='savedPropertyColumn'>";
