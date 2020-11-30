@@ -347,7 +347,6 @@ function footerLoaded(){
 	input1.setAttribute("id", "useremail");
 	input1.setAttribute("type", "email");
 	input1.setAttribute("placeholder", "example@gmail.com");
-	input1.setAttribute("required", "required");
 	formSub.appendChild(input1);
 	let br2 = document.createElement("BR");
 	formSub.appendChild(br2);
@@ -369,6 +368,11 @@ function footerLoaded(){
 	p.appendChild(txtword);
 	
 	document.body.insertBefore(footer, document.body.nextSibling);
+
+	var form = document.getElementById("inputform");
+	function handleForm(event) { event.preventDefault(); } 
+	form.addEventListener('submit', handleForm);
+	
 }
 
 /**
@@ -377,13 +381,18 @@ function footerLoaded(){
 function buttonPressed() 
 {
 	var f = document.getElementById('inputform');
-	var e = document.getElementById('useremail').value;
+	var e = document.getElementById('useremail');
 
 	// Let the input E-Mail field validate the input. Upon successful validation
-	// subscribe the e-mail address and alert the user.
-	if(f.checkValidity()) {
-		postEmailtoDatabase(e);
+	// subscribe the e-mail address and alert the user. Had to check if the input field
+	// is blank as using required parameter caused the validation message to appear after
+	// resetting the form.
+	if(f.checkValidity() && e.value != '') {
+		postEmailtoDatabase(e.value);
+		f.reset();
 		alert("Thank you for subscribing to our newsletter!");
+	} else {
+		alert("Please enter your E-Mail Address.")
 	}
 }
 
