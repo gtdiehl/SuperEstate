@@ -24,9 +24,11 @@
 	  
 		// If result matched $myusername and $mypassword, table row must be 1 row
 		if($count == 0) {
+			// SQL INSERT statement to add the user details into the database
 			$sql="insert into account (username, password, email) VALUES ('$myusername', '$mypassword', '$myemail')";
 			$result = mysqli_query($db,$sql);
 			error_log($result);
+			// Upon successful insertion re-direct user to login page. If a failure occurs display an error.
 			if($result) {
 				header("location: login.php");
 			} else {
