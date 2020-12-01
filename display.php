@@ -123,7 +123,7 @@
 							p = document.getElementById("map");
 							var iframeNode = document.createElement("iframe");
 							iframeNode.setAttribute("id", "map");
-							iframeNode.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=AIzaSyDHoKTlzPooE2GOaFauWyvrzYjBxxY9wms&q=" + propertyAddress);
+							iframeNode.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=[redacted]&q=" + propertyAddress);
 							
 							p.appendChild(iframeNode);
 						});
