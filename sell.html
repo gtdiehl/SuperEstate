@@ -132,6 +132,25 @@
                 var info = document.getElementById("info").value;
 
                 // In the production system the users info would be sent in an e-mail to an agent
+                
+                /**
+                var mailme = document.createElement("a");
+                mailme.setAttribute("id", "lnk");
+                document.body.appendChild(mailme);
+
+                var mailString = "mailto:agent@superestate.com?subject=I'm%20interested%20in%20selling%20my%20house&body=";
+                var bodyText = "Hello Agent\nMy name is "
+                bodyText += fname + " " + lname + "\n\nI am interested in discussing with you about selling my home.\n\n";
+                bodyText += "My Contact info is\nPhone: " + phone + "\nE-Mail: " + email + "\n\n";
+                bodyText += "Here is some details about my home:\n" + info;
+                bodyText = encodeURIComponent(bodyText);
+
+                mailString += bodyText;
+
+                document.getElementById("lnk").setAttribute("href", mailString);
+                document.getElementById("lnk").click();
+                */
+                 
             }
 
             var phoneMask = IMask(
