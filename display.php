@@ -123,6 +123,8 @@
 							p = document.getElementById("map");
 							var iframeNode = document.createElement("iframe");
 							iframeNode.setAttribute("id", "map");
+							
+							// Removed Google API key to not be exposed to the public
 							iframeNode.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=[redacted]&q=" + propertyAddress);
 							
 							p.appendChild(iframeNode);
