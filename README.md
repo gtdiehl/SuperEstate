@@ -33,5 +33,5 @@ User account creation and login
 Agent biography
 ![agents](https://github.com/gtdiehl/superEImages/blob/main/images/agents.png?raw=true)
 
-Seller form
+Seller form<br/>
 ![sellform](https://github.com/gtdiehl/superEImages/blob/main/images/sellform.png?raw=true)
