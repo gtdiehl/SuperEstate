@@ -17,15 +17,21 @@ The majority of the code is HTML, CSS, and JavaScript.
 Here are some screenshots from the website!
 
 Home Page
+![homepage](https://github.com/gtdiehl/superEImages/blob/main/images/homepage.png?raw=true)
 
 Property Listing
+![propertylisting](https://github.com/gtdiehl/superEImages/blob/main/images/propertylisting.png?raw=true)
 
 Property Search
+![propertysearch](https://github.com/gtdiehl/superEImages/blob/main/images/propertysearch.png?raw=true)
 
 Neighborhood Guide
+![neighborhoodguide](https://github.com/gtdiehl/superEImages/blob/main/images/neighborhoodguide.png?raw=true)
 
 User account creation and login
 
 Agent biography
+![agents](https://github.com/gtdiehl/superEImages/blob/main/images/agents.png?raw=true)
 
 Seller form
+![sellform](https://github.com/gtdiehl/superEImages/blob/main/images/sellform.png?raw=true)
